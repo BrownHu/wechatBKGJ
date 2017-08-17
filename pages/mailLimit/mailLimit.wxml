@@ -1,0 +1,96 @@
+<!-- waybill.wxml -->
+<view class="expense">
+  <view class="title">
+    <view class="expense_before">
+    </view>
+        <text class="word">邮寄限制</text>
+  </view>
+    <view class="wrap">
+    <!-- <view class="des_all">
+        <view class="label">商品分类：</view>
+        <view class="region"><picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <text class="left">{{region[0]}}-{{region[1]}}-{{region[2]}}</text> <text class="right">></text>
+        </picker>
+        </view>
+    </view> -->
+    <view class="weight_all">
+      <view class="label">商品分类:</view>
+        <view class="weight">
+               <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+        <text style="margin-left:5px;">{{array[index]}}</text><text style="float:right;margin-right:5px;">></text>
+    </view>
+  </picker>
+        </view>
+        <view class="cal_button">
+        <button style="font-size:14px;bottom:1px;background-color:#0398e7;line-height:2;" type="primary" bindtap="default"> 搜索 </button>
+        </view>
+        </view>
+    </view>
+    <view class="hr"></view>
+    <view class="expense_detail">
+           <view class="table">
+  <view class="tr bg-w">
+    <view class="th">商品分类</view>
+    <view class="th ">可否邮寄</view>
+    <view class="th">寄送方式</view>
+    <view class="th" style="border-right:1rpx solid #c8c8c8;">限重(KG)</view>
+  </view>
+     <view class="tr">
+     <view class="td">敏感物品</view>
+     <view class="td colorful">是</view>
+
+     <view class="td">EUB-F</view>
+     <view class="td" style="border-right:1px solid #c8c8c8; ">此物品属于敏感物品，有明确的限制，只能用特定方式邮寄</view>
+    </view>
+  
+</view>
+    </view>
+</view>
+
+<view class="questions">
+  <text class="title">常见问题</text>
+    <!-- <view class="wenda">
+        <view class="ques">
+          问： <text>什么是敏感物品？</text>
+        </view>
+        <view class="reply">
+          答： <text class="body">依据各国海关政策差异，部分国家或地区对特殊商品较为敏感,在进入当地海关时被罚没收概率会稍大，包括并不仅限于如下物品：肉类（熟食）、电子类、服饰(仿牌类)、种子、刀具等。</text>
+        </view>
+    </view>
+     <view class="wenda">
+        <view class="ques">
+          问： <text>哪些是绝对不能邮寄的？</text>
+        </view>
+        <view class="reply">
+          答： <text class="body">各类武器弹药、仿真武器、烈性毒药、伪造货币、有价证券、珍贵植物种子等。具体请参见法律规定禁止出口物品。</text>
+        </view>
+    </view>
+     <view class="wenda">
+        <view class="ques">
+          问： <text>大件的商品也可以支持寄送吗？</text>
+        </view>
+        <view class="reply">
+          答： <text class="body">国际货运是按商品的重量和体积进行计费的，我们暂时不支持该类商品的采购，大件商品包括但不限于以下商品：音响/HIFI、厨房电器(烤箱/净水器/咖啡机等)、其他家电(冰箱/洗衣机/烘干机/空调机/电视机/烤箱等)、健身器材等</text>
+        </view>
+    </view> -->
+     <block wx:for="{{questionReply}}"> 
+     <view class="wenda">
+        <view class="ques">
+          问： <text>{{item.question}}</text>
+        </view>
+        <view class="reply">
+          答： <text class="body">{{item.reply}}</text>
+        </view>
+    </view>
+  </block> 
+
+   
+ 
+</view>
+
+
+  
+
+
+

@@ -1,0 +1,95 @@
+  <view class="member">
+    <view class="wraper">
+        <view class="head">
+            <image src="../../images/member/head.png" class="headimg" mode="aspectFit"></image>
+            <view class="name">布兰奇MA</view>
+            <text class="more">></text>
+        </view>
+    </view>
+</view>
+<view class="tool">
+    <view class="common">
+        <view class="img">
+          <image src="../../images/member/1.png" class="tool-img" mode="aspectFit" ></image>
+        </view>
+        <view class="desc">
+          我的运单
+        </view>
+    </view>
+    <view class="common">
+        <view class="img">
+          <image src="../../images/member/2.png" class="tool-img" mode="aspectFit" ></image>
+        </view>
+        <view class="desc">
+          我的运单
+        </view>
+    </view>
+    <view class="common">
+        <view class="img">
+          <image src="../../images/member/3.png" class="tool-img" mode="aspectFit" ></image>
+        </view>
+        <view class="desc">
+          我的运单
+        </view>
+    </view>
+    <view class="common">
+        <view class="img">
+          <image src="../../images/member/4.png" class="tool-img" mode="aspectFit" ></image>
+        </view>
+        <view class="desc">
+          我的运单
+        </view>
+    </view>
+</view>
+
+
+<view class="part-bottom">
+    <view class="part-wrap">
+        <view class="icon">
+            <image class="icon-img" src="../../images/member/11.png" mode="aspectFit"></image>
+        </view>
+        <view class="word">
+              资料管理
+        </view>
+        <text class="right-arrow">></text>
+    </view>
+    <view class="sep"></view>
+    <view class="part-wrap">
+        <view class="icon">
+            <image class="icon-img" src="../../images/member/22.png" mode="aspectFit"></image>
+        </view>
+        <view class="word">
+              我的优惠券
+        </view>
+        <text class="right-arrow">></text>
+    </view>
+     <view class="sep"></view>
+    <view class="part-wrap">
+        <view class="icon">
+            <image class="icon-img" src="../../images/member/33.png" mode="aspectFit"></image>
+        </view>
+        <view class="word">
+              收货地址
+        </view>
+        <text class="right-arrow">></text>
+    </view>
+     <view class="sep"></view>
+    <view class="part-wrap">
+        <view class="icon">
+            <image class="icon-img" src="../../images/member/44.png" mode="aspectFit"></image>
+        </view>
+        <view class="word">
+              帮助中心
+        </view>
+        <text class="right-arrow">></text>
+    </view> <view class="sep"></view>
+    <view class="part-wrap">
+        <view class="icon">
+            <image class="icon-img" src="../../images/member/55.png" mode="aspectFit"></image>
+        </view>
+        <view class="word">
+              关于代购
+        </view>
+        <text class="right-arrow">></text>
+    </view>
+</view>

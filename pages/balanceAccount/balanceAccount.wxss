@@ -1,0 +1,56 @@
+/* balanceAccount.wxss */
+.balance{
+
+padding:15px 10px;
+background-color:#ffffff;
+display:flex;
+
+}
+.img{
+width:40px;
+height:40px;
+
+}
+.icon{
+}
+.show{
+
+line-height:40px;
+margin-left:17px;
+color: #676767;
+
+}
+.money{
+
+margin-left:5px;
+font-size:18px;
+line-height:40px;
+
+
+}
+.detail{
+
+margin-top:10px;
+background-color:#ffffff;
+padding:15px 10px;
+display:flex;
+position:relative;
+
+}
+.left{
+border-left:3px solid #0398e7;
+
+
+}
+.middle{
+
+margin-left:10px;
+
+}
+.right{
+
+position:absolute;
+right:10px;
+color:#636363;
+
+}

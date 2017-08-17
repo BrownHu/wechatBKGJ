@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/show/show",        
+    "pages/memberShow/memberShow",
+    "pages/tradeAccount/tradeAccount",
+    "pages/balanceAccount/balanceAccount",
+    "pages/registerAccount/registerAccount",
+    "pages/bindAccount/bindAccount",
+    "pages/member/member",
+    "pages/index/index",
+    "pages/mailLimit/mailLimit",
+    "pages/chooseGood/chooseGood",
+    "pages/chooseCountry/chooseCountry",
+    "pages/volumeStart/volumeStart",
+    "pages/volumeCalc/volumeCalc",
+    "pages/guide/guide",
+    "pages/calc/calc",
+    "pages/waybill/waybill",
+    "pages/expense/expense",
+    "pages/guideGif/guideGif",
+    "pages/announceDetail/announceDetail",
+    "pages/announcement/announcement",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "red",
+    "navigationBarTitleText": "新手指南",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#82B8E9",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/selected_home.png",
+        "selectedColor": "#82B8E9",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "icon/transform.png",
+        "selectedIconPath": "icon/selected_transform.png",
+        "selectedColor": "#82B8E9",
+        "text": "国际转运"
+      },
+      {
+        "pagePath": "pages/memberShow/memberShow",
+        "iconPath": "icon/user.png",
+        "selectedIconPath": "icon/selected_user.png",
+        "selectedColor": "#82B8E9",
+        "text": "我的"
+      }
+    ]
+  }
+}

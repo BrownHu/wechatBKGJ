@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="top_pic">
+ <image src="../../images/row.png" mode="aspectFit"></image>
+ </view> 
+
+  <view class="guide_wrap">
+      <view class="detail">
+         <image src="../../images/row_1.png" mode="aspectFit"></image>
+      </view>
+      <view class="detail">
+         <image src="../../images/row_2.png" mode="aspectFit"></image>
+      </view>
+     
+  </view>
+  <view class="guide_wrap" style="margin-top:-70px;">
+      <view class="detail">
+         <image src="../../images/row_3.png" mode="aspectFit" style="margin-"></image>
+      </view>
+      <view class="detail">
+         <image src="../../images/row_4.png" mode="aspectFit"></image>
+      </view>
+     
+  </view>
+
+</view>
+
+
+

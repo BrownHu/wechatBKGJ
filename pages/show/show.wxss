@@ -1,0 +1,5 @@
+/* show.wxss */
+button{
+  margin-top: 3px;
+  width:100%;
+}

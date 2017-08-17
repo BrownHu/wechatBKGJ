@@ -1,0 +1,30 @@
+<!--volumeStart.wxml-->
+<view class="volume">
+    <view class="topselect">
+      <view class="left">   
+           <button   style="  padding-left:27px ;padding-right:27px;border-radius:33px;line-height:1.7;color:#0398e7;background-color:#ffffff;border:1px solid #0398e7;" type="primary" bindtap="default" id="announcement">国内港澳台</button>
+      </view>
+      <view class="right">  
+       <button  style="  padding-left:27px ;padding-right:27px;border-radius:33px;line-height:1.7;background-color:#0398e7;" type="primary" bindtap="default" id="announcement">国际其他地区</button>
+      </view>
+    </view>
+</view>
+<view class="volume_input">
+   <view class="inputGroup">
+        <text class="label">长(CM):</text>
+        <input class="length" placeholder=""/>
+    </view> 
+    <view class="inputGroup martop">
+        <text class="label">宽(CM):</text>
+        <input class="length" placeholder=""/>
+    </view>
+    <view class="inputGroup martop">
+        <text class="label">高(CM):</text>
+        <input class="length" placeholder=""/>
+    </view>
+     <view class="calcbutton">
+        <button  type="primary" bindtap="default" id="" style="background-color:#0398e7;">计算</button>
+    </view> 
+    <view class="hr"></view>
+
+</view>

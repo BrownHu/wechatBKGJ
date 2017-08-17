@@ -1,0 +1,44 @@
+<!--waybill.wxml-->
+<view class="waybill">
+  <view class="title">
+    <view class="waybill_before">
+    </view>
+        <text class="word">运单查询</text>
+  </view>
+  <view class="body">
+    <text class="label">运单号：</text>
+    <input class="wayinput" placeholder="请输入运单号" auto-focus/>
+  </view>
+    <view class="button_about">
+    <button style="background-color:#0398e7;width:190px;" type="primary" class="trace" size="default"  
+        disabled="{{disabled}}"  bindtap="trace" > 查询 </button>
+    </view>
+    <view class="hr"></view>
+
+    <view class="table">
+  <view class="tr bg-w">
+    <view class="th">时间</view>
+    <view class="th_place">地点和跟踪进度</view>
+  </view>
+    <view class="tr">
+      <view class="td">2017-07-11 21:28:28</view>
+      <view class="td_place" style="color:#bebeb3">邯郸|发件【邯郸市集散中心】,正准备发往【保定】</view>
+    </view>
+    <view class="tr">
+      <view class="td">2017-07-11 21:28:28</view>
+      <view class="td_place" style="color:#bebeb3">邯郸|发件【邯郸市集散中心】</view>
+    </view>
+    <view class="tr">
+      <view class="td">2017-07-11 21:28:28</view>
+      <view class="td_place" style="color:#bebeb3">邯郸|发件【邯郸市集散中心】</view>
+    </view>
+   <!-- <block wx:for="{{listData}}">
+    <view class="tr">
+      <view class="td">{{item.time}}</view>
+      <view class="td_place">{{item.place}}</view>
+    </view>
+  </block>  -->
+</view>
+</view>
+
+

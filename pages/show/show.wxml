@@ -1,0 +1,20 @@
+<!--show.wxml-->
+
+<view class="" style="padding:20px;">
+    <button type="primary" bindtap="mytap" id="index" >首页</button>
+    <button type="primary" bindtap="mytap" id="guide" >新手指南</button>
+    <button type="primary" bindtap="mytap" id="guideGif" >新手指南gif</button>
+    <button type="primary" bindtap="mytap" id="announcement">系统公告</button>
+    <button type="primary" bindtap="mytap" id="announceDetail" >系统公告详情</button>
+    <button type="primary" bindtap="mytap" id="chooseCountry" >选择国家</button>
+    <button type="primary" bindtap="mytap" id="expense" >运费查询</button>
+    <button type="primary" bindtap="mytap" id="waybill">运单查询</button>
+    <button type="primary" bindtap="mytap" id="volumeStart" >体积计算</button>
+    <button type="primary" bindtap="mytap" id="volumeCalc" >体积计算详情</button>
+    <button type="primary" bindtap="mytap" id="chooseGood" >选择物品</button>
+    <button type="primary" bindtap="mytap" id="mailLimit" >邮寄限制</button>
+
+
+
+
+</view>

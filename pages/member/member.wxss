@@ -1,0 +1,112 @@
+/* member.wxss */
+.member{
+  padding:40px 20px;
+background-color:#ea0f34;
+
+}
+.wraper{
+  /* border: 1px solid red; */
+}
+.head{
+  display:flex;
+position:relative;
+
+
+}
+.headimg{
+  height:50px;
+width:50px;
+
+
+}
+.name{
+  line-height:50px;
+color:#ffffff;
+margin-left:20px;
+
+
+
+}
+.more{
+line-height:50px;
+color:#ffffff;
+position:absolute;
+right:0;
+}
+
+/*tool  */
+
+  .tool{
+    margin:10px 0;
+padding:10px 20px;
+display:flex;
+background-color:#ffffff;
+
+  }
+  .common{
+
+width:25%;
+
+  }
+  .img{
+
+display:flex;
+justify-content:center;
+
+  }
+  .tool-img{
+width:40px;
+height:40px;
+
+
+  }
+  .desc{
+
+  text-align: center;
+
+  }
+/*part bottom  */
+
+.part-bottom{
+  margin-top:10px;
+background-color:#ffffff;
+
+}
+.part-wrap{
+
+display:flex;
+padding:10px;
+
+}
+.icon{
+
+height:20px;
+width:20px;
+margin-right:10px;
+
+}
+.icon-img{
+height:20px;
+width:20px;
+
+
+}
+.word{
+  line-height:20px;
+color:rgba(0,0,0,0.8);
+
+
+}
+.right-arrow{
+float:right;
+position:absolute;
+right:30px;
+line-height:20px;
+font-size:20px;
+color:rgba(0,0,0,0.8);
+}
+.sep{
+    width: 100%;
+    height: 5px;
+    background-color: #f5f5f5;
+}

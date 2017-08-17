@@ -1,0 +1,65 @@
+/* volumeStart.wxss *//* volumeCalc.wxss */
+.volume{
+  background-color: #ffffff;
+  width: 100%;
+  box-shadow:1px 1px 4px #888888;
+}
+.volume_input{
+  padding: 20px 10px;
+  margin-top:10px; 
+  background-color: #ffffff;
+  min-height: 199px;  
+}
+
+.topselect{
+    padding: 10px 0;
+    text-align: center;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.button_top_left{
+  padding-left:27px ;padding-right:27px;border-radius:33px;
+}
+.button_top_right{
+  padding:10px 27px ;
+  border-radius: 33px;
+}
+.left{
+    padding-right: 5px;
+    display: inline-block;
+    border-right: 1px solid #d6d6d6;
+
+}
+.right{
+  padding-left:5px;
+  display: inline-block;
+}
+.label{
+  width: 20%;
+  position: relative;
+  top: 10px;
+  color: #717171;
+  
+}
+.length{
+  padding: 4px 6px;
+  display: inline-block;
+  width: 80%;
+  float: right;
+  color: #717171;
+  border:1px solid #717171;
+}
+.inputGroup{
+width: 100%;
+}
+.martop{
+  margin-top:35px; 
+}
+.place{
+  width: 20%;
+}
+.calcbutton{
+  margin-left:16%;
+  margin-top:10%;
+  width:60%;
+}

@@ -1,0 +1,10 @@
+/* chooseGood.wxss *//* chooseCountry.wxss */
+.good{
+  margin-top:10px; 
+  background-color: #ffffff;
+  padding: 10px 15px;
+}
+.name{
+  padding: 3px 5px;
+  color: #858585;
+}

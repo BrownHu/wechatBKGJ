@@ -1,0 +1,10 @@
+<!--chooseCountry.wxml-->
+<view class="good">
+  <block wx:for="{{good}}"> 
+    <view class="name">{{item}}</view>
+    <view class="hr"></view>
+  </block>  
+</view>
+
+
+

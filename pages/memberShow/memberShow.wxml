@@ -1,0 +1,9 @@
+<!--show.wxml-->
+
+<view class="" style="padding:20px;">
+    <button type="primary" bindtap="mytap" id="member" >会员中心</button>
+    <button type="primary" bindtap="mytap" id="bindAccount" >绑定账号</button>
+    <button type="primary" bindtap="mytap" id="registerAccount" >注册</button>
+    <button type="primary" bindtap="mytap" id="balanceAccount">账户余额管理</button>
+    <button type="primary" bindtap="mytap" id="tradeAccount" >收入记录</button>
+</view>

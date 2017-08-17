@@ -1,0 +1,53 @@
+/* tradeAccount.wxss */
+
+.in{
+  background-color:#ffffff;
+  display:flex;
+  justify-content:center;
+  padding:15px;
+}
+.left{
+  border-right:1px solid green;
+  padding-right:20px;
+}
+.right{
+  padding-left:20px;
+}
+.left-in{
+  color: #9a9a9a;
+}
+.right-in{
+  color: #f9364f;
+}
+.record{
+  margin-top:15px;
+  background-color:#ffffff;
+  padding:12px 10px;
+}
+.under{
+  margin-top:15px;
+}
+.action{
+  font-size:17px;
+}
+.money{
+  float:right;
+  color:#f9364f;
+}
+.time{
+  color:#999999;
+  font-size:13px;
+}
+.detail{
+  margin-left:5px;
+}
+.succerr{
+  float:right;
+  color:#999999;
+  font-size:13px;
+}
+.tips{
+  margin-top:20px;
+  color:#999999;
+  padding:0 10px;
+}

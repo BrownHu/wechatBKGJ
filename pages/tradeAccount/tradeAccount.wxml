@@ -1,0 +1,25 @@
+<!--tradeAccount.wxml 收入 交易记录-->
+
+<view class="in">
+    <view class="left">
+        <text class="left-in">支出记录</text>
+    </view>
+    <view class="right">
+        <text class="right-in">收入记录</text>
+    </view>
+</view>
+
+<view class="record">
+    <view class="on">
+       <text class="action">余额充值</text>
+       <text class="money">¥300.00</text>
+    </view>
+  <view class="under">
+       <text class="time">交易时间: <text class="detail">2017-07-05 10:21</text> </text>
+       <text class="succerr">交易成功</text>
+  </view>
+</view>
+
+<view class="tips">
+  温馨提示：充值与提现请到电脑端进行操作！
+</view>

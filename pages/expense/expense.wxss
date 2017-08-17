@@ -1,0 +1,133 @@
+/* expense.wxss *//* waybill.wxss */
+page{
+  background: #f5f5f5;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.expense{
+  margin-top: 10px;
+  min-height: 300px;
+  padding:30px 20px;
+  background-color: #ffffff;
+}
+.expense_before{
+  display: inline-block;
+  background-color: red;
+  width: 4px;
+  height: 10px;
+  }
+  .hr{
+    width: 100%;
+    height: 1px;
+    margin: 30px 0;
+    background-color: #c7c7c7;
+  }
+  .word{
+    margin-left:10px; 
+  }
+  
+  .wrap{
+    width: 100%;
+    margin:10px 0;
+  }
+  .label{
+    width: 10%;
+    display: inline;
+    color: rgba(0,0,0,0.7);
+  }
+  .region{
+      display:inline-block;
+      width:78%;
+      overflow:hidden;
+      padding:5px;
+      border:1px solid rgba(0,0,0,0.3);
+      position:relative;
+      top:12px;
+      height:26px;
+      line-height:26px;
+  }
+  .weight_all{
+    margin-top:20px; 
+    width: 100%;
+  }
+  .weight{
+  border:1px solid   rgba(0,0,0,0.3);
+  position: relative;
+  top: 5px;
+  left: 5px;
+  display:inline-block;
+  padding:5px;
+  width:40%;
+  }
+  .cal_button{
+    display:inline-block;
+    width:32%;
+    position:relative;
+    top:12px;
+    left:10px;
+  }
+
+  .left{
+      float: left;
+      margin-left: 10px;
+      color: rgba(0,0,0,0.3);
+  }
+  .right{
+    float: right;
+    margin-right:10px;
+    color: rgba(0,0,0,0.3);
+
+  }
+    /*table about */
+  .table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0;
+}
+.td {
+  color:#bebeb3;
+  height:22px;
+  padding:13px 5px 5px 5px;
+  width:20%;
+  justify-content:center;
+  text-align:center;
+  border:1rpx solid #c8c8c8;
+  overflow:scroll;
+  font-size:10px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  padding: 5px;
+  width: 20%;
+  justify-content: center;
+  background: #eeeeee;
+  color: #666666; 
+  border: 1px solid #c8c8c8;
+  border-bottom:none;
+  border-right: none; 
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+}
+.colorful{
+  color: #0096e6;
+}
+.price{
+  color:#f53557;
+}

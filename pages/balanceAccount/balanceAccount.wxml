@@ -1,0 +1,13 @@
+<!--balanceAccount.wxml 账户余额-->
+<view class="balance">
+  <view class="icon">
+      <image class="img" src="../../images/member/money.png" mode="aspectFit"></image>
+  </view>
+  <text class="show">账户余额:<text class="money">¥10.00</text> </text>
+</view>
+
+<view class="detail">
+  <view class="left"></view>
+  <view class="middle">财务详情</view>
+  <view class="right">交易记录</view>
+</view>

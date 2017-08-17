@@ -1,0 +1,17 @@
+<!--announcement.wxml-->
+
+  <block wx:for="{{announcement}}">
+    <view class="ann" bindtap="sayhello">
+  <text class="ann_title">{{item.title}}</text>
+  <text class="asert">></text>
+  <view class="hr"></view>
+  <view class="ann_body">
+  {{item.body}}</view>
+  <view class="ann_bottom">
+  <text class="ann_date">{{item.date}}</text>
+  <text class="ann_admin">{{item.admin}}</text>
+  </view>
+</view>
+  </block>  
+
+

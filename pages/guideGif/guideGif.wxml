@@ -1,0 +1,6 @@
+<!--guideGif.wxml-->
+<view class="container">
+  <view class="gif">
+  <image src="../../images/guide.gif" mode="scaleToFill" style="width:100%;"></image>
+  </view>
+</view>

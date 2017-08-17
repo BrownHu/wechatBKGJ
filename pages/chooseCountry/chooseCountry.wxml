@@ -1,0 +1,12 @@
+<!--chooseCountry.wxml-->
+<view class="country">
+  <block wx:for="{{country}}"> 
+    <view class="name">{{item.cname}}({{item.ename}})</view>
+    <view class="hr"></view>
+  </block>  
+    <view class="name">更多国家</view>
+    <view class="hr"></view>
+</view>
+
+
+
