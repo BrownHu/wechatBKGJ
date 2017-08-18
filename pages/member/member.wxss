@@ -23,6 +23,8 @@ width:50px;
   line-height:50px;
 color:#ffffff;
 margin-left:20px;
+font-size:20px;
+
 
 
 
@@ -32,6 +34,8 @@ line-height:50px;
 color:#ffffff;
 position:absolute;
 right:0;
+font-size:18px;
+
 }
 
 /*tool  */

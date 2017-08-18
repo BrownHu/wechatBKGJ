@@ -1,0 +1,47 @@
+<!--depotAddressAccount.wxml-->
+<view class="in">
+    <view class="left">
+        <text class="left-in">基本资料</text>
+    </view>
+    <view class="right">
+        <text class="right-in">仓库地址</text>
+    </view>
+</view>
+
+<view class="advice">
+  <view class="title-wrap">
+    <view class="title">
+      <view class="expense_before">
+      </view>
+      <text class="word">您唯一的收货地址</text>
+    </view>
+  </view>
+  <view class="tips">
+          您在中国购物网站进行购物时，请使用以下地址提交运单
+      </view>
+  <view class="all-wrap">
+      
+      <view class="address">
+          <text class="common">收件人：<text class="detail">佰客国际9218</text></text>
+          <text class="common">电话：<text class="detail">18681069319</text></text>
+          <text class="common">所在地区：<text class="detail">广东省 东莞市 虎门镇</text></text>
+          <text class="common" style="margin-bottom:0">地址：<text class="detail">广东省东莞市虎门镇金州梁屋新区8巷2号</text></text>
+      </view>
+  </view>
+</view>
+<view class="depot-bottom">
+    <view class="wrap">
+        <view class="all-title">
+          <view class="for-img">
+            <image class="img" src="../../images/member/fritip.png" mode="aspectFit"></image>
+          </view>
+          <text class="title-text">友情提示</text>
+        </view>
+        <view class="para">
+            1、请不要发平邮和到付包裹，由于平邮需到邮局领包裹，3天内部领取邮局将收取滞纳金，佰客国际会拒收任何平邮和到付包裹。
+        </view>
+        <view class="para">
+            2、请不要提交海关限制出口和邮政禁邮物品，否则可能会被邮政退包或海关没收物品，对于私自邮寄违禁物品我们将不负责哦。
+        </view>
+    </view>
+</view>

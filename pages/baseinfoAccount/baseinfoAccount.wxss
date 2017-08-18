@@ -1,0 +1,113 @@
+/* baseinfoAccount.wxss */
+.in{
+  background-color:#ffffff;
+  display:flex;
+  justify-content:center;
+  padding:15px;
+  margin-bottom:15px;
+
+}
+.left{
+  border-right:1px solid #d6d6d6;
+  padding-right:20px;
+}
+.right{
+  padding-left:20px;
+}
+.left-in{
+  color: #f9364f;
+}
+.right-in{
+    color: #9a9a9a;
+
+}
+/*form  */
+.form-here{
+  margin-top:10px;
+  background-color:#ffffff;
+  padding:20px 30px;
+}
+
+.form-password{
+  margin-top:20px;
+}
+.submit{
+  /* margin-top:30px; */
+display:flex;
+justify-content:center;
+flex-flow:column wrap;
+padding:0 10px;
+
+
+}
+
+
+/*addition  */
+.verify{
+
+display:flex;
+justify-content:space-between;
+
+}
+.verify-input{
+
+width:60%;
+
+}
+.getcode{
+
+height:40px;
+line-height:40px;
+background-color:#f9364f;
+color:#ffffff;
+
+}
+.agree{
+
+text-align:center;
+font-size:12px;
+
+
+}
+.sub-button{
+  background-color:#0398e7;
+  color:#ffffff;
+  line-height:1.8;
+  border-radius:30px;
+  padding:5px 90px;
+  margin-top:20px;
+
+}
+.agreement{
+  color: #40a1e0;
+}
+/*this about  */
+
+.label{
+  width:15%;
+position:relative;
+top:3px;
+color:#666666;
+
+
+}
+.form-account{
+width:80%;
+color:#666666;
+padding-left:5px;
+
+  
+}
+.info-wrap{
+    display:flex;
+    margin-top: 20px;
+    /* margin-bottom: 5px; */
+}
+.radio-group{
+  display:flex;
+width:80%;
+justify-content:space-between;
+padding:0 20px;
+color:#666666;
+
+}

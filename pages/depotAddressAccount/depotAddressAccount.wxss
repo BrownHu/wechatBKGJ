@@ -1,0 +1,101 @@
+/* depotAddressAccount.wxss */.in{
+  background-color:#ffffff;
+  display:flex;
+  justify-content:center;
+  padding:15px;
+  margin-bottom:15px;
+
+}
+.left{
+  border-right:1px solid #d6d6d6;
+  padding-right:20px;
+}
+.right{
+  padding-left:20px;
+}
+.left-in{
+      color: #9a9a9a;
+}
+.right-in{
+  color: #f9364f;
+}
+.expense_before{
+  display: inline-block;
+  background-color: #0398e7;
+  width: 4px;
+  height: 10px;
+  }
+   .word{
+    margin-left:10px; 
+  }
+.title{
+  color:#6c6c6c;
+  font-size: 16px;
+}
+.advice{
+
+  background-color:#ffffff;
+padding:10px;
+padding-bottom:20px;
+
+
+}
+.title-wrap{
+margin-bottom:10px;
+}
+/*additionnal   */
+
+.all-wrap{
+padding: 12px;
+box-shadow:#666 0px 0px 10px;
+margin-left:14px;
+border-radius:3px;
+margin-top: 20px;
+background-color:#eeeeee;
+}
+.tips{
+  padding-left:14px;
+  color:#ff2a4f;
+  margin-top: 20px;
+}
+.common{
+
+  display:block;
+  margin-bottom:10px;
+  color:#646464;
+  font-weight:bold;
+}
+.detail{
+  font-weight:normal;
+}
+.depot-bottom{
+  margin-top:20px;
+  padding:15px 20px;
+}
+.wrap{
+}
+.all-title{
+  display:flex;
+  margin-bottom:10px;
+}
+.for-img{
+  width:16px;
+  height:16px;
+}
+.title-text{
+  margin-left: 5px;
+  font-weight: bold;
+  color:#646464;
+
+}
+.para{
+  text-indent:1.5em;
+  line-height:15px;
+  color:#949494;
+  font-size:12px;
+  margin-bottom: 5px;
+}
+.img{
+  width:15px;
+  height:15px;
+}

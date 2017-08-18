@@ -1,7 +1,13 @@
 {
   "pages": [
-    "pages/show/show",        
+    "pages/depotAddressAccount/depotAddressAccount",        
+    "pages/show/show",
     "pages/memberShow/memberShow",
+    
+    "pages/adviceAccount/adviceAccount",
+    "pages/baseinfoAccount/baseinfoAccount",
+    "pages/messageAccount/messageAccount",
+    "pages/tradeoutAccount/tradeoutAccount",
     "pages/tradeAccount/tradeAccount",
     "pages/balanceAccount/balanceAccount",
     "pages/registerAccount/registerAccount",
@@ -18,7 +24,6 @@
     "pages/waybill/waybill",
     "pages/expense/expense",
     "pages/guideGif/guideGif",
-    "pages/announceDetail/announceDetail",
     "pages/announcement/announcement",
     "pages/logs/logs"
   ],

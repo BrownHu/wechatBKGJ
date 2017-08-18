@@ -1,0 +1,51 @@
+<!--messageAccount.wxml-->
+<view class="in">
+    <view class="left">
+        <text class="left-in">系统通知</text>
+    </view>
+    <view class="right">
+        <text class="right-in">投诉建议</text>
+    </view>
+</view>
+
+<view class="record">
+    <view class="on">
+       <text class="action">订单即将关闭</text>
+       <text class="money">></text>
+    </view>
+    <view class="hr"></view>
+    <view class="shortintro">
+      您有一笔订单即将关闭，再不付款宝贝就没啦，快去看看吧~
+    </view>
+  <view class="under">
+       <text class="time">2017-04-15 14:20</text>
+  </view>
+</view>
+<view class="record">
+    <view class="on">
+       <text class="action">下单失败</text>
+       <text class="money">></text>
+    </view>
+    <view class="hr"></view>
+    <view class="shortintro">
+        抱歉，您的订单（020024646164)，因为当前库存不足，交易失败，请您稍后再试。刚学您对非越的厚爱和支持！
+    </view>
+  <view class="under">
+       <text class="time">2017-04-12 11:18</text>
+  </view>
+</view>
+<view class="record">
+    <view class="on">
+       <text class="action">送您10元新人专享优惠券！</text>
+       <text class="money">></text>
+    </view>
+    <view class="hr"></view>
+    <view class="shortintro">
+        新人专享10元优惠券免费领，还有更多惊喜，快来领取吧~
+    </view>
+  <view class="under">
+       <text class="time">2017-04-10 18:22</text>
+  </view>
+</view>
+
+

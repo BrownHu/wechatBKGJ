@@ -1,0 +1,136 @@
+/* adviceAccount.wxss */
+
+.in{
+  background-color:#ffffff;
+  display:flex;
+  justify-content:center;
+  padding:15px;
+  margin-bottom:15px;
+
+}
+.left{
+  border-right:1px solid #d6d6d6;
+  padding-right:20px;
+}
+.right{
+  padding-left:20px;
+}
+.left-in{
+  color: #9a9a9a
+}
+.right-in{
+  color: #f9364f;
+
+}
+.expense_before{
+  display: inline-block;
+  background-color: red;
+  width: 4px;
+  height: 10px;
+  }
+   .word{
+    margin-left:10px; 
+  }
+.title{
+  color:#6c6c6c;
+  font-size: 16px;
+}
+
+/*this about  */
+
+.advice{
+
+  background-color:#ffffff;
+padding:10px;
+
+}
+.title-wrap{
+margin-bottom:20px;
+
+
+}
+.input-group{
+
+  display:flex;
+flex-flow:row wrap;
+
+
+}
+.label{
+
+width:15%;
+position:relative;
+top:5px;
+color:#666666;
+
+
+
+}
+.first{
+  width:100%;
+display:flex;
+margin-bottom:10px;
+
+
+}
+.second{
+  width:100%;
+display:flex;
+margin-bottom:10px;
+
+
+}
+.last{
+ width:100%;
+display:flex;
+
+
+}
+.first-input{
+
+width:85%;
+padding:2px 5px;
+}
+.second-input{
+
+width:85%;
+padding:2px 5px;
+border-radius: 3px;
+border: 1px solid #999999;
+}
+.third-input{
+width:85%;
+border: 1px solid #999999;
+padding:2px 5px;
+border-radius: 3px;
+}
+.submit{
+  margin-top:15px;
+display:flex;
+justify-content:center;
+padding:0 15%;
+
+}
+.left-button{
+  line-height:1.5;
+padding:5px 15px;
+background-color: #0398e7;
+color:#ffffff;
+
+
+}
+.right-botton{
+   line-height:1.5;
+  padding:5px 15px;
+  color: #ffffff;
+  background-color: #999999;
+
+}
+.radio-group{
+  display:flex;
+justify-content:space-between;
+width:90%;
+padding:0 10px;
+color:#666666;
+
+}
