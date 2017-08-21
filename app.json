@@ -1,9 +1,18 @@
 {
   "pages": [
-    "pages/depotAddressAccount/depotAddressAccount",        
+    "pages/helpcentreMember/helpcentreMember",            
     "pages/show/show",
     "pages/memberShow/memberShow",
-    
+    "pages/aboutAgentMember/aboutAgentMember",        
+    "pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember",
+    "pages/helpcentreAgentMember/helpcentreAgentMember",        
+    "pages/addressAddMember/addressAddMember",        
+    "pages/addressIndexMember/addressIndexMember",
+    "pages/announceDetail/announceDetail",
+    "pages/couponExpireMember/couponExpireMember",
+    "pages/couponNousedMember/couponNousedMember",
+    "pages/couponUsedMember/couponUsedMember",
+    "pages/depotAddressAccount/depotAddressAccount",
     "pages/adviceAccount/adviceAccount",
     "pages/baseinfoAccount/baseinfoAccount",
     "pages/messageAccount/messageAccount",

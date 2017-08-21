@@ -1,0 +1,25 @@
+/* pages/helpcentreAgentMember/helpcentreAgentMember.wxss */
+.top{
+margin-top:15px;
+background-color:#ffffff;
+padding:10px;
+display:flex;
+
+}
+.topbefore{
+width:3px;
+background-color:red;
+
+
+}
+.title{
+  margin-left: 5px;
+}
+.questions{
+padding:18px;
+}
+.common{
+  margin-bottom:15px;
+color:#0398e7;
+line-height: 20px;
+}

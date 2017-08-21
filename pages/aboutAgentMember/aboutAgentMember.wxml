@@ -1,0 +1,11 @@
+<!--pages/aboutAgentMember/aboutAgentMember.wxml-->
+<view class="top">
+  <view class="topbefore"></view>
+  <view class="title">关于代购</view>
+</view>
+
+<view class="questions">
+    <view class="common">
+        佰客国际-代购相关操作请到电脑端!
+    </view>
+</view>

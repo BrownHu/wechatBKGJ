@@ -1,0 +1,76 @@
+/* pages/helpcentreMember/helpcentreMember.wxss */
+.first{
+  display:flex;
+justify-content:space-between;
+padding:15px;
+align-items:center;
+background-color:#ffffff;
+margin-top:10px;
+
+}
+.icon{
+
+
+}
+.hr{
+    width: 100%;
+    height: 1px;
+  margin:5px 0 15px 0;
+
+    background-color: #c7c7c7;
+}
+.word{
+margin-left:15px;
+font-weight:bold;
+
+
+}
+.belongFirst{
+
+
+}
+.wrap{
+    display:flex;
+
+align-items:center;
+
+}
+.icon-image{
+  width:15px;
+height:15px;
+
+}
+.belongFirst{
+margin-top:5px;
+padding:10px 25px;
+background-color:#ffffff;
+
+
+}
+.subwrap{
+
+
+
+}
+.one{
+display:flex;
+justify-content:space-between;
+
+
+}
+.img-sm{
+width: 15px 15px;
+
+}
+.top-arrow{
+  height: 13px;
+  width: 20px;
+}
+.right-arrow{
+  height: 18px;
+  width: 10px;
+}
+.name{
+  color: rgba(0,0,0,0.7)
+
+}

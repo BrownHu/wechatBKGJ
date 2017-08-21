@@ -1,0 +1,47 @@
+<!--pages/addressIndexMember/addressIndexMember.wxml-->
+
+<block wx:for="{{address}}">
+
+<view class="address">
+    <view class="namemobile">
+      <text class="name">收件人: <text class="common">{{item.name}}</text> </text>
+      <text class="mobile">电话:<text class="common">{{item.mobile}}</text></text>
+    </view>
+    <view class="country">
+        <text class="topic">
+          国家/省州/城市/邮编：
+        </text>
+        <text class="cou-detail">
+          {{item.country}}
+        </text>
+        <view class="detail">
+          <text class="topic">
+            收货地址: 
+          </text>
+          <text class="de-detail">
+            {{item.detail}}
+          </text>
+        </view>
+      </view>
+    <view class="hr"></view>
+      <view class="bottom">
+      <view class="wrap">
+        <checkbox class="check" color="#f9364f" value="true" checked='{{item.default}}'/>
+        <text class="topic">默认地址{{item.default}}</text>
+      </view>
+        <view class="button-group">
+            <view class="edit">
+                <image src="../../images/member/addressEdit.png" class="img"></image>
+                <text class="action">编辑</text>
+            </view>
+            <view class="delete">
+                <image src="../../images/member/addressDelete.png" class="img"></image>
+                <text class="action">删除</text>
+            </view>
+        </view>
+      </view>
+</view>
+</block>
+<view class="add-button">
+  <button class="btn" size="default" type="primary" style="background-color:#0398e7;">+添加新地址</button>
+</view>

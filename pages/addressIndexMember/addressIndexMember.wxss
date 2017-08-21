@@ -1,0 +1,104 @@
+/* pages/addressIndexMember/addressIndexMember.wxss */
+
+.address{
+background-color:#ffffff;
+margin:15px 0;
+padding:10px;
+
+}
+.namemobile{
+
+margin-bottom:5px;
+
+}
+.name{
+font-weight:bold;
+
+}
+.mobile{
+
+font-weight:bold;
+float: right;
+
+
+}
+
+.country{
+display:inline-block;
+
+}
+.cou-detail{
+display:inline-block;
+color:rgba(0,0,0,0.7);
+
+}
+.detail{
+display:inline-block;
+margin-bottom:15px;
+
+}
+.de-detail{
+  display: inline-block;
+  color:rgba(0,0,0,0.7);
+
+
+}
+.common{
+color:rgba(0,0,0,0.7);
+margin-left: 5px;
+
+
+}
+.topic{
+display:inline-block;
+}
+/*bottom  */
+.bottom{
+  justify-content:space-between;
+align-items:center;
+display:flex;
+
+
+
+}
+.button-group{
+float:right;
+  display: inline-block;
+}
+.edit{
+
+display:inline-block;
+
+}
+.delete{
+display:inline-block;
+margin-left:10px;
+}
+.img{
+height:15px;
+width:15px;
+
+}
+.check{
+display:inline-flex;
+align-items:center;
+
+}
+.wrap{
+ display: inline-flex;
+ align-items: center;
+}
+.action{
+  margin-left: 5px;
+}
+.add-button{
+
+margin-top:40px;
+padding:0 20px;
+
+
+}
+.btn{
+border-radius:20px;
+
+}

@@ -1,0 +1,29 @@
+<!--pages/helpcentreMember/helpcentreMember.wxml-->
+<view class="first" bindtap="firstTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/1111.png"></image>
+      </view>
+      <view class="word">
+        业务类型
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="../../images/common/helparrow-top.png"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{firstHidden}}">
+  <block wx:for="{{submenu}}">
+      <view class="subwrap">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+
+

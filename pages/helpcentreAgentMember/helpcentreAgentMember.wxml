@@ -1,0 +1,13 @@
+<!--pages/helpcentreAgentMember/helpcentreAgentMember.wxml-->
+<view class="top">
+  <view class="topbefore"></view>
+  <view class="title">代购</view>
+</view>
+
+<view class="questions">
+  <block wx:for="{{questions}}">
+    <view class="common">
+    {{questions[index]}}
+    </view>
+  </block>
+</view>
