@@ -16,6 +16,7 @@
     <button type="primary" bindtap="mytap" id="couponExpireMember" >过期优惠券</button>
     <button type="primary" bindtap="mytap" id="addressIndexMember" >收货地址</button>
     <button type="primary" bindtap="mytap" id="addressAddMember" >添加收货地址</button>
+    <button type="primary" bindtap="mytap" id="helpcentreMember" >帮助中心</button>
     <button type="primary" bindtap="mytap" id="helpcentreAgentMember" >帮助中心代购</button>
     <button type="primary" bindtap="mytap" id="helpcentreAgentdetailMember" >帮助中心代购详情</button>
     <button type="primary" bindtap="mytap" id="aboutAgentMember" >关于代购</button>

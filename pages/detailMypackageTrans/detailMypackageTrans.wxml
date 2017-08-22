@@ -1,0 +1,42 @@
+<!--pages/detailMypackageTrans/detailMypackageTrans.wxml-->
+<view class="top">
+    <view class="top-wrap">
+      <text class="word">仓库：广东省东莞市虎门镇金州梁屋新区8巷2号</text>
+    </view>
+    <view class="top-wrap">
+      <text class="word">快递：快捷快递</text>
+    </view>
+    <view class="top-wrap">
+      <text class="word">跟踪号：6235545541</text>
+    </view>
+</view>
+<view class="wrap">
+      <view class="table">
+          <view class="tr bg-w">
+            <view class="th">序号</view>
+            <view class="th_place">货物</view>
+            <view class="th">数量</view>
+            <view class="th borderright">总价</view>
+          </view>
+          <view class="tr white">
+            <view class="td  td-num">1</view>
+            <view class="td_place" >时尚女装</view>
+            <view class="td">5</view>
+            <view class="td price">40.00</view>
+
+          </view>
+           <view class="tr white">
+            <view class="td td-num">2</view>
+            <view class="td_place" >小象休闲防晒衣女中长款夏季新款宽松披肩外套</view>
+            <view class="td">1</view>
+            <view class="td price">120.00</view>
+          </view>
+           <view class="tr white">
+            <view class="td-six">其申报1类货物</view>
+            <view class="td">6</view>
+            <view class="td price">160.00</view>
+
+          </view>
+          
+      </view>
+</view>

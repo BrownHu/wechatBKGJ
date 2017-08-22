@@ -1,0 +1,84 @@
+<!--pages/packagePredictTrans/packagePredictTrans.wxml-->
+
+<view class="top">
+  <view class="left">
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;">包裹预报</button>
+  </view>
+  <view class="center">
+    <button type="primary"  class="special" style="background-color: #f9364f;">包裹认领</button>
+  </view>
+  <view class="right">
+    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;" >我的包裹</button>
+  </view>
+</view>
+
+<view class="middle-form">
+  <view class="top-wrap">
+      <image src="../../images/trans/2.png" class="img"></image>
+      <text class="word-tip">包裹认领</text>
+  </view>
+  <view class="form">
+      
+       <view class="row">
+          <view class="fleft">
+              <text class="red">*</text>
+              快递公司
+          </view>
+        
+          <view class="fright">
+           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                  <text style="margin-left:5px;">{{array[index]}}</text>
+                  <view style="float:right;margin-right:5px;">
+                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
+                  </view>
+              </view>
+            </picker>
+          </view>
+          
+      </view>
+      <view class="hr"></view>
+       <view class="row-3">
+          <view class="fleft-3">
+              <text class="red">*</text>
+              快递单号
+          </view>
+           <input value='5464313426' class="input" placeholder="" auto-focus/>
+          <view class="search">
+            <button size="mini" style="line-height:18px;padding:5px 0 " class="sbtn">搜索</button>
+          </view>
+      </view>
+      <view class="shorthr"></view>
+  </view>
+  <view class="table">
+      <view class="tr"> 
+          <view class="value">
+              <radio value="" checked=""/>全选
+          </view>
+          <view class="count">物品详情</view>
+      </view>
+      <view class="tr"> 
+          <view class="value">
+              <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </view>
+          <view class="count detail">
+            <view class="detail-left">
+                <view class="same">快递名称：<text class="commonword">{{detail.name}}</text></view>
+                <view class="same">快递单号：<text class="commonword">{{detail.number}}</text></view>
+                <view class="same">重量(KG):<text class="commonword">{{detail.weight}}</text></view>
+            </view>
+            <view class="detail-right">
+                <view class="same">尺寸(CM)：<text class="commonword">{{detail.size}}</text></view>
+                <view class="same">状态：<text class="commonword">{{detail.status}}</text></view>
+                <view class="same">仓库号:<text class="commonword">{{detail.depot}}</text></view>
+            </view>
+          </view>
+      </view>
+ 
+    </view>
+</view>
+<view class="submit">
+  <button type="primary" style="background-color: #f9364f;">
+    确认认领{{good.name}}
+  </button>
+</view>

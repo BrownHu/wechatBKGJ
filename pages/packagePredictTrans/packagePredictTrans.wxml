@@ -1,0 +1,130 @@
+<!--pages/packagePredictTrans/packagePredictTrans.wxml-->
+
+<view class="top">
+  <view class="left">
+    <button type="primary"  class="special" style="background-color: #f9364f;">包裹预报</button>
+  </view>
+  <view class="center">
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;">包裹认领</button>
+  </view>
+  <view class="right">
+    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;" >我的包裹</button>
+  </view>
+</view>
+
+<view class="middle-form">
+  <view class="top-wrap">
+      <image src="../../images/trans/1.png" class="img"></image>
+      <text class="word-tip">填写包裹预报</text>
+  </view>
+  <view class="form">
+      <view class="row">
+          <view class="fleft">
+              <text class="red">*</text>
+              送货仓库
+          </view>
+        
+          <view class="fright">
+           <picker bindchange="bindDepotChange" value="{{depotindex}}" range="{{depot}}">
+              <view class="picker">
+                  <text style="margin-left:5px;">{{depot[depotindex]}}</text>
+                  <view style="float:right;margin-right:5px;">
+                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
+                  </view>
+              </view>
+            </picker>
+          </view>
+
+          
+          
+      </view>
+      <view class="hr"></view>
+       <view class="row">
+          <view class="fleft">
+              <text class="red">*</text>
+              快递公司
+          </view>
+        <view class="fright">
+           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                  <text style="margin-left:5px;">{{array[index]}}</text>
+                  <view style="float:right;margin-right:5px;">
+                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
+                  </view>
+              </view>
+            </picker>
+          </view>
+         
+          
+      </view>
+      <view class="hr"></view>
+       <view class="row-3">
+          <view class="fleft-3">
+              <text class="red">*</text>
+              快递单号
+          </view>
+           <input class="input" placeholder="" auto-focus/>
+          
+      </view>
+      <view class="hr"></view>
+  </view>
+  <view class="table">
+      <view class="tr"> 
+          <view class="good-name">物品名称</view>
+          <view class="count">数量</view>
+          <view class="value">总价值(元)</view>
+          <view class="action">操作</view>
+      </view>
+      <view class="tr"> 
+          <view class="good-name">
+            <input class="tinput" placeholder="时尚女装" />
+
+          </view>
+          <view class="count">
+            <input class="tinput" placeholder="2" />
+
+          </view>
+          <view class="value">
+            <input class="tinput" placeholder="1285.00" />
+
+          </view>
+          <view class="action">
+            <button class="btn">删除</button>
+          </view>
+      </view>
+  <view class="tr"> 
+          <view class="good-name">
+            <input class="tinput" placeholder=""/>
+
+          </view>
+          <view class="count">
+            <input class="tinput" placeholder="" />
+
+          </view>
+          <view class="value">
+            <input class="tinput" placeholder=""/>
+
+          </view>
+          <view class="action">
+            <button class="btn">删除</button>
+          </view>
+      </view>
+       <view class="add-good">
+            <button size="mini" style="line-height:12px;padding:5px 0 " class="add-btn">添加商品</button>
+            <view class="add-tip">
+              如果包裹里有多个商品,请点击添加商品
+            </view>
+      </view>
+  </view>
+  <view class="remark">
+      <view class="re-left">备注</view>
+      <view class="re-right">
+          <textarea class="textarea" placeholder="填写商品名称，商品数量，特殊需求等......" placeholder-style="color:#6a6a6a;"  />
+      </view>
+  </view>
+</view>
+<view class="submit">
+  <button type="primary" style="background-color: #f9364f;">
+    提交包裹预报
+  </button>
+</view>

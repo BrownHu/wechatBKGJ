@@ -1,8 +1,16 @@
 {
   "pages": [
-    "pages/helpcentreMember/helpcentreMember",            
-    "pages/show/show",
+        "pages/show/show",
+    "pages/transShow/transShow", 
     "pages/memberShow/memberShow",
+    "pages/detailMypackageTrans/detailMypackageTrans",        
+    "pages/mypackageTrans/mypackageTrans",        
+    "pages/editMypackageTrans/editMypackageTrans",
+    "pages/packageRenlingTrans/packageRenlingTrans",
+    "pages/packagePredictTrans/packagePredictTrans",
+    "pages/expressChooseTrans/expressChooseTrans",    
+    "pages/depotChooseTrans/depotChooseTrans",
+    "pages/helpcentreMember/helpcentreMember",            
     "pages/aboutAgentMember/aboutAgentMember",        
     "pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember",
     "pages/helpcentreAgentMember/helpcentreAgentMember",        
@@ -29,7 +37,6 @@
     "pages/volumeStart/volumeStart",
     "pages/volumeCalc/volumeCalc",
     "pages/guide/guide",
-    "pages/calc/calc",
     "pages/waybill/waybill",
     "pages/expense/expense",
     "pages/guideGif/guideGif",
@@ -57,7 +64,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/show/show",
+        "pagePath": "pages/transShow/transShow",
         "iconPath": "icon/transform.png",
         "selectedIconPath": "icon/selected_transform.png",
         "selectedColor": "#82B8E9",

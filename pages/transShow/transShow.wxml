@@ -1,0 +1,18 @@
+<!--show.wxml-->
+
+<view class="" style="padding:20px;">
+    <button type="primary" bindtap="mytap" id="detailMypackageTrans" >我的包裹-详情</button>
+    <button type="primary" bindtap="mytap" id="mypackageTrans" >我的包裹-到库</button>
+    <button type="primary" bindtap="mytap" id="editMypackageTrans" >我的包裹-编辑</button>
+    <button type="primary" bindtap="mytap" id="packageRenlingTrans">包裹认领</button>
+    <button type="primary" bindtap="mytap" id="packagePredictTrans" >包裹转运-预测</button>
+    <button type="primary" bindtap="mytap" id="expressChooseTrans" >快递选择</button>
+    <button type="primary" bindtap="mytap" id="depotChooseTrans" >仓库选择</button>
+  
+
+
+
+
+
+
+</view>

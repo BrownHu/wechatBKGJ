@@ -1,5 +1,5 @@
 <!--pages/helpcentreMember/helpcentreMember.wxml-->
-<view class="first" bindtap="firstTap">
+<view class="first" bindtap="oneTap">
     <view class="wrap">
       <view class="icon">
       <image class="icon-image"  src="../../images/member/1111.png"></image>
@@ -9,11 +9,11 @@
       </view>
     </view>
     <view class="rightImg">
-      <image class="top-arrow" src="../../images/common/helparrow-top.png"></image>
+      <image class="top-arrow" src="{{outArrow[oneArrowIndex]}}"></image>
     </view>
 </view>
-<view class="belongFirst" hidden="{{firstHidden}}">
-  <block wx:for="{{submenu}}">
+<view class="belongFirst" hidden="{{onehidden}}">
+  <block wx:for="{{Firstsubmenu}}">
       <view class="subwrap">
         <view class="one">
             <view class="name">{{item.name}}</view>
@@ -25,5 +25,110 @@
       </view>
   </block>   
 </view>
+<view class="first" bindtap="twoTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/2222.png"></image>
+      </view>
+      <view class="word">
+        账户资产
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[twoArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{twohidden}}">
+  <block wx:for="{{Secondsubmenu}}">
+      <view class="subwrap">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+<view class="first" bindtap="threeTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/3333.png"></image>
+      </view>
+      <view class="word">
+        配送说明
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[threeArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{threehidden}}">
+  <block wx:for="{{Thirdsubmenu}}">
+      <view class="subwrap">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+<view class="first" bindtap="fourTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/4444.png"></image>
+      </view>
+      <view class="word">
+        售后服务
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[fourArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{fourhidden}}">
+  <block wx:for="{{Fourthsubmenu}}">
+      <view class="subwrap">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+<view class="first" bindtap="fiveTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/5555.png"></image>
+      </view>
+      <view class="word">
+        用户须知
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[fiveArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{fivehidden}}">
+  <block wx:for="{{Fivethsubmenu}}">
+      <view class="subwrap">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+
 
 

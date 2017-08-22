@@ -1,0 +1,12 @@
+<!--pages/depotChooseTrans/depotChooseTrans.wxml-->
+<view class="depot">
+
+    <block wx:for="{{express}}">
+    <view class="wrap">
+        <text>{{item}}</text>
+    </view>
+    <view class="hr"></view>
+    </block>
+    
+
+</view>

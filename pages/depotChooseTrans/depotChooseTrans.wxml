@@ -1,0 +1,9 @@
+<!--pages/depotChooseTrans/depotChooseTrans.wxml-->
+<view class="depot">
+    <view class="wrap">
+        <text>中国 广东省 东莞仓</text>
+    </view>
+    <view class="hr"></view>
+    
+
+</view>
