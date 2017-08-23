@@ -1,0 +1,9 @@
+<!--pages/methodOfTrans/methodOfTrans.wxml-->
+<view class="wrap">
+  <block wx:for="{{method}}">
+      <view class="row" bindtap="methodChoosed" data-value="{{item.id}}">
+        <text class="ml5" >{{item.name}}</text>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>

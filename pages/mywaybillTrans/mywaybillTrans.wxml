@@ -1,0 +1,69 @@
+<!--pages/mywaybillTrans/mywaybillTrans.wxml-->
+<view class="waybill">
+  <view class="top" bindtap="showorhide">
+        <view class="left">
+            <image class="limg" src="../../images/trans/2.png"></image>
+            <text class="lword">我的运单</text>
+        </view>
+        <view class="right" >
+            <text class="rword">所有运单</text>
+            <image src="{{arrowImg[index]}}" class="rimg"></image>
+        </view>
+  </view>
+
+  <view class="table" hidden="{{hide}}">
+      <view class="row title">
+          <view class="commitTime ">提交时间</view>
+          <view class="peopleWay ">收货人/运单号</view>
+          <view class="trace ">跟踪号</view>
+          <view class="action ">操作</view>
+      </view>
+       <view class="row detail">
+          <view class="commitTime center">2017-07-11</view>
+          <view class="peopleWay center">
+             <text class="name">布兰奇MA</text>
+             <text class="number">456464346445</text>
+          </view>
+          <view class="trace center">
+          <text class="status">布兰奇MA</text>
+             <text class="traceNum">4646464</text>
+          </view>
+          <view class="action centerme">
+            <button type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini">查看</button>
+
+          </view>
+      </view>
+       <view class="row detail">
+          <view class="commitTime center">2017-07-11</view>
+          <view class="peopleWay center">
+             <text class="name">布兰奇MA</text>
+             <text class="number">456464346445</text>
+          </view>
+          <view class="trace center">
+          <text class="status">布兰奇MA</text>
+             <text class="traceNum">4646464</text>
+          </view>
+          <view class="action centerme">
+            <button type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini">查看</button>
+            <button type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " size="mini">收货</button>
+          </view>
+      </view>
+       <view class="row detail">
+          <view class="commitTime center">2017-07-11</view>
+          <view class="peopleWay center">
+             <text class="name">布兰奇MA</text>
+             <text class="number">456464346445</text>
+          </view>
+          <view class="trace center">
+          <text class="status">布兰奇MA</text>
+             <text class="traceNum">4646464</text>
+          </view>
+          <view class="action centerme">
+            <button type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini">查看</button>
+            <button type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " size="mini">收货</button>
+          </view>
+      </view>
+      
+  </view>
+
+</view>

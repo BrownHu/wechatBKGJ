@@ -1,0 +1,14 @@
+<!--pages/remarkWaybillTrans/remarkWaybillTrans.wxml-->
+
+ <view class="remark">
+      <view class="re-left">备注</view>
+      <view class="re-right">
+          <textarea class="textarea" placeholder="请把您运单的特殊要求写下来吧" placeholder-style="color:#6a6a6a;"  />
+      </view>
+</view>
+
+<view class="submit">
+  <button type="primary" style="background-color: #f9364f;">
+    确定
+  </button>
+</view>

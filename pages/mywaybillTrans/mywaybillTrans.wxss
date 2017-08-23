@@ -1,0 +1,122 @@
+/* pages/mywaybillTrans/mywaybillTrans.wxss */
+.waybill{
+background-color:#ffffff;
+padding:15px;
+
+}
+.top{
+justify-content:space-between;
+align-items:center;
+background-color:gray;
+display: flex;
+padding: 10px 5px;
+border-radius: 5px;
+color: #ffffff;
+}
+.limg{
+width:15px;
+height:15px;
+
+}
+.rimg{
+width:21px;
+height:15px;
+
+}
+.left{
+display: flex;
+}
+.right{
+display: flex;
+
+}
+.lword{
+margin-left:5px;
+
+}
+.rword{
+margin-right:5px;
+
+}
+
+.table{
+background-color:#eeeeee;
+margin-top:15px;
+padding:10px;
+
+
+}
+.row{
+    margin-bottom: 10px;
+
+width:100%;
+display:flex;
+justify-content:space-between;
+text-align:center;
+
+}
+.commitTime{
+ width: 23%;
+
+}
+.peopleWay{
+ width: 30%;
+
+
+}
+.trace{
+ width: 23%;
+
+
+}
+.action{
+ width: 18%;
+
+
+}
+.name{
+margin-bottom: 5px;
+}
+.status{
+margin-bottom: 5px;
+
+}
+.detail{
+  height: 100px;
+}
+.center{
+display:flex;
+vertical-align:middle;
+flex-flow:column wrap;
+justify-content:center;
+align-items:center;
+background-color: #ffffff;
+color: #999999;
+font-size: 13px;
+overflow: scroll;
+border: 1px solid #c8c8c8;
+}
+.centerme{
+display:flex;
+vertical-align:middle;
+flex-flow:column wrap;
+justify-content:center;
+align-items:center;
+color: #999999;
+font-size: 13px;
+overflow: scroll;
+border: 1px solid #eeeeee;
+}
+.see{
+width:55px;
+margin:10px 0;
+}
+.title{
+  color: #696969;
+}
+.get{
+
+width:55px;
+margin: 10px 0;
+
+}

@@ -1,0 +1,16 @@
+/* pages/methodOfTrans/methodOfTrans.wxss */
+.wrap{
+margin-top:10px;
+padding:10px 10px 100px 10px;
+background-color: #ffffff;
+
+}
+.row{
+
+}
+.ml5{
+margin-left:10px;
+color:#6e6e6e;
+/* font-size: 17px; */
+
+}

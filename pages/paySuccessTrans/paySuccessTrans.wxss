@@ -1,0 +1,24 @@
+/* pages/paySuccessTrans/paySuccessTrans.wxss */
+.wrap{
+width:100%;
+min-height:100px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.img{
+width:25px;
+height:25px;
+}
+.word{
+font-size:25px;
+margin-left: 5px;
+}
+.btn-group{
+padding:0 20px;
+}
+
+.see{
+  margin-top: 10px;
+  color: #6e6e6e;
+}

@@ -1,8 +1,17 @@
 {
   "pages": [
-        "pages/show/show",
-    "pages/transShow/transShow", 
+    "pages/show/show",
+    "pages/transShow/transShow",
     "pages/memberShow/memberShow",
+      "pages/mergeTrans/mergeTrans",        
+    "pages/methodOfTrans/methodOfTrans",                
+    "pages/chooseCouponTrans/chooseCouponTrans",
+    "pages/baseinfoAccount/baseinfoAccount",
+    "pages/mywaybillTrans/mywaybillTrans",
+    "pages/paySuccessTrans/paySuccessTrans",
+    "pages/waybillDetailTrans/waybillDetailTrans",      
+    "pages/remarkWaybillTrans/remarkWaybillTrans",  
+   
     "pages/detailMypackageTrans/detailMypackageTrans",        
     "pages/mypackageTrans/mypackageTrans",        
     "pages/editMypackageTrans/editMypackageTrans",
@@ -22,7 +31,6 @@
     "pages/couponUsedMember/couponUsedMember",
     "pages/depotAddressAccount/depotAddressAccount",
     "pages/adviceAccount/adviceAccount",
-    "pages/baseinfoAccount/baseinfoAccount",
     "pages/messageAccount/messageAccount",
     "pages/tradeoutAccount/tradeoutAccount",
     "pages/tradeAccount/tradeAccount",
@@ -58,22 +66,22 @@
     "list": [
       {
         "pagePath": "pages/show/show",
-        "iconPath": "icon/home.png",
-        "selectedIconPath": "icon/selected_home.png",
+        "iconPath": "images/common/home.png",
+        "selectedIconPath": "images/common/selected_home.png",
         "selectedColor": "#82B8E9",
         "text": "首页"
       },
       {
         "pagePath": "pages/transShow/transShow",
-        "iconPath": "icon/transform.png",
-        "selectedIconPath": "icon/selected_transform.png",
+        "iconPath": "images/common/transform.png",
+        "selectedIconPath": "images/common/selected_transform.png",
         "selectedColor": "#82B8E9",
         "text": "国际转运"
       },
       {
         "pagePath": "pages/memberShow/memberShow",
-        "iconPath": "icon/user.png",
-        "selectedIconPath": "icon/selected_user.png",
+        "iconPath": "images/common/user.png",
+        "selectedIconPath": "images/common/selected_user.png",
         "selectedColor": "#82B8E9",
         "text": "我的"
       }

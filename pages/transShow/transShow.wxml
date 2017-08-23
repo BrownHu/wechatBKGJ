@@ -8,6 +8,20 @@
     <button type="primary" bindtap="mytap" id="packagePredictTrans" >包裹转运-预测</button>
     <button type="primary" bindtap="mytap" id="expressChooseTrans" >快递选择</button>
     <button type="primary" bindtap="mytap" id="depotChooseTrans" >仓库选择</button>
+    <button type="primary" bindtap="mytap" id="mywaybillTrans" >我的运单</button>
+    <button type="primary" bindtap="mytap" id="waybillDetailTrans" >运单详情</button>
+    <button type="primary" bindtap="mytap" id="remarkWaybillTrans" >运单备注</button>
+    <button type="primary" bindtap="mytap" id="paySuccessTrans" >支付成功</button>
+        <button type="primary" bindtap="mytap" id="paySuccessTrans" >选择国家</button>
+    <button type="primary" bindtap="mytap" id="chooseCouponTrans" >选择优惠券</button>
+    <button type="primary" bindtap="mytap" id="mergeTrans" >提交合箱转运</button>
+        <button type="primary" bindtap="mytap" id="methodOfTrans" >我的运单</button>
+
+    
+
+
+
+
   
 
 

@@ -1,0 +1,87 @@
+/* pages/waybillDetailTrans/waybillDetailTrans.wxss */
+
+.waybill{
+padding:15px;
+background-color:#ffffff;
+margin-top:5px;
+
+}
+.topwrap{
+
+}
+.common{
+display:block;
+margin-bottom:5px;
+color:#666666;
+
+
+}
+.word{
+color:#a3a3a3;
+
+}
+
+/*table  */
+.table {
+  border: 0px solid darkgray;
+  padding:15px;
+margin-top:10px;
+
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0;
+}
+.td {
+  color:#999999;
+  height: 35px;
+  padding: 5px;
+  width:30%;
+  justify-content: center;
+  border-left: 1rpx solid #c8c8c8;
+  border-right: 1rpx solid #c8c8c8;
+  border-bottom: 1rpx solid #c8c8c8;
+
+
+}
+.td_place {
+  color:#999999;
+  padding: 5px;
+  height: 35px;
+  width:70%;
+  justify-content: center;
+  text-align: left;
+  border-right: 1rpx solid #c8c8c8;
+  border-bottom: 1rpx solid #c8c8c8;
+
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  padding: 5px;
+  width: 30%;
+  justify-content: center;
+  background: #eeeeee;
+  color: #666666; 
+  border: 1rpx solid #c8c8c8;
+  border-right: none;
+  display: flex;
+  align-items: center;
+}
+.th_place {
+  padding: 5px;
+  width: 70%;
+  justify-content: center;
+  background: #eeeeee;
+  color: #666666; 
+  border: 1rpx solid #c8c8c8;
+  display: flex;
+  align-items: center;
+}

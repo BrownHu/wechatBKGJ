@@ -1,0 +1,23 @@
+<!--pages/chooseCouponTrans/chooseCouponTrans.wxml-->
+<view class="top">
+  <block wx:for="{{coupon}}">
+    <view class="row">
+      <view class="left">
+          <view class="value"><text class="red">¥{{item.value}}</text>-{{item.type}}</view>
+          <view class="during">
+              {{item.during}}
+          </view>
+      </view>
+      <view class="right">
+              <radio value="" checked="{{item.checked}}"/>选择
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="verify">
+      <input placeholder="请输入优惠码"  class="input"/>
+      <view class="wrap">
+        <button class="btn" style="background-color:#0398e7;color:#ffffff">验证</button>
+      </view>
+</view>

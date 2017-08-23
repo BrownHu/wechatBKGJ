@@ -1,0 +1,39 @@
+<!--pages/waybillDetailTrans/waybillDetailTrans.wxml-->
+<view class="waybill">
+  <view class="topwrap">
+      <text class="common">状态: <text class="word">已收货</text></text>
+      <text class="common">跟踪号: <text class="word">4464644</text></text>
+      <text class="common">收货人: <text class="word">布兰奇MA</text></text>
+  </view>
+</view>
+<view class="waybill">
+  <view class="topwrap">
+      <text class="common">运单号: <text class="word">1131131345431</text></text>
+      <text class="common">运输方式: <text class="word">EMS</text></text>
+      <text class="common">提交时间: <text class="word">2017-07-01</text></text>
+  </view>
+</view>
+<view class="table">
+      <view class="tr bg-w">
+        <view class="th">时间</view>
+        <view class="th_place">地点和跟踪进度</view>
+      </view>
+      <view class="tr">
+        <view class="td">2017-07-11 21:28:28</view>
+        <view class="td_place" >邯郸|发件【邯郸市集散中心】,正准备发往【保定】</view>
+      </view>
+      <view class="tr">
+        <view class="td">2017-07-11 21:28:28</view>
+        <view class="td_place" >邯郸|发件【邯郸市集散中心】</view>
+      </view>
+      <view class="tr">
+        <view class="td">2017-07-11 21:28:28</view>
+        <view class="td_place" >邯郸|发件【邯郸市集散中心】</view>
+      </view>
+      <!-- <block wx:for="{{listData}}">
+        <view class="tr">
+          <view class="td">{{item.time}}</view>
+          <view class="td_place">{{item.place}}</view>
+        </view>
+      </block>  -->
+  </view>

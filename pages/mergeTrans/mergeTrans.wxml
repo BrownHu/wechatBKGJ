@@ -1,0 +1,151 @@
+<!--pages/mergeTrans/mergeTrans.wxml-->
+
+<view class="area">
+    <view class="left">选择配送的区域</view>
+    <view class="right">
+          <picker bindchange="bindAreaChange" value="{{index}}" range="{{area}}">
+            <text class="country">{{area[index]}}</text>
+          </picker>
+          <view>
+            <image src="../../images/common/Arrow-right.png" class="arrow"></image>
+          </view>
+    </view>
+</view>
+
+<view class="area">
+    <view class="left">选择配送方式</view>
+    <view class="right">
+          <picker bindchange="bindMethodChange" value="{{methodindex}}" range="{{method}}">
+            <text class="country">{{method[methodindex]}}</text>
+          </picker>
+          <view>
+            <image src="../../images/common/Arrow-right.png" class="arrow"></image>
+          </view>
+    </view>
+</view>
+
+<view class="area">
+    <view class="sleft">
+        <view class="left-on">
+            <view class="person">
+              收件人： <text class="word">布兰奇MA</text>
+            </view>
+            <view class="mobile">
+              电话： <text class="word">18866880008</text> 
+            </view>
+        </view>
+        <view class="left-under">
+           收货地址：<text class="word">泰国曼安努蒂第四大街305</text>
+        </view>
+    </view>
+    <view class="sright">
+          
+          <view>
+            <image src="../../images/common/Arrow-right.png" class="arrow"></image>
+          </view>
+    </view>
+</view>
+<view class="area" >
+    <view class="left">运单备注：</view>
+    <view class="right">
+          <input   placeholder="可备注一些特殊要求"  class="input" />
+          <view>
+            <image src="../../images/common/Arrow-right.png" class="arrow"></image>
+          </view>
+    </view>
+</view>
+
+<view class="area" style="margin-top:10px">
+      <view class="list">
+          <image src="../../images/trans/merge.png" class="mergeImg"></image>
+          <text class="list-word">转运物品列表</text>
+      </view>
+</view>
+
+<view class="area-column" >
+    <view class="row bb">
+      <view class="first">
+        <view class="pid">
+          包裹ID:
+        </view>
+        <view class="weight">
+          重量(KG):<text class="red">0.85</text>
+        </view>
+      </view>
+      <view class="last">
+        <view class="waybillnum">快递单号:<text class="detail">54643134642</text></view>
+        <view class="count">x2</view>
+      </view>
+    </view>
+    <view class="row">
+      <view class="first">
+        <view class="pid">
+          包裹ID: <text class="detail"></text>
+        </view>
+        <view class="weight">
+          重量(KG):<text class="red">0.85</text>
+        </view>
+      </view>
+      <view class="last">
+        <view class="waybillnum">快递单号:<text class="detail">54643134642</text></view>
+        <view class="count">x2</view>
+      </view>
+    </view>
+</view>
+<view class="countbar">
+    <view >
+      <text class="count-left">共计<text class="allplus">3</text>件商品</text>总重(KG):<text class="red">1.4</text>
+    </view>
+</view>
+<view class="area">
+    <view class="left">优惠券</view>
+    <view class="right">
+          <text style="margin-right:10px;color:#757575"><text class="red" style="margin-right:5px">2</text>张可用</text>
+          <view>
+            <image src="../../images/common/Arrow-right.png" class="arrow"></image>
+          </view>
+    </view>
+</view>
+<view class="area-column">
+    <view class="fee">
+        <view class="feeleft">运费</view>
+        <view class="feeright red">¥55.00</view>
+    </view>
+    <view class="fee">
+        <view class="feeleft">服务费</view>
+        <view class="feeright red">¥20.00</view>
+    </view>
+    <view class="fee">
+        <view class="feeleft">报关费</view>
+        <view class="feeright red">¥8.00</view>
+    </view>
+    <view class="fee">
+        <view class="feeleft">包装费</view>
+        <view class="feeright red">¥5.00</view>
+    </view>
+    <view class="fee">
+        <view class="feeleft">优惠券减</view>
+        <view class="feeright red">-¥0.00</view>
+    </view>
+    <view class="fee">
+        <view class="feeleft">运费</view>
+        <view class="feeright red">¥55.00</view>
+    </view>
+</view>
+<view class="area">
+  <view class="left">
+    账户余额：¥0.00
+  </view>
+  <view class="right" style="color:#757575">
+    合计： <text class="red">¥88.00</text>
+  </view>
+</view>
+
+<view class="btn-group">
+  <view class="wechat">
+    <button style="background-color:#1aad19;color:#ffffff">微信支付</button>
+  </view>
+  <view class="rest">
+    <button style="background-color:#bfbfbf;color:#fbfbfb">余额支付</button>
+  </view>
+</view>

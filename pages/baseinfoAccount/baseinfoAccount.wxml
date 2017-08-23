@@ -15,12 +15,18 @@
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap" style="margin-bottom:20px">
-          <text class="label">国家:</text>
-<radio-group  class="radio-group" bindchange="radioChange">
+          <text class="label">性别:</text>
+                <radio-group  class="radio-group" bindchange="radioChange">
                   <label class="radio" wx:for="{{items}}">
                     <radio  name="adtype" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
                   </label>
-                </radio-group>        </view>
+                </radio-group>       
+        </view>
+        <view class="info-wrap">
+          <text class="label">国家:</text>
+          <input class="form-account"  />
+        </view>
+        <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">省/州:</text>
           <input class="form-account"  />
