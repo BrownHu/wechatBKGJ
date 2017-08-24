@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/show/show",
-    "pages/transShow/transShow",
-    "pages/memberShow/memberShow",
-      "pages/mergeTrans/mergeTrans",        
+      "pages/show/show",
+      "pages/transShow/transShow",
+      "pages/memberShow/memberShow",
+    "pages/onwayPackageTrans/onwayPackageTrans",
+    "pages/arrivedPackageTrans/arrivedPackageTrans",              
+    "pages/mergeTrans/mergeTrans",
+  
     "pages/methodOfTrans/methodOfTrans",                
     "pages/chooseCouponTrans/chooseCouponTrans",
     "pages/baseinfoAccount/baseinfoAccount",

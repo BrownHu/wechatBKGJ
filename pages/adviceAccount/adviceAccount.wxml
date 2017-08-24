@@ -24,7 +24,7 @@
           <!-- <input class="first-input" placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
                 <radio-group class="radio-group" bindchange="radioChange">
                   <label class="radio" wx:for="{{items}}">
-                    <radio name="adtype" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                    <radio name="adtype" value="{{item.name}}" color="#f9364f" checked="{{item.checked}}"/>{{item.value}}
                   </label>
                 </radio-group>
       </view>

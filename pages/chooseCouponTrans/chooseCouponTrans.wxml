@@ -9,7 +9,7 @@
           </view>
       </view>
       <view class="right">
-              <radio value="" checked="{{item.checked}}"/>选择
+                          <checkbox value="" color="#f9364f" checked=""/>选择
       </view>
     </view>
   </block>

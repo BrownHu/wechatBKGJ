@@ -7,13 +7,19 @@ background-color: #ffffff;
 
 }
 .left{
-width: 30%;
+width: 33%;
+border-right:1px solid transparent; 
+border-image:linear-gradient( #ffffff, #d3d3d3,#ffffff) 2;
+
 }
 .center{
-width: 30%;
+width: 33%;
+border-right:1px solid transparent; 
+border-image:linear-gradient( #ffffff, #d3d3d3,#ffffff) 2;
+
 }
 .right{
-width: 30%;
+width: 33%;
 
 }
 .special{

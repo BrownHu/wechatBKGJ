@@ -1,20 +1,18 @@
 <!--show.wxml-->
 
 <view class="" style="padding:20px;">
-    <button type="primary" bindtap="mytap" id="index" >首页</button>
-    <button type="primary" bindtap="mytap" id="guide" >新手指南</button>
-    <button type="primary" bindtap="mytap" id="guideGif" >新手指南gif</button>
-    <button type="primary" bindtap="mytap" id="announcement">系统公告</button>
-    <button type="primary" bindtap="mytap" id="announceDetail" >系统公告详情</button>
-    <button type="primary" bindtap="mytap" id="chooseCountry" >选择国家</button>
-    <button type="primary" bindtap="mytap" id="expense" >运费查询</button>
-    <button type="primary" bindtap="mytap" id="waybill">运单查询</button>
-    <button type="primary" bindtap="mytap" id="volumeStart" >体积计算</button>
-    <button type="primary" bindtap="mytap" id="volumeCalc" >体积计算详情</button>
-    <button type="primary" bindtap="mytap" id="chooseGood" >选择物品</button>
-    <button type="primary" bindtap="mytap" id="mailLimit" >邮寄限制</button>
-
-
+    <button type="primary" bindtap="mytap" id="index" >1.2首页</button>
+    <button type="primary" bindtap="mytap" id="guide" >1.3新手指南</button>
+    <button type="primary" bindtap="mytap" id="guideGif" >1.4新手指南gif</button>
+    <button type="primary" bindtap="mytap" id="announcement">1.5系统公告</button>
+    <button type="primary" bindtap="mytap" id="announceDetail" >1.5系统公告详情</button>
+    <button type="primary" bindtap="mytap" id="chooseCountry" >1.6选择国家</button>
+    <button type="primary" bindtap="mytap" id="expense" >1.6运费查询</button>
+    <button type="primary" bindtap="mytap" id="waybill">1.7运单查询</button>
+    <button type="primary" bindtap="mytap" id="volumeStart" >1.8体积计算</button>
+    <button type="primary" bindtap="mytap" id="volumeCalc" >2.8体积计算详情</button>
+    <button type="primary" bindtap="mytap" id="chooseGood" >1.9选择物品</button>
+    <button type="primary" bindtap="mytap" id="mailLimit" >1.9邮寄限制</button>
 
 
 </view>

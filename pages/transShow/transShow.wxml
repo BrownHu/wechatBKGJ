@@ -1,29 +1,22 @@
 <!--show.wxml-->
 
 <view class="" style="padding:20px;">
-    <button type="primary" bindtap="mytap" id="detailMypackageTrans" >我的包裹-详情</button>
-    <button type="primary" bindtap="mytap" id="mypackageTrans" >我的包裹-到库</button>
-    <button type="primary" bindtap="mytap" id="editMypackageTrans" >我的包裹-编辑</button>
-    <button type="primary" bindtap="mytap" id="packageRenlingTrans">包裹认领</button>
-    <button type="primary" bindtap="mytap" id="packagePredictTrans" >包裹转运-预测</button>
-    <button type="primary" bindtap="mytap" id="expressChooseTrans" >快递选择</button>
-    <button type="primary" bindtap="mytap" id="depotChooseTrans" >仓库选择</button>
-    <button type="primary" bindtap="mytap" id="mywaybillTrans" >我的运单</button>
-    <button type="primary" bindtap="mytap" id="waybillDetailTrans" >运单详情</button>
-    <button type="primary" bindtap="mytap" id="remarkWaybillTrans" >运单备注</button>
-    <button type="primary" bindtap="mytap" id="paySuccessTrans" >支付成功</button>
-        <button type="primary" bindtap="mytap" id="paySuccessTrans" >选择国家</button>
-    <button type="primary" bindtap="mytap" id="chooseCouponTrans" >选择优惠券</button>
-    <button type="primary" bindtap="mytap" id="mergeTrans" >提交合箱转运</button>
-        <button type="primary" bindtap="mytap" id="methodOfTrans" >我的运单</button>
-
-    
-
-
-
-
-  
-
+    <button type="primary" bindtap="mytap" id="packagePredictTrans" >2.0佰客转运-预测</button>
+    <button type="primary" bindtap="mytap" id="expressChooseTrans" >2.0快递选择</button>
+    <button type="primary" bindtap="mytap" id="depotChooseTrans" >2.0仓库选择</button>
+    <button type="primary" bindtap="mytap" id="packageRenlingTrans">2.1包裹认领</button>
+    <button type="primary" bindtap="mytap" id="arrivedPackageTrans" >2.2我的包裹-到库</button>
+    <button type="primary" bindtap="mytap" id="onwayPackageTrans" >2.2我的包裹-在途</button>    
+    <button type="primary" bindtap="mytap" id="detailMypackageTrans" >2.2我的包裹-详情</button>
+    <button type="primary" bindtap="mytap" id="editMypackageTrans" >2.2我的包裹-编辑</button>
+    <button type="primary" bindtap="mytap" id="methodOfTrans" >2.3合箱转运+运输方式</button>
+    <button type="primary" bindtap="mytap" id="mergeTrans" >2.3提交合箱转运</button>
+    <button type="primary" bindtap="mytap" id="chooseCountry" >2.3选择国家</button>
+    <button type="primary" bindtap="mytap" id="paySuccessTrans" >2.4支付成功</button>
+    <button type="primary" bindtap="mytap" id="remarkWaybillTrans" >2.5运单备注</button>
+    <button type="primary" bindtap="mytap" id="chooseCouponTrans" >4.4选择优惠券</button>
+    <button type="primary" bindtap="mytap" id="mywaybillTrans" >5.7我的运单</button>
+    <button type="primary" bindtap="mytap" id="waybillDetailTrans" >5.7运单详情</button>
 
 
 

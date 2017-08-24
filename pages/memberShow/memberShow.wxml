@@ -1,25 +1,25 @@
 <!--show.wxml-->
 
 <view class="" style="padding:20px;">
-    <button type="primary" bindtap="mytap" id="member" >会员中心</button>
-    <button type="primary" bindtap="mytap" id="bindAccount" >绑定账号</button>
-    <button type="primary" bindtap="mytap" id="registerAccount" >注册</button>
-    <button type="primary" bindtap="mytap" id="balanceAccount">账户余额管理</button>
-    <button type="primary" bindtap="mytap" id="tradeAccount" >收入记录</button>
-    <button type="primary" bindtap="mytap" id="tradeoutAccount" >支出记录</button>
-    <button type="primary" bindtap="mytap" id="messageAccount" >我的消息</button>
-    <button type="primary" bindtap="mytap" id="adviceAccount" >意见投诉</button>
-    <button type="primary" bindtap="mytap" id="baseinfoAccount" >基本资料</button>
-    <button type="primary" bindtap="mytap" id="depotAddressAccount" >仓库地址</button>
-    <button type="primary" bindtap="mytap" id="couponNousedMember" >未使用优惠券</button>
-    <button type="primary" bindtap="mytap" id="couponUsedMember" >已使用优惠券</button>
-    <button type="primary" bindtap="mytap" id="couponExpireMember" >过期优惠券</button>
-    <button type="primary" bindtap="mytap" id="addressIndexMember" >收货地址</button>
-    <button type="primary" bindtap="mytap" id="addressAddMember" >添加收货地址</button>
-    <button type="primary" bindtap="mytap" id="helpcentreMember" >帮助中心</button>
-    <button type="primary" bindtap="mytap" id="helpcentreAgentMember" >帮助中心代购</button>
-    <button type="primary" bindtap="mytap" id="helpcentreAgentdetailMember" >帮助中心代购详情</button>
-    <button type="primary" bindtap="mytap" id="aboutAgentMember" >关于代购</button>
+    <button type="primary" bindtap="mytap" id="member" >4.0会员中心</button>
+    <button type="primary" bindtap="mytap" id="bindAccount" >4.1绑定账号</button>
+    <button type="primary" bindtap="mytap" id="registerAccount" >4.2注册</button>
+    <button type="primary" bindtap="mytap" id="balanceAccount">4.3账户余额管理</button>
+    <button type="primary" bindtap="mytap" id="tradeAccount" >4.4收入记录</button>
+    <button type="primary" bindtap="mytap" id="tradeoutAccount" >4.5支出记录</button>
+    <button type="primary" bindtap="mytap" id="messageAccount" >4.6我的消息</button>
+    <button type="primary" bindtap="mytap" id="adviceAccount" >4.7意见投诉</button>
+    <button type="primary" bindtap="mytap" id="baseinfoAccount" >4.8基本资料</button>
+    <button type="primary" bindtap="mytap" id="depotAddressAccount" >4.9仓库地址</button>
+    <button type="primary" bindtap="mytap" id="couponNousedMember" >5.0未使用优惠券</button>
+    <button type="primary" bindtap="mytap" id="couponUsedMember" >5.1已使用优惠券</button>
+    <button type="primary" bindtap="mytap" id="couponExpireMember" >5.2过期优惠券</button>
+    <button type="primary" bindtap="mytap" id="addressIndexMember" >5.3收货地址</button>
+    <button type="primary" bindtap="mytap" id="addressAddMember" >5.3添加收货地址</button>
+    <button type="primary" bindtap="mytap" id="helpcentreMember" >5.4帮助中心</button>
+    <button type="primary" bindtap="mytap" id="helpcentreAgentdetailMember" >5.8帮助中心代购详情</button>
+    <button type="primary" bindtap="mytap" id="aboutAgentMember" >5.9关于代购</button>
+    <button type="primary" bindtap="mytap" id="helpcentreAgentMember" >5.9帮助中心下拉-代购</button>
 
 
 

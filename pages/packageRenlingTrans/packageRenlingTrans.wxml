@@ -2,13 +2,13 @@
 
 <view class="top">
   <view class="left">
-    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;">包裹预报</button>
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%">包裹预报</button>
   </view>
   <view class="center">
-    <button type="primary"  class="special" style="background-color: #f9364f;">包裹认领</button>
+    <button type="primary"  class="special" style="background-color: #f9364f;width:95%">包裹认领</button>
   </view>
   <view class="right">
-    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;" >我的包裹</button>
+    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;width:95%" >我的包裹</button>
   </view>
 </view>
 
@@ -53,13 +53,13 @@
   <view class="table">
       <view class="tr"> 
           <view class="value">
-              <radio value="" checked=""/>全选
+                          <checkbox value="" color="#f9364f" checked=""/>全选
           </view>
           <view class="count">物品详情</view>
       </view>
       <view class="tr"> 
           <view class="value">
-              <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                          <checkbox value="" color="#f9364f" checked=""/>{{item.value}}
           </view>
           <view class="count detail">
             <view class="detail-left">

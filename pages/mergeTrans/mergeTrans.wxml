@@ -24,7 +24,7 @@
     </view>
 </view>
 
-<view class="area">
+<view class="area address-border address-border-assit">
     <view class="sleft">
         <view class="left-on">
             <view class="person">
@@ -66,7 +66,7 @@
     <view class="row bb">
       <view class="first">
         <view class="pid">
-          包裹ID:
+          包裹ID:<text class="detail">A2456</text>
         </view>
         <view class="weight">
           重量(KG):<text class="red">0.85</text>
@@ -80,7 +80,7 @@
     <view class="row">
       <view class="first">
         <view class="pid">
-          包裹ID: <text class="detail"></text>
+          包裹ID: <text class="detail">54565</text>
         </view>
         <view class="weight">
           重量(KG):<text class="red">0.85</text>

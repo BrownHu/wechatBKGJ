@@ -3,3 +3,26 @@ button{
   margin-top: 3px;
   width:100%;
 }
+
+.piaochecked {
+width: 20px;
+height: 20px;
+float: left;
+cursor: pointer;
+border: 1px solid red;
+margin-left: 10px;
+text-align: center;
+background-image: url("http://www.haorooms.com/uploads/images/checkbox_01.gif");
+background-repeat: no-repeat;
+background-position: 0 0;
+}
+
+.on_check {
+background-position: 0 -21px;
+}
+.radioclass {
+opacity: 0;
+cursor: pointer;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: alpha(opacity=0);
+}

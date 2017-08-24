@@ -171,3 +171,11 @@ color: red;
 .count{
 
 }
+
+.address-border-assit{
+  border-bottom:10px solid transparent;
+
+}
+.address-border{
+border-image: url('http://oetzcsmir.bkt.clouddn.com/borderimg.png') 0 0 10 0 stretch stretch;
+}
