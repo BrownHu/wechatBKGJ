@@ -10,59 +10,56 @@
 </swiper>
 </view>
 
-<view class="function-tab" style="display:flex;">
+<view class="function-tab" >
+    <view class="wrap">
       <view class="list">
-            <image class="func-img"  src="../../images/index/trans.png"  mode="aspectFit" />
-            <view class="func-name">国际转运</view>
-      </view>
-      <view class="list">
-      <image class="func-img"  src="../../images/index/pack.png"  mode="aspectFit" />
-      <view class="func-name">我的包裹</view>
+          <image class="func-img"  src="../../images/index/trans.png"  mode="aspectFit" />
+          <view class="func-name">国际转运</view>
       </view>
       <view class="list">
-      <image class="func-img"  src="../../images/index/calc.png"  mode="aspectFit" />
-      <view class="func-name">体积计算</view>
+          <image class="func-img"  src="../../images/index/pack.png"  mode="aspectFit" />
+          <view class="func-name">我的包裹</view>
       </view>
       <view class="list">
-      <image class="func-img"  src="../../images/index/waybill.png"  mode="aspectFit" />
-      <view class="func-name">我的运单</view>
+          <image class="func-img"  src="../../images/index/calc.png"  mode="aspectFit" />
+          <view class="func-name">体积计算</view>
       </view>
-  </view> 
-  <view class="sixe"></view>
-  <view class="model">
-      <view class="toptitle">
-            <view class="hr-this"></view>
-            <view class="wraper">
-          <text class="left_deco">||</text>
-          <text class="word">佰客国际服务</text>
-          <text class="right_deco">||</text>
-            </view>
-          <view class="hr-this"></view>
+      <view class="list">
+          <image class="func-img"  src="../../images/index/waybill.png"  mode="aspectFit" />
+          <view class="func-name">我的运单</view>
       </view>
-      <view class="sixmodel">
-          <view class="model-detail">
-              <image src="../../images/index/1.png" class="model-img" mode="aspectFit"></image>
-          </view>
-          <view class="model-detail">
-              <image src="../../images/index/2.png" class="model-img" mode="aspectFit"></image>
-          </view>
-          <view class="model-detail">
-              <image src="../../images/index/3.png" class="model-img" mode="aspectFit"></image>
-          </view>
-          <view class="model-detail">
-              <image src="../../images/index/4.png" class="model-img" mode="aspectFit"></image>
-          </view>
-          <view class="model-detail">
-              <image src="../../images/index/5.png" class="model-img" mode="aspectFit"></image>
-          </view>
-          <view class="model-detail">
-              <image src="../../images/index/6.png" class="model-img" mode="aspectFit"></image>
-          </view>
-      </view>
-  
-  
-  </view>
+    </view>
+</view> 
 
+<view class="model">
+    <view class="toprow">
+        <image  src="../../images/index/bkgj.png" mode="aspectFit" class="bk-img"></image>
+    </view>
+    <view class="row">
+      <view class="imgWrap">
+            <image style="height:{{height}}px" src="../../images/index/1.png" bindload="hubing" mode="aspectFit" class="model-img"></image>
+      </view>
+      <view class="imgWrap">
+             <image style="height:{{height}}px" src="../../images/index/2.png" mode="aspectFit" bindload="hubing" class="model-img"></image> 
+      </view>
+    </view>
+      <view class="row">
+      <view class="imgWrap">
+            <image style="height:{{height}}px" src="../../images/index/3.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+      </view>
+      <view class="imgWrap">
+            <image style="height:{{height}}px" src="../../images/index/4.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+      </view>
+    </view>
+     <view class="row">
+      <view class="imgWrap">
+            <image style="height:{{height}}px" src="../../images/index/5.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+      </view>
+      <view class="imgWrap">
+            <image style="height:{{height}}px" src="../../images/index/6.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+      </view>
+    </view> 
 
+</view>
 
 

@@ -1,5 +1,7 @@
 {
   "pages": [
+        "pages/index/index",
+        
       "pages/show/show",
       "pages/transShow/transShow",
       "pages/memberShow/memberShow",
@@ -41,7 +43,6 @@
     "pages/registerAccount/registerAccount",
     "pages/bindAccount/bindAccount",
     "pages/member/member",
-    "pages/index/index",
     "pages/mailLimit/mailLimit",
     "pages/chooseGood/chooseGood",
     "pages/chooseCountry/chooseCountry",

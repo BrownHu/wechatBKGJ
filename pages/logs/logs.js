@@ -2,6 +2,7 @@
 const util = require('../../utils/util.js')
 
 Page({
+  height:"90px",
   data: {
     logs: []
   },
