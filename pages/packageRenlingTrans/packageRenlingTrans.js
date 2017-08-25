@@ -5,13 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    allcheck:false,
     array:
     ["百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
 
     index: 0,
-    detail:
-      { name: "韵达快递", number: "5463134642", weight: "8.00", size: "200*87*65", status: "已到库", depot: "81"}      
+    detail:[
+      { name: "韵达快递", number: "5463134642", weight: "8.00", size: "200*87*65", status: "已到库", depot: "81"},
+      { name: "韵达快递", number: "5463134642", weight: "8.00", size: "200*87*65", status: "已到库", depot: "81" }
+      ]
+
   },
 
   /**
@@ -75,4 +78,32 @@ Page({
       index: e.detail.value
     })
   },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.jump;
+    wx.navigateTo({
+      url: '../' + url + "/" + url,
+      complete: function () {
+        console.log('success')
+      }
+    })
+
+  },
+  formSubmit: function (e) {
+    wx.showToast({
+      title: '认领成功',
+      icon: 'success',
+      duration: 5000,
+      success: function () {
+        wx.redirectTo({
+          url: '../../pages/arrivedPackageTrans/arrivedPackageTrans',
+        })
+      }
+    })
+  },
+  allSelect:function(){
+    var allcheck = this.data.allcheck===false?true:false;
+    this.setData({
+      allcheck: allcheck,
+    })
+  }
 })

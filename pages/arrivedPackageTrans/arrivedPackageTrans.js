@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    allcheck: false,
     array:
     ["百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
     index: 0,
@@ -76,4 +76,26 @@ Page({
       index: e.detail.value
     })
   },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.jump;
+    wx.navigateTo({
+      url: '../' + url + "/" + url,
+      complete: function () {
+        console.log('success')
+      }
+    })
+
+  },
+  formSubmit: function (e) {
+    console.log('传值处理..')
+    wx.redirectTo({
+      url: '../../pages/mergeTrans/mergeTrans',
+    })
+  },
+  allSelect: function () {
+    var allcheck = this.data.allcheck === false ? true : false;
+    this.setData({
+      allcheck: allcheck,
+    })
+  }
 })

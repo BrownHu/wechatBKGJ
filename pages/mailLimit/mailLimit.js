@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    kind:"敏感物品",
     questionReply:[
       { "question": "什么是敏感物品？", "reply":"依据各国海关政策差异，部分国家或地区对特殊商品较为敏感,在进入当地海关时被罚没收概率会稍大，包括并不仅限于如下物品：肉类（熟食）、电子类、服饰(仿牌类)、种子、刀具等。"},
       { "question": "哪些是绝对不能邮寄的？", "reply": "各类武器弹药、仿真武器、烈性毒药、伪造货币、有价证券、珍贵植物种子等。具体请参见法律规定禁止出口物品。" },
@@ -19,7 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+        var kind=options.kind;
+        this.setData({
+          kind:kind
+        })
   },
 
   /**
@@ -47,7 +51,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+      
+      
   },
 
   /**
@@ -76,4 +81,10 @@ Page({
       index: e.detail.value
     })
   },
+  formSubmit:function(e){
+    var  kind=e.detail.value.kind;
+    wx.redirectTo({
+      url: '../../pages/mailLimit/mailLimit?kind='+kind,
+    })
+  }
 })

@@ -1,24 +1,22 @@
 <!--pages/packagePredictTrans/packagePredictTrans.wxml-->
-
+<form bindsubmit="formSubmit">
 <view class="top">
   <view class="left">
-    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%">包裹预报</button>
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="packagePredictTrans">包裹预报</button>
   </view>
   <view class="center">
-    <button type="primary"  class="special" style="background-color: #f9364f;width:95%">包裹认领</button>
+    <button type="primary"  class="special" style="background-color: #f9364f;width:95%" bindtap="jump" data-jump="packageRenlingTrans">包裹认领</button>
   </view>
   <view class="right">
-    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;width:95%" >我的包裹</button>
+    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="arrivedPackageTrans">我的包裹</button>
   </view>
 </view>
-
 <view class="middle-form">
   <view class="top-wrap">
       <image src="../../images/trans/2.png" class="img"></image>
       <text class="word-tip">包裹认领</text>
   </view>
   <view class="form">
-      
        <view class="row">
           <view class="fleft">
               <text class="red">*</text>
@@ -53,32 +51,34 @@
   <view class="table">
       <view class="tr"> 
           <view class="value">
-                          <checkbox value="" color="#f9364f" checked=""/>全选
+                          <checkbox value="" color="#f9364f" bindtap="allSelect"/>全选
           </view>
           <view class="count">物品详情</view>
       </view>
+    <block wx:for="{{detail}}">
       <view class="tr"> 
           <view class="value">
-                          <checkbox value="" color="#f9364f" checked=""/>{{item.value}}
+                <checkbox value="" color="#f9364f" checked="{{allcheck}}" />
           </view>
           <view class="count detail">
             <view class="detail-left">
-                <view class="same">快递名称：<text class="commonword">{{detail.name}}</text></view>
-                <view class="same">快递单号：<text class="commonword">{{detail.number}}</text></view>
-                <view class="same">重量(KG):<text class="commonword">{{detail.weight}}</text></view>
+                <view class="same">快递名称：<text class="commonword">{{item.name}}</text></view>
+                <view class="same">快递单号：<text class="commonword">{{item.number}}</text></view>
+                <view class="same">重量(KG):<text class="commonword">{{item.weight}}</text></view>
             </view>
             <view class="detail-right">
-                <view class="same">尺寸(CM)：<text class="commonword">{{detail.size}}</text></view>
-                <view class="same">状态：<text class="commonword">{{detail.status}}</text></view>
-                <view class="same">仓库号:<text class="commonword">{{detail.depot}}</text></view>
+                <view class="same">尺寸(CM)：<text class="commonword">{{item.size}}</text></view>
+                <view class="same">状态：<text class="commonword">{{item.status}}</text></view>
+                <view class="same">仓库号:<text class="commonword">{{item.depot}}</text></view>
             </view>
           </view>
       </view>
- 
+    </block>
     </view>
 </view>
 <view class="submit">
-  <button type="primary" style="background-color: #f9364f;">
+  <button form-type="submit" type="primary" style="background-color: #f9364f;">
     确认认领{{good.name}}
   </button>
 </view>
+</form>

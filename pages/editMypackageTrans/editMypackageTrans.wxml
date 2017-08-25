@@ -1,7 +1,6 @@
 <!--pages/packagePredictTrans/packagePredictTrans.wxml-->
 
-
-
+<form bindsubmit="formSubmit">
 <view class="middle-form">
   
   <view class="form">
@@ -79,6 +78,7 @@
             <button class="btn">删除</button>
           </view>
       </view>
+<block wx:for="{{goods}}">      
   <view class="tr"> 
           <view class="good-name">
             <input class="tinput" placeholder=""/>
@@ -93,11 +93,12 @@
 
           </view>
           <view class="action">
-            <button class="btn">删除</button>
+            <button class="btn" bindtap="deleteGood">删除</button>
           </view>
       </view>
+</block>
        <view class="add-good">
-            <button size="mini" style="line-height:12px;padding:5px 0 " class="add-btn">添加商品</button>
+            <button size="mini" style="line-height:12px;padding:5px 0 " class="add-btn" bindtap="addGood">添加商品</button>
             <view class="add-tip">
               如果包裹里有多个商品,请点击添加商品
             </view>
@@ -111,7 +112,8 @@
   </view>
 </view>
 <view class="submit">
-  <button type="primary" style="background-color: #f9364f;">
+  <button form-type="submit" type="primary" style="background-color: #f9364f;">
     提交包裹预报
   </button>
 </view>
+</form>

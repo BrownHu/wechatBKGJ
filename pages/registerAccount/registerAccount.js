@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  formSubmit: function (e) {
+    console.log('传值处理..')
+    wx.redirectTo({
+      url: '../../pages/mergeTrans/mergeTrans',
+    })
   }
 })

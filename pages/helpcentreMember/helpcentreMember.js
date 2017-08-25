@@ -146,5 +146,10 @@ Page({
       fivehidden: firstHidden,
       fiveArrowIndex: outArrowIndex
     })
+  },
+  jump:function(){
+    wx.redirectTo({
+      url: '../../pages/helpcentreAgentMember/helpcentreAgentMember',
+    })
   }
 })

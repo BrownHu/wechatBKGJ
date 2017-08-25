@@ -1,4 +1,5 @@
 // pages/packagePredictTrans/packagePredictTrans.js
+var app=getApp()
 Page({
 
   /**
@@ -12,7 +13,8 @@ Page({
     
     depot:[
       "中国 广东 东莞仓","上海仓"
-    ]
+    ],
+    goods:app.globalData.goods
   },
 
   /**
@@ -82,4 +84,61 @@ Page({
       depotindex: e.detail.value
     })
   },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.jump;
+    wx.navigateTo({
+      url: '../' + url + "/" + url,
+      complete: function () {
+        console.log('success')
+      }
+    })
+  
+  },
+  addGood:function(){
+      app.globalData.goods.push({})
+      wx.redirectTo({
+        url: '../../pages/packagePredictTrans/packagePredictTrans',
+      })
+  },
+  deleteGood:function(e){
+    wx.showModal({
+      title: '佰客国际',
+      content: '确认删除商品',
+      success: function (res) {
+        if (res.confirm) {
+          var id=e.currentTarget.dataset.index
+          app.globalData.goods.splice(id,1)
+          wx.redirectTo({
+            url: '../../pages/packagePredictTrans/packagePredictTrans',
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+    this.say()
+   
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
+
+    // setTimeout(function () {
+    //   wx.hideLoading()
+    // }, 2000)
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 2000,
+    //   mask:true
+    // })
+  
+  },
+  say:function(){
+    console.log('from say')
+  },
+  formSubmit:function(e){
+        wx.redirectTo({
+          url: '../../pages/mergeTrans/mergeTrans',
+        })
+  }
 })

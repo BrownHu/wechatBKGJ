@@ -1,4 +1,5 @@
 <!--waybill.wxml-->
+<form bindsubmit="formSubmit">
 <view class="expense">
   <view class="title">
     <view class="expense_before">
@@ -8,7 +9,7 @@
     <view class="wrap">
     <view class="des_all">
         <view class="label">目的地：</view>
-        <view class="region"><picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="region"><picker mode="region" name="destination" bindchange="bindRegionChange" value="{{region}}">
           <text class="left">{{region[0]}}-{{region[1]}}-{{region[2]}}</text> <text class="right">></text>
         </picker>
         </view>
@@ -16,10 +17,10 @@
     <view class="weight_all">
       <view class="label">重量(KG):</view>
         <view class="weight">
-              <input placeholder="" />
+              <input placeholder="" type="digit" name="weight"/>
         </view>
         <view class="cal_button">
-        <button style="font-size:14px;bottom:1px;background-color:#0398e7;" type="primary" bindtap="default"> 运费计算 </button>
+        <button style="font-size:14px;bottom:1px;background-color:#0398e7;" type="primary" form-type="submit"> 运费计算 </button>
         </view>
         </view>
     </view>
@@ -60,7 +61,7 @@
 </view>
     </view>
 </view>
-
+</form>
 
   
 

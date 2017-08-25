@@ -1,4 +1,5 @@
 <!-- waybill.wxml -->
+<form bindsubmit="formSubmit">
 <view class="expense">
   <view class="title">
     <view class="expense_before">
@@ -16,14 +17,14 @@
     <view class="weight_all">
       <view class="label">商品分类:</view>
         <view class="weight">
-               <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+               <picker bindchange="bindPickerChange" value="{{index}}" name="kind" range="{{array}}">
     <view class="picker">
         <text style="margin-left:5px;">{{array[index]}}</text><text style="float:right;margin-right:5px;">></text>
     </view>
   </picker>
         </view>
         <view class="cal_button">
-        <button style="font-size:14px;bottom:1px;background-color:#0398e7;line-height:2;" type="primary" bindtap="default"> 搜索 </button>
+        <button style="font-size:14px;bottom:1px;background-color:#0398e7;line-height:2;" type="primary" form-type="submit"> 搜索 </button>
         </view>
         </view>
     </view>
@@ -37,7 +38,7 @@
     <view class="th" style="border-right:1rpx solid #c8c8c8;">限重(KG)</view>
   </view>
      <view class="tr">
-     <view class="td">敏感物品</view>
+     <view class="td">{{kind}}</view>
      <view class="td colorful">是</view>
 
      <view class="td">EUB-F</view>
@@ -88,6 +89,7 @@
    
  
 </view>
+</form>
 
 
   

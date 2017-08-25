@@ -1,10 +1,10 @@
 
 <view class="top-swiper">
-<swiper style="height:180px" indicator-dots="true" indicator-active-color="#f03650"
+<swiper style="height:{{swiperHeight}}px;width:100%;" indicator-dots="true" indicator-active-color="#f03650"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image class="img"  src="{{item}}"  mode="aspectFit" />
+      <image class="img" style="height:{{swiperHeight}}px"  src="{{item}}"  mode="aspectFit" />
     </swiper-item>
   </block> 
 </swiper>
@@ -12,19 +12,19 @@
 
 <view class="function-tab" >
     <view class="wrap">
-      <view class="list">
+      <view class="list" bindtap="jump" data-jump="packagePredictTrans">
           <image class="func-img"  src="../../images/index/trans.png"  mode="aspectFit" />
           <view class="func-name">国际转运</view>
       </view>
-      <view class="list">
+      <view class="list" bindtap="jump" data-jump="arrivedPackageTrans">
           <image class="func-img"  src="../../images/index/pack.png"  mode="aspectFit" />
           <view class="func-name">我的包裹</view>
       </view>
-      <view class="list">
+      <view class="list" bindtap="jump" data-jump="volumeStart">
           <image class="func-img"  src="../../images/index/calc.png"  mode="aspectFit" />
           <view class="func-name">体积计算</view>
       </view>
-      <view class="list">
+      <view class="list" bindtap="jump" data-jump="mywaybillTrans">
           <image class="func-img"  src="../../images/index/waybill.png"  mode="aspectFit" />
           <view class="func-name">我的运单</view>
       </view>
@@ -37,26 +37,26 @@
     </view>
     <view class="row">
       <view class="imgWrap">
-            <image style="height:{{height}}px" src="../../images/index/1.png" bindload="hubing" mode="aspectFit" class="model-img"></image>
+            <image style="height:{{height}}px" src="../../images/index/1.png" bindload="hubing" mode="aspectFit" class="model-img" bindtap="jump" data-jump="guide"></image>
       </view>
       <view class="imgWrap">
-             <image style="height:{{height}}px" src="../../images/index/2.png" mode="aspectFit" bindload="hubing" class="model-img"></image> 
+             <image style="height:{{height}}px" src="../../images/index/2.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="announcement"></image> 
       </view>
     </view>
       <view class="row">
       <view class="imgWrap">
-            <image style="height:{{height}}px" src="../../images/index/3.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+            <image style="height:{{height}}px" src="../../images/index/3.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="mailLimit"></image>
       </view>
       <view class="imgWrap">
-            <image style="height:{{height}}px" src="../../images/index/4.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+            <image style="height:{{height}}px" src="../../images/index/4.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="helpcentreMember"></image>
       </view>
     </view>
      <view class="row">
       <view class="imgWrap">
-            <image style="height:{{height}}px" src="../../images/index/5.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+            <image style="height:{{height}}px" src="../../images/index/5.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="waybill"></image>
       </view>
       <view class="imgWrap">
-            <image style="height:{{height}}px" src="../../images/index/6.png" mode="aspectFit" bindload="hubing" class="model-img"></image>
+            <image style="height:{{height}}px" src="../../images/index/6.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="expense"></image>
       </view>
     </view> 
 

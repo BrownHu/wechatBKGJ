@@ -2,13 +2,13 @@
 
 <view class="top">
   <view class="left">
-    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%">包裹预报</button>
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="packagePredictTrans">包裹预报</button>
   </view>
   <view class="center">
-    <button type="primary"  class="special" style="color:#f9364f;background-color: #ffffff;width:95%">包裹认领</button>
+    <button type="primary"  class="special" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="packageRenlingTrans">包裹认领</button>
   </view>
   <view class="right">
-    <button type="primary" class="common" style="background-color: #f9364f;width:95%" >我的包裹</button>
+    <button type="primary" class="common" style="background-color: #f9364f;width:95%"  bindtap="jump" data-jump="arrivedPackageTrans">我的包裹</button>
   </view>
 </view>
 
@@ -19,10 +19,10 @@
   </view>
   <view class="switch-btn">
     <view class="arrive">
-      <button style="margin:0;background-color:#ffffff;color:#0398e7;width:90%;line-height:2;border:2px solid #0398e7;">到库包裹</button>
+      <button style="margin:0;background-color:#ffffff;color:#0398e7;width:90%;line-height:2;border:2px solid #0398e7;" bindtap="jump" data-jump="arrivedPackageTrans" >到库包裹</button>
     </view>
     <view class="onway">
-      <button style="margin:0;background-color:#0398e7;color:#ffffff;width:90%;line-height:2" >在途包裹</button>
+      <button style="margin:0;background-color:#0398e7;color:#ffffff;width:90%;line-height:2" bindtap="jump" data-jump="onwayPackageTrans" >在途包裹</button>
     </view>
   </view>
   <view class="row">
@@ -45,7 +45,7 @@
       <view class="table">
         <view class="top-row">
           <view class="top-all-select">
-            <checkbox value="" color="#f9364f" checked=""/>
+            <checkbox value="" color="#f9364f" bindtap="allSelect" />
           </view>
           <view style="width:10%">全选</view>
           <view class="top-detail">物品详情</view>
@@ -56,7 +56,7 @@
       <block wx:for="{{packages}}">
         <view class="row">
           <view class="all-select">
-            <checkbox value="" color="#f9364f" checked=""/>
+            <checkbox value="" color="#f9364f" checked="{{allcheck}}"/>
           </view>
           <view class="wrap">
             <view class="detail">
@@ -73,8 +73,8 @@
             </view>
             <view class="weight">{{item.weight}}</view>
             <view class="action">
-                <button class="detail-btn">详情</button>
-                <button class="detail-btn">编辑</button>
+                <button class="detail-btn" bindtap="jump" data-jump="detailMypackageTrans">详情</button>
+                <button class="detail-btn" bindtap="jump" data-jump="editMypackageTrans">编辑</button>
             </view>
           </view>
         </view>
@@ -95,7 +95,7 @@
 </view>
 
 <view class="btnWrap">
-  <button class="submitbtn">提交合箱转运</button>
+  <button disabled="true" style="background-color:#c9c9c9;color:#ffffff">提交合箱转运</button>
 </view>
 
 

@@ -71,5 +71,15 @@ Page({
     this.setData({
       region: e.detail.value
     })
+  },
+  formSubmit:function(e){
+    var info={}
+    info.destination=e.detail.value.destination;
+    info.weight=e.detail.value.weight;
+    // 处理
+    console.log(info)
+    this.setData({
+
+    })
   }
 })

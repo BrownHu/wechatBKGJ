@@ -1,4 +1,5 @@
 <!--waybill.wxml-->
+<form bindsubmit="formSubmit">
 <view class="waybill">
   <view class="title">
     <view class="waybill_before">
@@ -7,11 +8,10 @@
   </view>
   <view class="body">
     <text class="label">运单号：</text>
-    <input class="wayinput" placeholder="请输入运单号" auto-focus/>
+    <input class="wayinput" placeholder="请输入运单号" name="number"/>
   </view>
     <view class="button_about">
-    <button style="background-color:#0398e7;width:190px;" type="primary" class="trace" size="default"  
-        disabled="{{disabled}}"  bindtap="trace" > 查询 </button>
+    <button style="background-color:#0398e7;width:190px;" type="primary" class="trace" form-type="submit"  > 查询 </button>
     </view>
     <view class="hr"></view>
 
@@ -40,5 +40,6 @@
   </block>  -->
 </view>
 </view>
+</form>
 
 

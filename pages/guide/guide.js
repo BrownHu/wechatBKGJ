@@ -1,9 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var util = require('util.js');
 Page({
   data: {
+    gap:10,
+    topheight:0,
+    singleheight:0,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -53,6 +56,21 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  hubing: function () {
+    var height = util.ImageUtil();
+    console.log(height)
+    this.setData({
+      topheight: height.topheight,
+      singleheight: height.singleheight,
+      gap:height.gap
+    })
+  },
+  jump: function (e) {
+    var id = e.currentTarget.dataset.jump;
+    wx.redirectTo({
+      url: '../../pages/guideGif/guideGif?id='+id,
     })
   }
 })

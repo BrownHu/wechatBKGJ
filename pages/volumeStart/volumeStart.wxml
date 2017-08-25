@@ -1,30 +1,36 @@
 <!--volumeStart.wxml-->
+
+<form bindsubmit="formSubmit">
 <view class="volume">
     <view class="topselect">
       <view class="left">   
-           <button   style="  padding-left:27px ;padding-right:27px;border-radius:33px;line-height:1.7;color:#0398e7;background-color:#ffffff;border:1px solid #0398e7;" type="primary" bindtap="default" id="announcement">国内港澳台</button>
+           <button   style="  padding-left:27px ;padding-right:27px;border-radius:33px;line-height:1.7;color:#ffffff;background-color:#0398e7;" type="primary" bindtap="default" id="announcement" bindtap="jump" data-jump="volumeStart">国内港澳台</button>
       </view>
       <view class="right">  
-       <button  style="  padding-left:27px ;padding-right:27px;border-radius:33px;line-height:1.7;background-color:#0398e7;" type="primary" bindtap="default" id="announcement">国际其他地区</button>
+       <button  style="padding-left:27px;padding-right:27px;border-radius:33px;line-height:1.7;background-color:#ffffff;color:#0398e7;border:1px solid #0398e7;" type="primary" bindtap="default" id="announcement" bindtap="jump" data-jump="volumeCalc">国际其他地区</button>
       </view>
+
+
     </view>
 </view>
 <view class="volume_input">
    <view class="inputGroup">
         <text class="label">长(CM):</text>
-        <input class="length" placeholder=""/>
+        <input class="length" placeholder="" name="length"/>
     </view> 
     <view class="inputGroup martop">
         <text class="label">宽(CM):</text>
-        <input class="length" placeholder=""/>
+        <input class="length" placeholder="" name="width" />
     </view>
     <view class="inputGroup martop">
         <text class="label">高(CM):</text>
-        <input class="length" placeholder=""/>
+        <input class="length" placeholder="" name="height"/>
     </view>
      <view class="calcbutton">
-        <button  type="primary" bindtap="default" id="" style="background-color:#0398e7;">计算</button>
+        <button  form-type="submit" type="primary" bindtap="default" id="" style="background-color:#0398e7;">计算</button>
     </view> 
     <view class="hr"></view>
 
+    <text  hidden="{{resultHidden}}" style="color:#717171;margin-top:10px">计算结果:<text style="color:#f94863;margin-left:5px;font-weight:bold;">{{result}}</text></text>
 </view>
+</form>

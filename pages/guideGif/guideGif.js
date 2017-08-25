@@ -1,18 +1,29 @@
 // guideGif.js
+var  client=require('image.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    height:100,
+    images:[
+      "../../images/guide/g1.gif",
+      "../../images/guide/g2.gif",
+      "../../images/guide/g3.gif",
+      "../../images/guide/g4.gif",
+    ]
   },
-
+  using:'',
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var id=options.id;
+      this.setData({
+        using:this.data.images[id]
+      })
+      console.log(this.data.using)
   },
 
   /**
@@ -62,5 +73,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  getheight:function(){
+    var imageheight=client.getheight()
+    this.setData({
+      height:imageheight
+    })
+    
   }
 })

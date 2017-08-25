@@ -1,14 +1,14 @@
 <!--pages/packagePredictTrans/packagePredictTrans.wxml-->
-
+<form bindsubmit="formSubmit">
 <view class="top">
   <view class="left">
-    <button type="primary"  class="special" style="background-color: #f9364f;width:95%;">包裹预报</button>
+    <button type="primary"  class="special" style="background-color: #f9364f;width:95%;" bindtap="jump" data-jump="packagePredictTrans">包裹预报</button>
   </view>
   <view class="center">
-    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%;">包裹认领</button>
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%;" bindtap="jump" data-jump="packageRenlingTrans">包裹认领</button>
   </view>
   <view class="right">
-    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;width:95%" >我的包裹</button>
+    <button type="primary" class="common" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="arrivedPackageTrans">我的包裹</button>
   </view>
 </view>
 
@@ -25,7 +25,7 @@
           </view>
         
           <view class="fright">
-           <picker bindchange="bindDepotChange" value="{{depotindex}}" range="{{depot}}">
+           <picker bindchange="bindDepotChange" name="depot" value="{{depotindex}}" range="{{depot}}">
               <view class="picker">
                   <text style="margin-left:5px;">{{depot[depotindex]}}</text>
                   <view style="float:right;margin-right:5px;">
@@ -45,7 +45,7 @@
               快递公司
           </view>
         <view class="fright">
-           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+           <picker bindchange="bindPickerChange" name="express" value="{{index}}" range="{{array}}">
               <view class="picker">
                   <text style="margin-left:5px;">{{array[index]}}</text>
                   <view style="float:right;margin-right:5px;">
@@ -63,7 +63,7 @@
               <text class="red">*</text>
               快递单号
           </view>
-           <input class="input" placeholder="" auto-focus/>
+           <input class="input" placeholder="" name='waybill' />
           
       </view>
       <view class="hr"></view>
@@ -92,7 +92,8 @@
             <button class="btn">删除</button>
           </view>
       </view>
-  <view class="tr"> 
+    <block wx:for="{{goods}}">
+       <view class="tr"> 
           <view class="good-name">
             <input class="tinput" placeholder=""/>
 
@@ -103,14 +104,14 @@
           </view>
           <view class="value">
             <input class="tinput" placeholder=""/>
-
           </view>
           <view class="action">
-            <button class="btn">删除</button>
+            <button class="btn" data-index="{{index}}" ontap="deleteGood">删除</button>
           </view>
-      </view>
+      </view> 
+     </block> 
        <view class="add-good">
-            <button size="mini" style="line-height:12px;padding:5px 0 " class="add-btn">添加商品</button>
+            <button size="mini" style="line-height:12px;padding:5px 0 " class="add-btn" bindtap="addGood">添加商品</button>
             <view class="add-tip">
               如果包裹里有多个商品,请点击添加商品
             </view>
@@ -124,7 +125,8 @@
   </view>
 </view>
 <view class="submit">
-  <button type="primary" style="background-color: #f9364f;">
+  <button form-type="submit"  type="primary" style="background-color: #f9364f;"   data-jump="mergeTrans">
     提交包裹预报
   </button>
 </view>
+</form>

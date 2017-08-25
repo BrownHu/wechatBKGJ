@@ -1,14 +1,26 @@
 {
   "pages": [
+          "pages/packagePredictTrans/packagePredictTrans",
+          
+    "pages/helpcentreAgentMember/helpcentreAgentMember",
+    "pages/helpcentreMember/helpcentreMember",
+    "pages/mailLimit/mailLimit",
+    "pages/announcement/announcement",    
+    "pages/guide/guide",    
         "pages/index/index",
+        "pages/member/member",
         
-      "pages/show/show",
-      "pages/transShow/transShow",
-      "pages/memberShow/memberShow",
+    "pages/volumeCalc/volumeCalc",
+    "pages/volumeStart/volumeStart",        
+    "pages/packageRenlingTrans/packageRenlingTrans",    
     "pages/onwayPackageTrans/onwayPackageTrans",
-    "pages/arrivedPackageTrans/arrivedPackageTrans",              
+    "pages/editMypackageTrans/editMypackageTrans",
+    "pages/arrivedPackageTrans/arrivedPackageTrans",
+    "pages/show/show",
+    "pages/transShow/transShow",
+    "pages/memberShow/memberShow",
+    "pages/guideGif/guideGif",
     "pages/mergeTrans/mergeTrans",
-  
     "pages/methodOfTrans/methodOfTrans",                
     "pages/chooseCouponTrans/chooseCouponTrans",
     "pages/baseinfoAccount/baseinfoAccount",
@@ -16,18 +28,11 @@
     "pages/paySuccessTrans/paySuccessTrans",
     "pages/waybillDetailTrans/waybillDetailTrans",      
     "pages/remarkWaybillTrans/remarkWaybillTrans",  
-   
     "pages/detailMypackageTrans/detailMypackageTrans",        
-    "pages/mypackageTrans/mypackageTrans",        
-    "pages/editMypackageTrans/editMypackageTrans",
-    "pages/packageRenlingTrans/packageRenlingTrans",
-    "pages/packagePredictTrans/packagePredictTrans",
     "pages/expressChooseTrans/expressChooseTrans",    
     "pages/depotChooseTrans/depotChooseTrans",
-    "pages/helpcentreMember/helpcentreMember",            
     "pages/aboutAgentMember/aboutAgentMember",        
     "pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember",
-    "pages/helpcentreAgentMember/helpcentreAgentMember",        
     "pages/addressAddMember/addressAddMember",        
     "pages/addressIndexMember/addressIndexMember",
     "pages/announceDetail/announceDetail",
@@ -42,23 +47,16 @@
     "pages/balanceAccount/balanceAccount",
     "pages/registerAccount/registerAccount",
     "pages/bindAccount/bindAccount",
-    "pages/member/member",
-    "pages/mailLimit/mailLimit",
     "pages/chooseGood/chooseGood",
     "pages/chooseCountry/chooseCountry",
-    "pages/volumeStart/volumeStart",
-    "pages/volumeCalc/volumeCalc",
-    "pages/guide/guide",
     "pages/waybill/waybill",
     "pages/expense/expense",
-    "pages/guideGif/guideGif",
-    "pages/announcement/announcement",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "red",
-    "navigationBarTitleText": "新手指南",
+    "navigationBarTitleText": "佰客国际",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -69,21 +67,21 @@
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/show/show",
+        "pagePath": "pages/index/index",
         "iconPath": "images/common/home.png",
         "selectedIconPath": "images/common/selected_home.png",
         "selectedColor": "#82B8E9",
         "text": "首页"
       },
       {
-        "pagePath": "pages/transShow/transShow",
+        "pagePath": "pages/index/index",
         "iconPath": "images/common/transform.png",
         "selectedIconPath": "images/common/selected_transform.png",
         "selectedColor": "#82B8E9",
         "text": "国际转运"
       },
       {
-        "pagePath": "pages/memberShow/memberShow",
+        "pagePath": "pages/member/member",
         "iconPath": "images/common/user.png",
         "selectedIconPath": "images/common/selected_user.png",
         "selectedColor": "#82B8E9",

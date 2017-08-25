@@ -1,6 +1,6 @@
 /**index.wxss**/
 
-.top_pic{
+/* .top_pic{
   margin: -60rpx;
   width: 95%;
 }
@@ -23,5 +23,36 @@ image{
   width:48%;
   margin: 0 1%; 
 
-}
+} */
 
+.guide{
+  padding:15px;
+display:flex;
+flex-flow:column wrap;
+
+}
+.top{
+  width:100%;
+
+}
+.four{
+  width:100%;
+display:flex;
+flex-flow:column wrap;
+
+}
+.row{
+  width:100%;
+display:flex;
+flex-flow:row wrap;
+justify-content:space-between;
+
+}
+.single{
+  width: 48.5%;
+
+}
+.img{
+  width: 100%;
+
+}

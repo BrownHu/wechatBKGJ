@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    resultHidden:true,
+    result:0
   },
 
   /**
@@ -62,5 +63,23 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.jump;
+    wx.navigateTo({
+      url: '../' + url + "/" + url,
+      complete: function () {
+        console.log('success')
+      }
+    })
+
+  },
+  formSubmit: function (e) {
+      var form=e.detail.value;
+      var result = parseInt(form.width) + parseInt(form.height) +parseInt(form.length)
+      this.setData({
+        result: result,
+        resultHidden:false
+      })
+  },
 })

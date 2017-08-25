@@ -22,4 +22,6 @@ padding:18px;
   margin-bottom:15px;
 color:#0398e7;
 line-height: 20px;
+font-size:11px;
+
 }

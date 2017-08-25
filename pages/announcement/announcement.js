@@ -6,9 +6,8 @@ Page({
    */
   data: {
     announcement:[
-      { "title": "海关严查，违法物品一律拒发！", "body": "刚收到各种快递公司和报关行的最新消息，由于..", "date": "2017-06-20", "admin": "佰客国际" },
-      { "title": "端午节放假通知", "body": "您们好！端午节即将来临，为了方便大家提前安排...", "date": "2017-05-25", "admin": "佰客国际" },
-      // { "title": "", "body": "", "date": "", "admin": "" },
+      {"id":1, "title": "海关严查，违法物品一律拒发！", "body": "刚收到各种快递公司和报关行的最新消息，由于..", "date": "2017-06-20", "admin": "佰客国际" },
+      { "id":2,"title": "端午节放假通知", "body": "您们好！端午节即将来临，为了方便大家提前安排...", "date": "2017-05-25", "admin": "佰客国际" },
     ]  
   },
 
@@ -16,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
   },
 
   /**
@@ -71,10 +69,16 @@ Page({
       path: '/pages/guide/guide'
     }
   },
-  // bindtap 跳转到详细公告
-  jump:function(){
-    // wx.navigateTo({
-    //   url: '../thatday/thatday?&date=' + this.data.date
-    // })
-  }
+  jump: function (e) {
+    var id = e.currentTarget.dataset.id;
+    wx.redirectTo({
+      url: '../../pages/announceDetail/announceDetail?id='+id,
+    })
+  },
+  formSubmit: function (e) {
+    console.log('传值处理..')
+    wx.redirectTo({
+      url: '../../pages/mergeTrans/mergeTrans',
+    })
+  },
 })

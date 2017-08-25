@@ -66,7 +66,12 @@ Page({
   
   },
     // 查询按钮
-  trace:function(){
-
+  formSubmit:function(e){
+        var num=e.detail.value.number;
+      // 处理
+      this.setData({
+        
+      })
   }
+  
 })

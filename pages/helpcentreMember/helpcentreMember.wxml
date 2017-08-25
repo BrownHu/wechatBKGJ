@@ -14,7 +14,7 @@
 </view>
 <view class="belongFirst" hidden="{{onehidden}}">
   <block wx:for="{{Firstsubmenu}}">
-      <view class="subwrap">
+      <view class="subwrap" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">

@@ -1,6 +1,6 @@
 <!--guideGif.wxml-->
 <view class="container">
   <view class="gif">
-  <image src="../../images/guide.gif" mode="scaleToFill" style="width:100%;"></image>
+  <image style="border-radius:5%;margin-top:15px;width:100%;height:{{height}}px" src="{{using}}" bindload="getheight" mode="aspectFit" ></image>
   </view>
 </view>

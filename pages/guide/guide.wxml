@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<!-- <view class="container">
  <view class="top_pic">
  <image src="../../images/row.png" mode="aspectFit"></image>
  </view> 
@@ -23,6 +23,31 @@
      
   </view>
 
+</view> -->
+
+<view class="guide">
+  <view class="top">
+      <image style="height:{{topheight}}px" class="img" src="../../images/guide/row.png" mode="aspectFit" bindload="hubing"></image>
+  </view>
+  <view class="four">
+      <view class="row" style="margin-top:{{gap}}px">
+          <view class="single">
+              <image style="height:{{singleheight}}px" class="img" src="../../images/guide/row_1.png" mode="aspectFit" bindtap="jump" data-jump="0" ></image>        
+          </view>
+          <view class="single">
+              <image  style="height:{{singleheight}}px" class="img" src="../../images/guide/row_2.png" mode="aspectFit" bindtap="jump" data-jump="1"></image>    
+          </view>
+      </view>
+      <view class="row" style="margin-top:{{gap}}px">
+          <view class="single">
+              <image style="height:{{singleheight}}px" class="img" src="../../images/guide/row_3.png" mode="aspectFit" bindtap="jump" data-jump="2" ></image>        
+          </view>
+          <view class="single">
+              <image  style="height:{{singleheight}}px" class="img" src="../../images/guide/row_4.png" mode="aspectFit" bindtap="jump" data-jump="3"></image>    
+          </view>
+      </view>
+      
+  </view>
 </view>
 
 

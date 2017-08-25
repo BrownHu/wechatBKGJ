@@ -80,5 +80,10 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+jump:function(){
+  wx.redirectTo({
+    url: '../../pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember',
+  })
+}
 })
