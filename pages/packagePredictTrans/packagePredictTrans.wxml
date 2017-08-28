@@ -120,7 +120,7 @@
   <view class="remark">
       <view class="re-left">备注</view>
       <view class="re-right">
-          <textarea class="textarea" placeholder="填写商品名称，商品数量，特殊需求等......" placeholder-style="color:#6a6a6a;"  />
+          <textarea name="remark" class="textarea" placeholder="填写商品名称，商品数量，特殊需求等......" placeholder-style="color:#6a6a6a;"  />
       </view>
   </view>
 </view>

@@ -1,4 +1,5 @@
 // pages/addressAddMember/addressAddMember.js
+var utils=require("../../utils/util.js")
 Page({
 
   /**
@@ -86,5 +87,52 @@ Page({
     this.setData({
       cityindex: e.detail.value
     })
+  },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + utl + '/' + url,
+      })
+    } else {
+      wx.redirectTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
+  },
+  formSubmit: function (e) {
+    var form = {}
+    form.name = e.detail.value.name;
+    form.city = e.detail.value.city;
+    form.country = e.detail.value.country;
+    form.province = e.detail.value.province;
+    form.address = e.detail.value.address;
+    form.mailcode = e.detail.value.mailcode;
+    form.mobile = e.detail.value.mobile;
+    var formComplete = utils.IsComplete(form)
+
+
+    // if(){ 逻辑判断 表单处理
+
+    // // }
+    if (formComplete) {
+      wx.showToast({
+        title: '注册成功',
+        icon: 'success',
+        mask: true,
+        duration: 3000,
+        complete: function () {
+          wx.navigateTo({
+            url: '../../pages/addressIndexMember/addressIndexMember',
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '所有字段必填',
+        image: '../../icon/error.png'
+      })
+    }
   },
 })

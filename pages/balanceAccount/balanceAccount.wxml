@@ -6,7 +6,7 @@
   <text class="show">账户余额:<text class="money">¥10.00</text> </text>
 </view>
 
-<view class="detail">
+<view class="detail" bindtap="jump" data-url="tradeoutAccount">
   <view class="left"></view>
   <view class="middle">财务详情</view>
   <view class="right">交易记录</view>

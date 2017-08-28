@@ -1,9 +1,9 @@
 <!--pages/mergeTrans/mergeTrans.wxml-->
-
+<form bindsubmit="formSubmit">
 <view class="area">
     <view class="left">选择配送的区域</view>
     <view class="right">
-          <picker bindchange="bindAreaChange" value="{{index}}" range="{{area}}">
+          <picker name='area' bindchange="bindAreaChange" value="{{index}}" range="{{area}}">
             <text class="country">{{area[index]}}</text>
           </picker>
           <view>
@@ -15,7 +15,7 @@
 <view class="area">
     <view class="left">选择配送方式</view>
     <view class="right">
-          <picker bindchange="bindMethodChange" value="{{methodindex}}" range="{{method}}">
+          <picker name="method" bindchange="bindMethodChange" value="{{methodindex}}" range="{{method}}">
             <text class="country">{{method[methodindex]}}</text>
           </picker>
           <view>
@@ -38,7 +38,7 @@
            收货地址：<text class="word">泰国曼安努蒂第四大街305</text>
         </view>
     </view>
-    <view class="sright">
+    <view class="sright" bindtap="jump"  data-url="addressIndexMember">
           
           <view>
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
@@ -48,7 +48,7 @@
 <view class="area" >
     <view class="left">运单备注：</view>
     <view class="right">
-          <input   placeholder="可备注一些特殊要求"  class="input" />
+          <input name="remark"  placeholder="可备注一些特殊要求"  class="input" />
           <view>
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
           </view>
@@ -97,7 +97,7 @@
       <text class="count-left">共计<text class="allplus">3</text>件商品</text>总重(KG):<text class="red">1.4</text>
     </view>
 </view>
-<view class="area">
+<view class="area" bindtap="jump" data-url="couponNousedMember">
     <view class="left">优惠券</view>
     <view class="right">
           <text style="margin-right:10px;color:#757575"><text class="red" style="margin-right:5px">2</text>张可用</text>
@@ -143,9 +143,10 @@
 
 <view class="btn-group">
   <view class="wechat">
-    <button style="background-color:#1aad19;color:#ffffff">微信支付</button>
+    <button form-type="submit" style="background-color:#1aad19;color:#ffffff">微信支付</button>
   </view>
   <view class="rest">
-    <button style="background-color:#bfbfbf;color:#fbfbfb">余额支付</button>
+    <button form-type="submit" style="background-color:#bfbfbf;color:#fbfbfb">余额支付</button>
   </view>
 </view>
+</form>

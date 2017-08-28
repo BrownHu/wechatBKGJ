@@ -1,16 +1,17 @@
 <!--pages/addressAddMember/addressAddMember.wxml-->
+<form bindsubmit="formSubmit">
 <view class="all">
   <view class="name">
     <view class="label">姓名:</view>
     <view class="input-wrap">
-          <input class="input" placeholder="收货人姓名" />
+          <input class="input" placeholder="收货人姓名" name="name" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">国家:</view>
     <view class="input-wrap">
-          <picker bindchange="bindCountryChange" value="{{countryindex}}" range="{{country}}">
+          <picker bindchange="bindCountryChange" value="{{countryindex}}" range="{{country}}" name="country">
             <view class="picker">
               <text>{{country[countryindex]}}</text>
             </view>
@@ -20,7 +21,7 @@
   <view class="hr"></view><view class="name">
     <view class="label">省/州:</view>
     <view class="input-wrap">
-      <picker bindchange="bindProvinceChange" value="{{provinceindex}}" range="{{province}}">
+      <picker bindchange="bindProvinceChange" value="{{provinceindex}}" name="province" range="{{province}}">
             <view class="picker">
               <text>{{province[provinceindex]}}</text>
             </view>
@@ -30,7 +31,7 @@
   <view class="hr"></view><view class="name">
     <view class="label">城市:</view>
     <view class="input-wrap">
-          <picker bindchange="bindCityChange" value="{{cityindex}}" range="{{city}}">
+          <picker name='city' bindchange="bindCityChange" value="{{cityindex}}" range="{{city}}">
             <view class="picker">
               <text>{{city[cityindex]}}</text>
             </view>
@@ -41,21 +42,21 @@
   <view class="name">
     <view class="label">地址:</view>
     <view class="input-wrap">
-          <input class="input" placeholder="街道地址" />
+          <input name="address" class="input" placeholder="街道地址" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">邮编:</view>
     <view class="input-wrap">
-          <input class="input" placeholder="邮政编码" />
+          <input name="mailcode" type="number" class="input" placeholder="邮政编码" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">电话:</view>
     <view class="input-wrap">
-          <input class="input" placeholder="联系方式" />
+          <input name="mobile" class="input" placeholder="联系方式" />
     </view>
   </view>
   <view class="hr"></view>
@@ -63,5 +64,6 @@
 </view>
 
 <view class="btn-wrap">
-  <button class="btn" style="background-color:#0398e7">保存</button>
+  <button form-type="submit" class="btn" style="background-color:#0398e7">保存</button>
 </view>
+</form>

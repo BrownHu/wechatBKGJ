@@ -17,7 +17,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      // var origin=options.origin;
+      // if(origin=="merge"){
+      //   wx.redirectTo({
+      //     url: '../../pages/mergeTrans/mergeTrans',
+      //   })
+      // }
   },
 
   /**
@@ -67,5 +72,17 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + utl + '/' + url,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
+  },
 })

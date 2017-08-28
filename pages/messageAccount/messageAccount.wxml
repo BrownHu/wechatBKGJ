@@ -4,24 +4,26 @@
         <text class="left-in">系统通知</text>
     </view>
     <view class="right">
-        <text class="right-in">投诉建议</text>
+        <text class="right-in" data-url="adviceAccount" bindtap="jump">投诉建议</text>
     </view>
 </view>
 
+<block  wx:for="{{messages}}">
 <view class="record">
-    <view class="on">
-       <text class="action">订单即将关闭</text>
+    <view class="on" bindtap="toDetail" data-id="{{item.id}}" >
+       <text class="action">{{item.title}}</text>
        <text class="money">></text>
     </view>
     <view class="hr"></view>
     <view class="shortintro">
-      您有一笔订单即将关闭，再不付款宝贝就没啦，快去看看吧~
+      {{item.body}}
     </view>
   <view class="under">
-       <text class="time">2017-04-15 14:20</text>
+       <text class="time">{{item.date}}</text>
   </view>
 </view>
-<view class="record">
+</block>
+<!-- <view class="record">
     <view class="on">
        <text class="action">下单失败</text>
        <text class="money">></text>
@@ -46,6 +48,6 @@
   <view class="under">
        <text class="time">2017-04-10 18:22</text>
   </view>
-</view>
+</view> -->
 
 

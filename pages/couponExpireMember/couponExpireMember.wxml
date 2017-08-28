@@ -1,13 +1,13 @@
 <!--couponExpireMember.wxml-->
 
 <view class="top">
-  <view class="noused"> 
+  <view class="noused" bindtap="jump" data-url="couponNousedMember"> 
       未使用 <text class="count">2</text> 
   </view>
-  <view class="used">
+  <view class="used" bindtap="jump" data-url="couponUsedMember">
         已使用 <text class="count">1</text>
   </view>
-  <view class="expire">
+  <view class="expire" >
         已过期 <text class="count">1</text>
   </view>
 </view>

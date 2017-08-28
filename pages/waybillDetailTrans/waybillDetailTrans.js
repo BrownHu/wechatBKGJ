@@ -12,7 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var trace=options.trace
+      console.log(trace+" 当前跟踪号，调用接口，重置当前页数据");
+
   },
 
   /**

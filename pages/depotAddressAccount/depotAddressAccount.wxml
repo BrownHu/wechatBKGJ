@@ -1,7 +1,7 @@
 <!--depotAddressAccount.wxml-->
 <view class="in">
     <view class="left">
-        <text class="left-in">基本资料</text>
+        <text class="left-in" bindtap="jump" data-url="baseinfoAccount">基本资料</text>
     </view>
     <view class="right">
         <text class="right-in">仓库地址</text>

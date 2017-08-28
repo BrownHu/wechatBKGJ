@@ -43,5 +43,5 @@
 </view>
 </block>
 <view class="add-button">
-  <button class="btn" size="default" type="primary" style="background-color:#0398e7;">+添加新地址</button>
+  <button class="btn" size="default" type="primary" style="background-color:#0398e7;" bindtap="jump" data-url="addressAddMember">+添加新地址</button>
 </view>

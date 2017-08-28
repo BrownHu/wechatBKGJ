@@ -1,24 +1,25 @@
 <!--bindAccount.wxml 绑定账号-->
+<form bindsubmit="formSubmit">
 <view class="top-switch">
     <view class="left">
         <button class="lbutton" bindtap="default"> 绑定已有账号 </button>
     </view>
     <view class="right">
-        <button  class="rbutton" bindtap="default"> 注册新的账号 </button>
+        <button  class="rbutton" bindtap="default" data-url="registerAccount" bindtap="jump" > 注册新的账号 </button>
     </view>
 </view>
 
 <view class="form-here">
     <!-- <view class="form-account"> -->
-        <input class="form-account" placeholder="请输入原登录账号"/>
+        <input class="form-account" name="account" placeholder="请输入原登录账号"/>
         <view class="hr"></view>
     <!-- </view> -->
     <!-- <view class="form-password"> -->
-        <input class="form-password" placeholder="请输入原登录密码" />
+        <input class="form-password" name="password" placeholder="请输入原登录密码" />
         <view class="hr" style="margin-top:5px;"></view>
     <!-- </view> -->
 </view>
 <view class="submit">
-    <button class="sub-button">确认绑定</button>
+    <button form-type="submit" class="sub-button">确认绑定</button>
 </view>
-
+</form>

@@ -6,6 +6,6 @@
     </view>
 </view>
 <view class="btn-group">
-  <button type="primary" style="background-color:#f9364f" class="continue">+继续转运</button>
-  <button type="primary" style="background-color:#c9c9c9;color:#656565"  class="see">查看运单</button>
+  <button type="primary" style="background-color:#f9364f" class="continue" bindtap="jump" data-url="packagePredictTrans">+继续转运</button>
+  <button type="primary" style="background-color:#c9c9c9;color:#656565"  class="see" bindtap="jump" data-url="waybillDetailTrans" >查看运单</button>
 </view>

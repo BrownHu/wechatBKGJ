@@ -1,6 +1,6 @@
   <view class="member">
     <view class="wraper">
-        <view class="head">
+        <view class="head" data-url="bindAccount" bindtap="jump">
             <image src="../../images/member/head.png" class="headimg" mode="aspectFit"></image>
             <view class="name">布兰奇MA</view>
             <text class="more">></text>
@@ -8,7 +8,7 @@
     </view>
 </view>
 <view class="tool">
-    <view class="common">
+    <view class="common" data-url="mywaybillTrans" bindtap="jump">
         <view class="img">
           <image src="../../images/member/1.png" class="tool-img" mode="aspectFit" ></image>
         </view>
@@ -16,35 +16,35 @@
           我的运单
         </view>
     </view>
-    <view class="common">
+    <view class="common" data-url="arrivedPackageTrans" bindtap="jump">
         <view class="img">
           <image src="../../images/member/2.png" class="tool-img" mode="aspectFit" ></image>
         </view>
         <view class="desc">
-          我的运单
+          我的包裹
         </view>
     </view>
-    <view class="common">
+    <view class="common" data-url="messageAccount" bindtap="jump">
         <view class="img">
           <image src="../../images/member/3.png" class="tool-img" mode="aspectFit" ></image>
         </view>
         <view class="desc">
-          我的运单
+          我的消息
         </view>
     </view>
-    <view class="common">
+    <view class="common" data-url="balanceAccount" bindtap="jump">
         <view class="img">
           <image src="../../images/member/4.png" class="tool-img" mode="aspectFit" ></image>
         </view>
         <view class="desc">
-          我的运单
+          账户管理
         </view>
     </view>
 </view>
 
 
 <view class="part-bottom">
-    <view class="part-wrap">
+    <view class="part-wrap"  data-url="baseinfoAccount" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/11.png" mode="aspectFit"></image>
         </view>
@@ -54,7 +54,7 @@
         <text class="right-arrow">></text>
     </view>
     <view class="sep"></view>
-    <view class="part-wrap">
+    <view class="part-wrap" data-url="couponNousedMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/22.png" mode="aspectFit"></image>
         </view>
@@ -64,7 +64,7 @@
         <text class="right-arrow">></text>
     </view>
      <view class="sep"></view>
-    <view class="part-wrap">
+    <view class="part-wrap" data-url="addressIndexMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/33.png" mode="aspectFit"></image>
         </view>
@@ -74,7 +74,7 @@
         <text class="right-arrow">></text>
     </view>
      <view class="sep"></view>
-    <view class="part-wrap">
+    <view class="part-wrap" data-url="helpcentreMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/44.png" mode="aspectFit"></image>
         </view>
@@ -83,7 +83,7 @@
         </view>
         <text class="right-arrow">></text>
     </view> <view class="sep"></view>
-    <view class="part-wrap">
+    <view class="part-wrap" data-url="aboutAgentMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/55.png" mode="aspectFit"></image>
         </view>

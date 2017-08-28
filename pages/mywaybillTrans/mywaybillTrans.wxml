@@ -18,22 +18,25 @@
           <view class="trace ">跟踪号</view>
           <view class="action ">操作</view>
       </view>
+      <block wx:for="{{waybills}}" >
        <view class="row detail">
-          <view class="commitTime center">2017-07-11</view>
+          <view class="commitTime center">{{item.date}}</view>
           <view class="peopleWay center">
-             <text class="name">布兰奇MA</text>
-             <text class="number">456464346445</text>
+             <text class="name">{{item.people}}</text>
+             <text class="number">{{item.number}}</text>
           </view>
           <view class="trace center">
-          <text class="status">布兰奇MA</text>
-             <text class="traceNum">4646464</text>
+          <text class="status">{{item.status ==1 ?   "处理中" :  (item.status==2 ? "已发货" : "已签收") }}</text>
+             <text class="traceNum">{{item.trace}}</text>
           </view>
           <view class="action centerme">
-            <button type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini">查看</button>
+            <button  type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini" data-trace="{{item.trace}}" bindtap="see">查看</button>
+            <button wx:if="{{item.status==2}}" type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " data-trace="{{item.trace}}" bindtap="see" size="mini">收货</button>
 
           </view>
       </view>
-       <view class="row detail">
+      </block>
+       <!-- <view class="row detail">
           <view class="commitTime center">2017-07-11</view>
           <view class="peopleWay center">
              <text class="name">布兰奇MA</text>
@@ -62,7 +65,7 @@
             <button type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini">查看</button>
             <button type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " size="mini">收货</button>
           </view>
-      </view>
+      </view> -->
       
   </view>
 

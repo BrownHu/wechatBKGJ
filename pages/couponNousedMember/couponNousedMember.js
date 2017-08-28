@@ -65,5 +65,17 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + utl + '/' + url,
+      })
+    } else {
+      wx.redirectTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
+  },
 })

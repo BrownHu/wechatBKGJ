@@ -1,8 +1,8 @@
 <!--adviceAccount.wxml-->
-
+<form bindsubmit="formSubmit">
 <view class="in">
     <view class="left">
-        <text class="left-in">系统通知</text>
+        <text class="left-in" data-url="messageAccount" bindtap="jump">系统通知</text>
     </view>
     <view class="right">
         <text class="right-in">投诉建议</text>
@@ -21,26 +21,26 @@
   
       <view class="first">
           <text class="label">类别:</text>
-          <!-- <input class="first-input" placeholder="这是一个可以自动聚焦的input" auto-focus/> -->
-                <radio-group class="radio-group" bindchange="radioChange">
+                <radio-group class="radio-group" name="type" >
                   <label class="radio" wx:for="{{items}}">
-                    <radio name="adtype" value="{{item.name}}" color="#f9364f" checked="{{item.checked}}"/>{{item.value}}
+                    <radio name="adtype" value="{{item.name}}" color="#f9364f"  checked="{{item.checked}}"/>{{item.value}}
                   </label>
                 </radio-group>
       </view>
       <view class="second">
           <text class="label">标题:</text>
-          <input class="second-input" placeholder="" name='title' />
+          <input class="second-input" name="title" placeholder="" name='title' />
       </view>
       <view class="last">
           <text class="label">描述:</text>
-          <textarea class="third-input" placeholder="请把你遇到的问题或者建议写出来吧" placeholder-style="color:#999999;" name="description"  />        
+          <textarea class="third-input" name="description" placeholder="请把你遇到的问题或者建议写出来吧" placeholder-style="color:#999999;" name="description"  />        
       </view>
   </view>
 </view>
 
 <view class="submit">
-    <button class="left-button">提交问题</button>
-    <button class="right-botton">清空问题</button>
+    <button class="left-button" form-type="submit">提交问题</button>
+    <button class="right-botton" bindtap="clearQue">清空问题</button>
 </view>
+</form>
 

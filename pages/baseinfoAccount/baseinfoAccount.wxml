@@ -1,22 +1,23 @@
 <!--baseinfoAccount.wxml-->
+<form bindsubmit="formSubmit">
 <view class="in">
     <view class="left">
         <text class="left-in">基本资料</text>
     </view>
     <view class="right">
-        <text class="right-in">仓库地址</text>
+        <text class="right-in" data-url="depotAddressAccount" bindtap="jump">仓库地址</text>
     </view>
 </view>
 <view class="form-here">
     <!-- <view class="form-account"> -->
         <view class="info-wrap" style="margin-top:0">
           <text class="label">姓名:</text>
-          <input class="form-account"  />
+          <input class="form-account"  name="name" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap" style="margin-bottom:20px">
           <text class="label">性别:</text>
-                <radio-group  class="radio-group" bindchange="radioChange">
+                <radio-group  class="radio-group" name="sex">
                   <label class="radio" wx:for="{{items}}">
                     <radio  name="adtype" value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
                   </label>
@@ -24,35 +25,36 @@
         </view>
         <view class="info-wrap">
           <text class="label">国家:</text>
-          <input class="form-account"  />
+          <input class="form-account" name="country"  />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">省/州:</text>
-          <input class="form-account"  />
+          <input class="form-account"  name="province" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">城市:</text>
-          <input class="form-account"  />
+          <input class="form-account"  name="city" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">地址:</text>
-          <input class="form-account"  />
+          <input class="form-account" name="address" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">邮编:</text>
-          <input class="form-account"  />
+          <input class="form-account"  name="mailcode" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">电话:</text>
-          <input class="form-account"  />
+          <input class="form-account" name="mobile"  />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
 </view>
 <view class="submit">
-    <button class="sub-button">免费注册</button>
+    <button class="sub-button" form-type="submit">提交修改</button>
 </view>
+</form>

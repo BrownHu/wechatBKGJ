@@ -71,13 +71,13 @@ Page({
   },
   jump: function (e) {
     var id = e.currentTarget.dataset.id;
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../../pages/announceDetail/announceDetail?id='+id,
     })
   },
   formSubmit: function (e) {
     console.log('传值处理..')
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../../pages/mergeTrans/mergeTrans',
     })
   },

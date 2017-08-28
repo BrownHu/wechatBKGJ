@@ -1,5 +1,7 @@
 // pages/packagePredictTrans/packagePredictTrans.js
-var app=getApp()
+var app=getApp();
+var utils=require('../../utils/util.js')
+
 Page({
 
   /**
@@ -9,10 +11,10 @@ Page({
     index: 0,
     depotindex:0,
     array:
-    ["百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
+    ["请选择","百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
     
     depot:[
-      "中国 广东 东莞仓","上海仓"
+      "请选择","中国 广东 东莞仓","上海仓"
     ],
     goods:app.globalData.goods
   },
@@ -96,7 +98,7 @@ Page({
   },
   addGood:function(){
       app.globalData.goods.push({})
-      wx.redirectTo({
+      wx.reLaunch({
         url: '../../pages/packagePredictTrans/packagePredictTrans',
       })
   },
@@ -108,37 +110,44 @@ Page({
         if (res.confirm) {
           var id=e.currentTarget.dataset.index
           app.globalData.goods.splice(id,1)
-          wx.redirectTo({
+          wx.reLaunch({
             url: '../../pages/packagePredictTrans/packagePredictTrans',
           })
         } else if (res.cancel) {
           
         }
       }
-    })
-    this.say()
-   
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
+    })  
+  },
+  formSubmit: function (e) {
+    var form = {}
+    form.depot = e.detail.value.depot;
+    form.express = e.detail.value.express;
+    form.waybill = e.detail.value.waybill;
+    form.remark = e.detail.value.remark;
+    var formComplete = utils.IsComplete(form)
+    if (formComplete) {
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success',
+        mask: true,
+        duration: 3000,
+        complete: function () {
+          console.log(form)
+          wx.redirectTo({
+            url: '../mergeTrans/mergeTrans',
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '所有字段必填',
+        image: '../../icon/error.png'
+      })
+    }
 
-    // setTimeout(function () {
-    //   wx.hideLoading()
-    // }, 2000)
-    // wx.showToast({
-    //   title: '成功',
-    //   icon: 'success',
-    //   duration: 2000,
-    //   mask:true
-    // })
-  
+
   },
-  say:function(){
-    console.log('from say')
-  },
-  formSubmit:function(e){
-        wx.redirectTo({
-          url: '../../pages/mergeTrans/mergeTrans',
-        })
-  }
+
 })

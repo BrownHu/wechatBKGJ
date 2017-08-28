@@ -1,4 +1,5 @@
 // adviceAccount.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
@@ -67,5 +68,51 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  jump: function (e) {
+    var url = e.currentTarget.dataset.url;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + utl + '/' + url,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
+  },
+  formSubmit: function (e) {
+    var form = {}
+    // 0 订单 1 运单 2 客服 3 其他
+    form.type = e.detail.value.type;
+    form.title = e.detail.value.title;
+    form.description = e.detail.value.description;
+    var formComplete = utils.IsComplete(form)
+    if (formComplete) {
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success',
+        mask: true,
+        duration: 3000,
+        complete: function () {
+          console.log(form)
+          // 接口存操作
+          wx.switchTab({
+            url: '../member/member',
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '所有字段必填',
+        image: '../../icon/error.png'
+      })
+    }
+  },
+  clearQue:function(){
+    wx.reLaunch({
+      url: '../../pages/adviceAccount/adviceAccount',
+    })
   }
 })
