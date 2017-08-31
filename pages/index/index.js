@@ -1,8 +1,9 @@
 var util=require('util.js');
+var app=getApp();
 Page({
 
   data: {
-
+    open:'',
     swiperHeight:0,
     height:0,
     imgUrls: [
@@ -14,7 +15,17 @@ Page({
     interval: 5000,
     duration: 1000
   },
-
+  onLoad:function(options){
+      var that=this
+      wx.getStorage({
+        key: 'openId',
+        success: function(res) {
+          that.setData({
+            open:res.data
+          })
+        },
+      })
+  },
   hubing:function(e){
     var height = util.ImageUtil(e);
     this.setData({

@@ -35,7 +35,7 @@
     <view class="th">商品分类</view>
     <view class="th ">可否邮寄</view>
     <view class="th">寄送方式</view>
-    <view class="th" style="border-right:1rpx solid #c8c8c8;">限重(KG)</view>
+    <view class="th" style="border-right:1rpx solid #c8c8c8;">备注原因</view>
   </view>
      <view class="tr">
      <view class="td">{{kind}}</view>

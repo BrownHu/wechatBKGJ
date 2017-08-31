@@ -16,6 +16,8 @@ position:relative;
 .headimg{
   height:50px;
 width:50px;
+border-radius:50%;
+
 
 
 }

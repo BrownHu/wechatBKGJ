@@ -59,7 +59,9 @@
             <image style="height:{{height}}px" src="../../images/index/6.png" mode="aspectFit" bindload="hubing" class="model-img" bindtap="jump" data-jump="expense"></image>
       </view>
     </view> 
-
+<view style='color:red;font-size:15px'>openId
+<text style='color:black'>{{open}}</text>
+</view>
 </view>
 
 
