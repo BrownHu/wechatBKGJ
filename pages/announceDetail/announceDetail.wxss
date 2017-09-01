@@ -9,7 +9,7 @@ page{
 }
 .out_wrap{
   background-color: #ffffff;
-   min-height: 320px;
+   /* min-height: 320px; */
   padding: 20px 10px 5px 10px;
 }
  .title {
@@ -35,8 +35,9 @@ text{
   color: rgba(0,0,0,0.7);
 }
 .right{
-  float: right;
-    color: rgba(0,0,0,0.4);
+  position: absolute;
+  right: 10px;
+  
 
 }
 .bottom{

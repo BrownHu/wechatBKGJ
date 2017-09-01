@@ -25,7 +25,14 @@ const formatNumber = n => {
 
   }
 
+  var ForRegister=function (email) {
+   var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+   return reg.test(email);
+ } 
+ 
+
 module.exports = {
   formatTime: formatTime,
-  IsComplete: IsComplete
+  IsComplete: IsComplete,
+  ForRegister: ForRegister
 }

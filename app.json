@@ -1,9 +1,12 @@
 {
   "pages": [
+            
         "pages/index/index",
         "pages/packagePredictTrans/packagePredictTrans",
         "pages/member/member",
         "pages/mergeTrans/mergeTrans",
+                    "pages/registerAccount/registerAccount",
+                    
         "pages/addressIndexMember/addressIndexMember",
         "pages/couponUsedMember/couponUsedMember",
         "pages/couponNousedMember/couponNousedMember",
@@ -12,7 +15,6 @@
         "pages/messageDetailAccount/messageDetailAccount",
         "pages/onwayPackageTrans/onwayPackageTrans",
         "pages/mywaybillTrans/mywaybillTrans",
-        "pages/registerAccount/registerAccount",
         "pages/bindAccount/bindAccount",
     "pages/helpcentreAgentMember/helpcentreAgentMember",
     "pages/helpcentreMember/helpcentreMember",

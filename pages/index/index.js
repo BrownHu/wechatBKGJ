@@ -3,7 +3,7 @@ var app=getApp();
 Page({
 
   data: {
-    open:'',
+    // open:'',
     swiperHeight:0,
     height:0,
     imgUrls: [
@@ -16,15 +16,13 @@ Page({
     duration: 1000
   },
   onLoad:function(options){
-      var that=this
-      wx.getStorage({
-        key: 'openId',
-        success: function(res) {
-          that.setData({
-            open:res.data
-          })
-        },
-      })
+
+    wx.getStorage({
+      key: 'userId',
+      success: function (res) {
+        // console.log(res.data.openId+"form index.js")
+      },
+    })
   },
   hubing:function(e){
     var height = util.ImageUtil(e);

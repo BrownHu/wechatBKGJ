@@ -9,8 +9,11 @@
 <!-- <text class="third">大陆：5月29-30日晚不发车；5月31日正常发车，6月1号到港派件！</text> -->
 <!-- <text class="fourth">注：如有货要出客户请提前拉点咨询，不便之处敬请谅解！谢谢！</text> -->
 <!-- <text class="fivth"></text> -->
-</view>
-<view class="bottom">
+
 <text class="right">{{specific.date}}   {{specific.admin}}</text>
+
 </view>
+<view style='min-height:30px'></view>
+
 </view>
+<view style='min-height:20px'></view>

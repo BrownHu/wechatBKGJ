@@ -68,10 +68,10 @@ Page({
     var url = e.currentTarget.dataset.url;
     if (url == "index" || url == "packagePredictTrans" || url == "member") {
       wx.switchTab({
-        url: '../../pages/' + utl + '/' + url,
+        url: '../../pages/' + url + '/' + url,
       })
     } else {
-      wx.redirectTo({
+      wx.navigateTo({
         url: '../../pages/' + url + '/' + url,
       })
     }
@@ -81,16 +81,35 @@ Page({
     form.account=e.detail.value.account;
     form.password=e.detail.value.password;
     var formComplete=utils.IsComplete(form)
+
     if(formComplete){
+      // console.log(form)
+      wx.getStorage({
+        key: 'openId',
+        success: function(res) {
+          // console.log(res.data)
+          wx.request({                      url:'https://api.beckbuy.com/api/bindAccount',
+          mathod:"POST",
+          data:{
+            account:form.account,
+            password:form.password,
+            openId:res.data
+          },
+          success:suc=>{
+            console.log(suc)
+          }
+          })
+        },
+      })
            wx.showToast({
       title: '绑定成功',
       icon: 'success',
       mask:true,
       duration: 3000,
       complete:function(){
-        wx.switchTab({
-          url: '../member/member',
-        })
+        // wx.switchTab({
+        //   url: '../member/member',
+        // })
       }
     })
     }else{

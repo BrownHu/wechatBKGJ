@@ -76,7 +76,7 @@ Page({
   },
   formSubmit: function (e) {
       var form=e.detail.value;
-      var result = parseInt(form.width) + parseInt(form.height) +parseInt(form.length)
+      var result = parseInt(form.width) * parseInt(form.height)*parseInt(form.length)
       this.setData({
         result: result,
         resultHidden:false
