@@ -5,7 +5,7 @@
       <image class="icon-image"  src="../../images/member/1111.png"></image>
       </view>
       <view class="word">
-        业务类型
+        {{Pname[0]}}
       </view>
     </view>
     <view class="rightImg">
@@ -13,8 +13,8 @@
     </view>
 </view>
 <view class="belongFirst" hidden="{{onehidden}}">
-  <block wx:for="{{Firstsubmenu}}">
-      <view class="subwrap" bindtap="jump">
+  <block wx:for="{{child[0]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">
@@ -31,7 +31,7 @@
       <image class="icon-image"  src="../../images/member/2222.png"></image>
       </view>
       <view class="word">
-        账户资产
+        {{Pname[1]}}
       </view>
     </view>
     <view class="rightImg">
@@ -39,8 +39,8 @@
     </view>
 </view>
 <view class="belongFirst" hidden="{{twohidden}}">
-  <block wx:for="{{Secondsubmenu}}">
-      <view class="subwrap">
+  <block wx:for="{{child[1]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">
@@ -57,7 +57,7 @@
       <image class="icon-image"  src="../../images/member/3333.png"></image>
       </view>
       <view class="word">
-        配送说明
+        {{Pname[2]}}
       </view>
     </view>
     <view class="rightImg">
@@ -65,8 +65,8 @@
     </view>
 </view>
 <view class="belongFirst" hidden="{{threehidden}}">
-  <block wx:for="{{Thirdsubmenu}}">
-      <view class="subwrap">
+  <block wx:for="{{child[2]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">
@@ -83,7 +83,7 @@
       <image class="icon-image"  src="../../images/member/4444.png"></image>
       </view>
       <view class="word">
-        售后服务
+        {{Pname[3]}}
       </view>
     </view>
     <view class="rightImg">
@@ -91,8 +91,8 @@
     </view>
 </view>
 <view class="belongFirst" hidden="{{fourhidden}}">
-  <block wx:for="{{Fourthsubmenu}}">
-      <view class="subwrap">
+  <block wx:for="{{child[3]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">
@@ -109,7 +109,7 @@
       <image class="icon-image"  src="../../images/member/5555.png"></image>
       </view>
       <view class="word">
-        用户须知
+        {{Pname[4]}}
       </view>
     </view>
     <view class="rightImg">
@@ -117,8 +117,60 @@
     </view>
 </view>
 <view class="belongFirst" hidden="{{fivehidden}}">
-  <block wx:for="{{Fivethsubmenu}}">
-      <view class="subwrap">
+  <block wx:for="{{child[4]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+<view class="first" bindtap="sixTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/4444.png"></image>
+      </view>
+      <view class="word">
+        {{Pname[5]}}
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[sixArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{sixhidden}}">
+  <block wx:for="{{child[5]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
+        <view class="one">
+            <view class="name">{{item.name}}</view>
+            <view class="img">
+                <image class="right-arrow" src="../../images/common/Arrow-right.png"></image>           
+            </view>
+        </view>
+        <view class="hr"></view>
+      </view>
+  </block>   
+</view>
+<view class="first" bindtap="sevenTap">
+    <view class="wrap">
+      <view class="icon">
+      <image class="icon-image"  src="../../images/member/4444.png"></image>
+      </view>
+      <view class="word">
+        {{Pname[6]}}
+      </view>
+    </view>
+    <view class="rightImg">
+      <image class="top-arrow" src="{{outArrow[sevenArrowIndex]}}"></image>
+    </view>
+</view>
+<view class="belongFirst" hidden="{{sevenhidden}}">
+  <block wx:for="{{child[6]}}">
+      <view class="subwrap" data-id="{{item.id}}" bindtap="jump">
         <view class="one">
             <view class="name">{{item.name}}</view>
             <view class="img">

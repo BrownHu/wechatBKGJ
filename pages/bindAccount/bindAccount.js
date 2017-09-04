@@ -1,19 +1,20 @@
 // bindAccount.js
 var utils=require('../../utils/util.js')
+var app=getApp()
+var temp = app.globalData.hubing
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-  
+      submitDisable:temp
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(this.data.submitDisable)
   },
 
   /**

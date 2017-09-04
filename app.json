@@ -1,15 +1,15 @@
 {
   "pages": [
-            
+                    
         "pages/index/index",
         "pages/packagePredictTrans/packagePredictTrans",
         "pages/member/member",
         "pages/mergeTrans/mergeTrans",
-                    "pages/registerAccount/registerAccount",
+                                        "pages/couponNousedMember/couponNousedMember",
+                                        "pages/registerAccount/registerAccount",
                     
         "pages/addressIndexMember/addressIndexMember",
         "pages/couponUsedMember/couponUsedMember",
-        "pages/couponNousedMember/couponNousedMember",
         "pages/baseinfoAccount/baseinfoAccount",                            
         "pages/messageAccount/messageAccount",           
         "pages/messageDetailAccount/messageDetailAccount",

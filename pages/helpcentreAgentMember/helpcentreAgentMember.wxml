@@ -1,13 +1,13 @@
 <!--pages/helpcentreAgentMember/helpcentreAgentMember.wxml-->
 <view class="top">
   <view class="topbefore"></view>
-  <view class="title">代购</view>
+  <view class="title">{{topName}}</view>
 </view>
 
 <view class="questions">
-  <block wx:for="{{questions}}">
-    <view class="common" bindtap="jump">
-    {{questions[index]}}
+  <block wx:for="{{child}}">
+    <view class="common" data-top="{{topName}}" data-id="{{item.qid}}" bindtap="jump">
+    {{item.title}}
     </view>
   </block>
 </view>

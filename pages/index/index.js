@@ -16,12 +16,10 @@ Page({
     duration: 1000
   },
   onLoad:function(options){
-
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        // console.log(res.data.openId+"form index.js")
-      },
+      }
     })
   },
   hubing:function(e){

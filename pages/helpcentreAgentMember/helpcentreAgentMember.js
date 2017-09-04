@@ -5,32 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    questions: [
-      "1、佰客国际-佰客集运&国际转运购物发票如何获取 >>",
-      "2、挑选商品-佰客集运&国际转运 >>",
-      "3、如何用电脑端快速代购 >>",
-      "4、如何生成订单 >>",
-      "5、订单、运单状态说明 >>",
-      "6、如何跟踪运单 >>",
-      "7、可以代购订制类商品么？>>",
-      "8、代购的商品，佰客国际会帮我验货吗？>>",
-      "9、卖家送的赠品佰客国际如何处理？也会验货么？>>",
-      "10、代购订单已经支付完毕，为什么还需要补款？>>",
-      "11、商品“已入库”接下来需要我如何操作呢？ >>",
-      "12、代购与包裹转运的区别 >>",
-      "13、什么是代购 >>",
-      "14、代购流程 >>",
-      "15、代购的相关费用 >>",
-      "16、代购怎么付钱，我不知道一共要付多少钱？什么时候付？>>"
-
-      ]
+    topName:null,
+      child:{},
+      
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var id=options.id
+      var that=this
+      wx.request({
+        url: 'https://api.beckbuy.com/api/helpCentre/questions/'+id,
+        success:res=>{
+          var top=res.data.result.TopName
+          top=top==null?"暂无数据":top
+          var child=res.data.result.child
+          that.setData({
+            topName:top,
+            child:child
+          })
+        }
+      })
   },
 
   /**
@@ -81,9 +78,11 @@ Page({
   onShareAppMessage: function () {
   
   },
-jump:function(){
-  wx.redirectTo({
-    url: '../../pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember',
+jump:function(e){
+  var id=e.currentTarget.dataset.id
+  var top=e.currentTarget.dataset.top
+  wx.navigateTo({
+    url: '../../pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember?id='+id+"&top="+top,
   })
 }
 })

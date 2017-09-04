@@ -30,7 +30,6 @@ const formatNumber = n => {
    return reg.test(email);
  } 
  
-
 module.exports = {
   formatTime: formatTime,
   IsComplete: IsComplete,

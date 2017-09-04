@@ -1,20 +1,28 @@
-// pages/helpcentreAgentdetailMember/helpcentreAgentdetailMember.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  questions:[
-    { "q": "1、佰客国际-佰客集运&国际转运购物发票如何获取 >>", "r":"您的每一笔消费，佰客集运&国际转运均可为您开具正式发票（商品发票由供应商开具。鉴于目前网络购物实际情况，淘宝网等拍卖网站绝大部分卖家将不会开具发票）。不过，鉴于海关可能会依据发票金额对您的货物征收关税，通常，佰客集运&国际转运并不会随包裹寄送。"}
-  ]
+  topTitle:'',
+  questions:{},
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var that=this
+      var id=options.id
+      var topName=options.top
+      wx.request({
+        url: 'https://api.beckbuy.com/api/helpCentre/detail/'+id,
+        success:res=>{
+           that.setData({
+             questions:res.data.result,
+             topTitle:topName
+           })
+        }
+      })
   },
 
   /**

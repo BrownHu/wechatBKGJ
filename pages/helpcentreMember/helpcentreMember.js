@@ -10,53 +10,44 @@ Page({
       threehidden: true,
       fourhidden: true,
       fivehidden: true,
+      sixhidden:true,
+      sevenhidden:true,
       oneArrowIndex:0,
       twoArrowIndex:1,
       threeArrowIndex:1,
       fourArrowIndex:1,
       fiveArrowIndex:1,
+      sixArrowIndex:1,
+      sevenArrowIndex:1,
+      Pname:{},
+      child:{},
       outArrow: ["../../images/common/helparrow-top.png","../../images/common/helparrow-bottom.png"],
-      Firstsubmenu:[
-        {"name":"代购","url":""},
-        { "name": "国际转运", "url": "" },
-        { "name": "商城", "url": "" },
-        { "name": "自助购", "url": "" },
-      ],
-      Secondsubmenu: [
-        { "name": "账号注册", "url": "" },
-        { "name": "修改密码及找回密码", "url": "" },
-        { "name": "充值查询及退款", "url": "" },
-        { "name": "支付方式", "url": "" },
-        { "name": "收货地址", "url": "" },
-
-      ],
-      Thirdsubmenu: [
-        { "name": "配送方式", "url": "" },
-        { "name": "提交订单", "url": "" },
-        { "name": "邮寄限制", "url": "" },
-        { "name": "海关及税项", "url": "" },
-      ],
-      Fourthsubmenu: [
-        { "name": "商品退换货", "url": "" },
-        { "name": "联系客服", "url": "" },
-        { "name": "查询物流", "url": "" },
-        { "name": "商品异常", "url": "" },
-        { "name": "包裹丢失", "url": "" },
-
-      ], 
-      Fivethsubmenu: [
-        { "name": "参见问题", "url": "" },
-        { "name": "商品保管期限", "url": "" },
-        { "name": "用户隐私和保护规则", "url": "" },
-        { "name": "寄送限制", "url": "" },
-      ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    wx.showLoading({
+      title: '加载中',
+    })
+      wx.request({
+        url: 'https://api.beckbuy.com/api/helpCentre',
+        success:res=>{
+          var  Pname=Array()
+          var  child=Array()
+          for(var i=0;i<res.data.result.length;i++){
+            Pname.push(res.data.result[i].name)
+            child.push(res.data.result[i].child)
+          }
+            that.setData({
+              Pname:Pname,
+              child:child
+            })
+          wx.hideLoading()
+        }
+      })
   },
 
   /**
@@ -147,9 +138,27 @@ Page({
       fiveArrowIndex: outArrowIndex
     })
   },
-  jump:function(){
-    wx.redirectTo({
-      url: '../../pages/helpcentreAgentMember/helpcentreAgentMember',
+  sixTap: function () {
+    var firstHidden = this.data.sixhidden === true ? false : true
+    var outArrowIndex = firstHidden ? 1 : 0;
+    this.setData({
+      sixhidden: firstHidden,
+      sixArrowIndex: outArrowIndex
+    })
+  },
+  sevenTap: function () {
+    var firstHidden = this.data.sevenhidden === true ? false : true
+    var outArrowIndex = firstHidden ? 1 : 0;
+    this.setData({
+      sevenhidden: firstHidden,
+      sevenArrowIndex: outArrowIndex
+    })
+  },
+  jump:function(e){
+    var id=e.currentTarget.dataset.id;
+    console.log(id);
+    wx.navigateTo({
+      url: '../../pages/helpcentreAgentMember/helpcentreAgentMember?id='+id,
     })
   }
 })
