@@ -4,59 +4,62 @@
   <view class="name">
     <view class="label">姓名:</view>
     <view class="input-wrap">
-          <input class="input" placeholder="收货人姓名" name="name" />
+          <input class="input" value='{{forEdit.receiver}}' placeholder="收货人姓名" name="name" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">国家:</view>
     <view class="input-wrap">
-          <picker bindchange="bindCountryChange" value="{{countryindex}}" range="{{country}}" name="country">
+          <!-- <picker bindchange="bindCountryChange" value="{{countryindex}}" range="{{country}}" name="country">
             <view class="picker">
               <text>{{country[countryindex]}}</text>
             </view>
-          </picker>
+          </picker> -->
+ <input class="input"  value='{{forEdit.country}}' placeholder='国家' name="country" />
     </view>
   </view>
   <view class="hr"></view><view class="name">
     <view class="label">省/州:</view>
     <view class="input-wrap">
-      <picker bindchange="bindProvinceChange" value="{{provinceindex}}" name="province" range="{{province}}">
+      <!-- <picker bindchange="bindProvinceChange" value="{{provinceindex}}" name="province" range="{{province}}">
             <view class="picker">
               <text>{{province[provinceindex]}}</text>
             </view>
-          </picker>
+          </picker> -->
+           <input class="input"  value='{{forEdit.state}}' placeholder="省/州" name="province" />
     </view>
   </view>
   <view class="hr"></view><view class="name">
     <view class="label">城市:</view>
     <view class="input-wrap">
-          <picker name='city' bindchange="bindCityChange" value="{{cityindex}}" range="{{city}}">
+          <!-- <picker name='city' bindchange="bindCityChange" value="{{cityindex}}" range="{{city}}">
             <view class="picker">
               <text>{{city[cityindex]}}</text>
             </view>
-          </picker>
+          </picker> -->
+           <input class="input"  value='{{forEdit.city}}' placeholder="城市" name="city" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">地址:</view>
     <view class="input-wrap">
-          <input name="address" class="input" placeholder="街道地址" />
+          <input name="address" value='{{forEdit.detailAddress}}' class="input" placeholder="街道地址" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">邮编:</view>
     <view class="input-wrap">
-          <input name="mailcode" type="number" class="input" placeholder="邮政编码" />
+          <input name="mailcode" value='{{forEdit.zip}}'  type="number" class="input" placeholder="邮政编码" />
     </view>
   </view>
   <view class="hr"></view>
   <view class="name">
     <view class="label">电话:</view>
     <view class="input-wrap">
-          <input name="mobile" class="input" placeholder="联系方式" />
+          <input name="mobile" value='{{forEdit.mobile}}' class="input" placeholder="联系方式" />
     </view>
   </view>
   <view class="hr"></view>

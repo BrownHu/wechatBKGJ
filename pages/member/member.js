@@ -1,6 +1,6 @@
 // member.js
-const app=getApp();
-
+var app=getApp();
+var util=require('../../utils/util.js')
 Page({
 
   /**
@@ -14,23 +14,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getStorage({
-      key: 'userId',
-      success: function(res) {
-        console.log(res.data)
+    var that = this
+    var url = 'baseInfo'
+    var data = {}
+    util.allRequest(url, data,
+      function (res) {
+        console.log(res);
+          app.globalData.userInfo=res.result
+          that.setData({
+            userInfo:res.result
+          })
       },
-    })
-      if(app.globalData.userInfo){
-          this.setData({
-            userInfo:app.globalData.userInfo
-          })
-      }else{
-        app.userInfoReadyCallback=res=>{
-          this.setData({
-            userInfo:res.userInfo
-          })
-        }
-      }
+      function (res) {
+        console.log(res)
+      },
+      true)
   },
 
   /**
@@ -44,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**

@@ -1,8 +1,8 @@
   <view class="member">
     <view class="wraper">
         <view class="head" data-url="bindAccount" bindtap="jump">
-            <image src="{{userInfo.avatarUrl}}" class="headimg" mode="aspectFit"></image>
-            <view class="name">{{userInfo.nickName}}</view>
+            <image src="{{userInfo.headImg}}" class="headimg" mode="aspectFit"></image>
+            <view class="name">{{userInfo.name}}</view>
             <text class="more">></text>
         </view>
     </view>

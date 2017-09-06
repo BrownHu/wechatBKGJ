@@ -18,6 +18,7 @@ Page({
     var data={}
       util.allRequest(url,data,
       function(res){
+        console.log(res)
           that.setData({
             address:res.result
           })
@@ -96,38 +97,51 @@ Page({
   },
   deleteAddress:function(e){
     var id = e.currentTarget.dataset.id
-    var userid=null;
-    wx.getStorage({
-      key: 'userId',
-      success: function(res) {
-        
-      },
-    })
+    console.log(id)
     wx.showModal({
       title: '收货地址',
       content: '删除',
       confirmColor:"red",
       success:res=>{
         if(res.confirm){
-
-          wx.request({
-            url: 'https://api.beckbuy.com/api/shipAddress',
-            data:{
-              op:"delete",
-              id:id
-            },
-            success:suc=>{
-              if(suc.data.err_code==0){
-                wx.showToast({
-                  title: '删除成功',
-                })
-              }
+        var url='shipAddress'
+        var data={
+          'op':'delete',
+          'id':id
+        }
+        util.allRequest(url,data,
+        function(res){
+          if (res.error_code==0 && res.result.status==0){
+              wx.showToast({
+                title: '删除成功',
+              })
+              setTimeout(function(){
+                  wx.hideToast()
+                  wx.reLaunch({
+                    url: '../addressIndexMember/addressIndexMember',
+                  })
+              })
+            }else{
+              wx.showToast({
+                title: '网络异常，请重试',
+                image:'../../icon/error.png'
+              })
             }
-          })
+        },
+        function(res){
+
+        },true)
         }
       }
-      
     })
-
+  },
+  addNewOrEdit:function(e){
+    var type=e.currentTarget.dataset.type
+    var page ='../addressAddMember/addressAddMember'
+    var param= type == 'edit' ? '?id=' + e.currentTarget.dataset.id :''
+    var url=page+param
+    wx.navigateTo({
+      url: url,
+    })
   }
 })

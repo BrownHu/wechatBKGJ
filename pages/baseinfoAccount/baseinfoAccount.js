@@ -1,19 +1,23 @@
 // baseinfoAccount.js
 var utils=require('../../utils/util.js')
+var app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      baseInfo:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var baseInfo=app.globalData.userInfo
+    this.setData({
+      baseInfo: baseInfo
+    })
   },
 
   /**
@@ -83,7 +87,6 @@ Page({
     form.province = e.detail.value.province;
     form.city = e.detail.value.city;
     form.address = e.detail.value.address;
-    form.province = e.detail.value.province;
     form.mobile = e.detail.value.mobile
     var formComplete = utils.IsComplete(form)
 
@@ -91,16 +94,35 @@ Page({
 
     // }
     if (formComplete) {
-      wx.showToast({
-        title: '修改成功',
-        icon: 'success',
-        mask: true,
+      wx.showLoading({
+        title: '正在修改',
         duration: 3000,
         complete: function () {
-          console.log('complete'+form)
-          wx.switchTab({
-            url: '../member/member',
-          })
+          console.log(form)
+          var url="baseInfo"
+          var data={
+            'op':'update',
+              'name':form.name,
+              'country':form.country,
+              'province':form.province,
+              'city':form.city,
+              'address':form.address,
+              'mobile':form.mobile,
+          }
+          utils.allRequest(url,data,function(res){
+      console.log(res)
+          },
+          function(){
+            
+          },true);
+          wx.hideLoading();
+          setTimeout(function(){
+
+  wx.reLaunch({
+    url: '../member/member',
+  })
+
+          },2000)
         }
       })
     } else {

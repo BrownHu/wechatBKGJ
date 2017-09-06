@@ -67,11 +67,12 @@ display:flex;
 .edit{
 
 display:inline-block;
+padding: 0 10px;
 
 }
 .delete{
 display:inline-block;
-margin-left:10px;
+padding: 0 10px;
 }
 .img{
 height:15px;

@@ -125,7 +125,7 @@ Page({
               setTimeout(function () {
                 wx.hideToast()
                 wx.reLaunch({
-                  url: '../member/member',
+                  url: '../index/index',
                 })
               }, 2000)
              

@@ -12,14 +12,37 @@ Page({
     country: ['--请选择--', '中国', '美国', '伊朗','新加坡','泰国','法国'],
     province: ['--请选择--', '江苏', '浙江', '辽宁'],
     city: ['--请选择--', '盘锦市', '沈阳市', '大连市'],
-
+    forEdit:null,
+    EditId:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    var id=options.id
+      if(id==undefined){
+            console.log('新增收货地址')
+      }else{
+        var url='shipAddress'
+        var data={
+          'op':"single",
+          'id':id
+        }
+        utils.allRequest(url,data,
+        function(res){
+            that.setData({
+              forEdit:res.result,
+              EditId:id
+            })
+            console.log(res);
+        },
+        function(res){
+
+        }
+        ,true)
+      }
   },
 
   /**
@@ -101,6 +124,7 @@ Page({
     }
   },
   formSubmit: function (e) {
+    var that=this
     var form = {}
     form.name = e.detail.value.name;
     form.city = e.detail.value.city;
@@ -116,17 +140,39 @@ Page({
 
     // // }
     if (formComplete) {
-      wx.showToast({
-        title: '注册成功',
-        icon: 'success',
-        mask: true,
-        duration: 3000,
-        complete: function () {
-          wx.navigateTo({
-            url: '../../pages/addressIndexMember/addressIndexMember',
-          })
-        }
-      })
+          var url="shipAddress"
+          var tempId = that.data.EditId
+          console.log(form)
+          var data={
+            'op':'update',
+            "id": tempId,
+            "name": form.name,
+            "country": form.country,
+            "province": form.province,
+            "address": form.address,
+            "mailcode": form.mailcode,
+            "mobile": form.mobile,
+            "city": form.city
+          }
+        utils.allRequest(url,data,
+        function(res){
+          console.log(res)
+          if (res.error_code==0){
+              wx.showToast({
+                title: '操作成功',
+              })
+              setTimeout(function(){
+                wx.hideToast()
+                wx.redirectTo({
+                  url: '../addressIndexMember/addressIndexMember',
+                })
+              },1000)
+          }
+        },
+        function(res){
+          console.log(res)
+        },true)
+          
     } else {
       wx.showToast({
         mask: true,

@@ -27,11 +27,11 @@
       <view class="bottom">
       
         <view class="button-group">
-            <view class="edit" data-id='{{item.id}}' bindtap='editAddress'>
+            <view class="edit" data-id='{{item.id}}' data-type="edit" bindtap='addNewOrEdit'>
                 <image src="../../images/member/addressEdit.png" class="img"></image>
                 <text class="action">编辑</text>
             </view>
-            <view class="delete" data-id='{{itm.id}}' bindtap='deleteAddress'>
+            <view class="delete" data-id='{{item.id}}' bindtap='deleteAddress'>
                 <image src="../../images/member/addressDelete.png" class="img"></image>
                 <text class="action">删除</text>
             </view>
@@ -40,5 +40,5 @@
 </view>
 </block>
 <view class="add-button">
-  <button class="btn" size="default" type="primary" style="background-color:#0398e7;" bindtap="jump" data-url="addressAddMember">+添加新地址</button>
+  <button class="btn" size="default" type="primary" style="background-color:#0398e7;" bindtap="addNewOrEdit"  data-type='add'>+添加新地址</button>
 </view>

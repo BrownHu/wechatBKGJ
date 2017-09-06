@@ -12,33 +12,33 @@
     <!-- <view class="form-account"> -->
         <view class="info-wrap" style="margin-top:0">
           <text class="label">姓名:</text>
-          <input class="form-account"  name="name" />
+          <input class="form-account"  value='{{baseInfo.name}}' name="name" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
        
         <view class="info-wrap">
           <text class="label">国家:</text>
-          <input class="form-account" name="country"  />
+          <input class="form-account" value='{{baseInfo.country}}' name="country"  />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">省/州:</text>
-          <input class="form-account"  name="province" />
+          <input class="form-account" value='{{baseInfo.province}}'  name="province" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">城市:</text>
-          <input class="form-account"  name="city" />
+          <input class="form-account"  value='{{baseInfo.city}}' name="city" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">地址:</text>
-          <input class="form-account" name="address" />
+          <input class="form-account" value='{{baseInfo.address}}' name="address" />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
         <view class="info-wrap">
           <text class="label">电话:</text>
-          <input class="form-account" name="mobile"  />
+          <input class="form-account" value='{{baseInfo.mobile}}' name="mobile"  />
         </view>
         <view class="hr" style="margin-top:5px;"></view>
 </view>
