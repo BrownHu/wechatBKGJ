@@ -38,7 +38,7 @@
     <view class="agree">
       <checkbox data-checked color="#f9364f" value="点击注册"  checked="true"/>点击注册，表示您同意佰客国际 <text class="agreement">《服务协议》</text>
     </view>
-    <button form-type="submit" class="sub-button">免费注册</button>
+    <button disabled='{{submitDisable}}' form-type="submit" class="sub-button">{{content}}</button>
 </view>
 </form>
 

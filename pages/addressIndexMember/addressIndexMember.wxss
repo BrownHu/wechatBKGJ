@@ -54,7 +54,7 @@ display:inline-block;
 }
 /*bottom  */
 .bottom{
-  justify-content:space-between;
+  justify-content:flex-end;
 align-items:center;
 display:flex;
 
@@ -62,7 +62,6 @@ display:flex;
 
 }
 .button-group{
-float:right;
   display: inline-block;
 }
 .edit{

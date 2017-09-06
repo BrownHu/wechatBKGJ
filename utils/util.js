@@ -29,9 +29,85 @@ const formatNumber = n => {
    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
    return reg.test(email);
  } 
+  const judgeBind = function (success, fail) {
+    wx.getStorage({
+      key: 'openId',
+      success: function (res) {
+        wx.getStorage({
+          key: 'userId',
+          success: function (res) {
+            success(res)
+          },
+          fail: res => {
+            fail(res)
+          }
+        })
+      },
+      fail: res => {
+        fail(res)
+      }
+    })
+  }
+//userAbout TRUE则拼接上userId  否则不拼接
+  var allRequest = function (url,data,success,fail,userAbout=false) {
+    var host = "https://api.beckbuy.com/api/";
+    url = host + url
+    wx.getStorage({
+      key: 'openId',
+      success: function(res) {
+        if(userAbout==true){
+          wx.getStorage({
+            key: 'userId',
+            success: function (res) {
+              data.userId = res.data
+              wx.request({
+                url: url,
+                data: data,
+                header: {
+                  // 'Content-Type': 'application/json'
+                },
+                success: function (res) {
+                  success(res.data);
+                },
+                fail: function (res) {
+                  fail(res);
+                }
+              });
+            },
+            fail: () => {
+              wx.showToast({
+                title: 'UserId未获取',
+                // 此处跳转到绑定注册页面
+              })
+            }
+          })
+        }else{
+              wx.request({
+                url: url,
+                data: data,
+                header: {
+                  // 'Content-Type': 'application/json'
+                },
+                success: function (res) {
+                  success(res.data);
+                },
+                fail: function (res) {
+                  fail(res);
+                }
+              });
+        }
+        
+      },
+    })
+  
+   
+  }
  
 module.exports = {
   formatTime: formatTime,
   IsComplete: IsComplete,
-  ForRegister: ForRegister
+  ForRegister: ForRegister,
+  allRequest: allRequest,
+  judgeBind: judgeBind
+
 }

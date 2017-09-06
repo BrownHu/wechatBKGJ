@@ -2,7 +2,6 @@
 App({
   onLaunch: function () {  
     var that=this
-    console.log(this.globalData.hubing+"before")
     // 获取openId并放入缓存
     wx.login({
       success: res => {
@@ -15,6 +14,7 @@ App({
          success:res=>{
            if (res.data.error_code==0){
              that.globalData.getOpenId=true,
+               console.log(res.data.result.openId)
            wx.setStorage({
              key: 'openId',
              data: res.data.result.openId,
@@ -41,9 +41,11 @@ App({
             wx.getStorage({
               key: 'userId',
               success:res=>{
+                // wx.showToast({
+                //   title: '以检测到绑定用户',
+                // })
               },
               fail: ()=> {
-                console.log( "fail  from getStorage fail")
                 wx.showLoading({
                   title: '正在获取绑定用户',
                   success:()=>{
@@ -57,13 +59,16 @@ App({
                             key: 'userId',
                             data: info.result.userId,
                             success: () => {
-                              that.globalData.hubing = true
+                              wx.setStorage({
+                                key: 'isBind',
+                                data: true,
+                              })
                               wx.showToast({
                                 title: '已获取绑定用户',
                               })
                               setTimeout(() => {
                                 wx.hideToast()
-                              }, 5000)
+                              }, 3000)
                             }
                           })
                         } else if (error_code == 0 && !info.result.isbind) {
@@ -71,11 +76,11 @@ App({
                             title: '当前账户未绑定，正在跳转..',
                           })
                           setTimeout(function () {
-                            wx.hideLoading(),
-                              wx.navigateTo({
-                                url: '../../pages/bindAccount/bindAccount?fromIndex=true',
-                              })
-                          }, 5000)
+                            wx.hideLoading()
+                              // wx.navigateTo({
+                              //   url: '../../pages/bindAccount/bindAccount?fromIndex=true',
+                              // })
+                          }, 2000)
                         } else {
                           wx.showToast({
                             title: '网络异常,请重试',
@@ -118,12 +123,10 @@ App({
 //         }
 //       }
 //     })
-    console.log(this.globalData.hubing+"after")
   },
   globalData: {
     getOpenId:null,
     userInfo: null,
-    hubing:false,
     goods: [
       {}
     ]

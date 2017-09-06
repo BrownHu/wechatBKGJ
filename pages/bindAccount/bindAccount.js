@@ -7,14 +7,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-      submitDisable:temp
+      submitDisable:false,
+      content:"确认绑定"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.submitDisable)
+    var that=this
+      wx.getStorage({
+        key: 'userId',
+        success: function(res) {
+          that.setData({
+            submitDisable:true,
+            content:"已绑定"
+          })
+        },
+      })
   },
 
   /**
@@ -28,7 +38,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    wx.getStorage({
+      key: 'userId',
+      success: function (res) {
+        that.setData({
+          submitDisable: true,
+          content: "已绑定"
+        })
+      },
+    })
   },
 
   /**
@@ -89,30 +108,46 @@ Page({
         key: 'openId',
         success: function(res) {
           // console.log(res.data)
-          wx.request({                      url:'https://api.beckbuy.com/api/bindAccount',
-          mathod:"POST",
+          wx.request({    
+          url:'https://api.beckbuy.com/api/bindAccount',
           data:{
             account:form.account,
             password:form.password,
             openId:res.data
           },
           success:suc=>{
-            console.log(suc)
+            if (suc.data.error_code==0){
+
+              wx.showToast({
+                title: '绑定成功',
+                icon: 'success'
+              })
+              setTimeout(function () {
+                wx.hideToast()
+                wx.reLaunch({
+                  url: '../member/member',
+                })
+              }, 2000)
+             
+            } else if (suc.data.error_code >0){
+              var message = suc.data.reason
+              wx.showToast({
+                title: message,
+                image: '../../icon/error.png',
+                mask: true,
+              })
+            }else{
+            wx.showToast({
+              title: '服务器错误',
+              image:'../../icon/error.png'
+            })
+            }
           }
           })
         },
       })
-           wx.showToast({
-      title: '绑定成功',
-      icon: 'success',
-      mask:true,
-      duration: 3000,
-      complete:function(){
-        // wx.switchTab({
-        //   url: '../member/member',
-        // })
-      }
-    })
+           
+ 
     }else{
       wx.showToast({
         mask:true,

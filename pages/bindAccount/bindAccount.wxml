@@ -20,6 +20,6 @@
     <!-- </view> -->
 </view>
 <view class="submit">
-    <button  disabled= form-type="submit" class="sub-button">确认绑定</button>
+    <button  disabled="{{submitDisable}}" form-type="submit" class="sub-button">{{content}}</button>
 </view>
 </form>

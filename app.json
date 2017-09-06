@@ -1,6 +1,7 @@
 {
   "pages": [
-                    
+                          "pages/addressIndexMember/addressIndexMember",
+                          
         "pages/index/index",
         "pages/packagePredictTrans/packagePredictTrans",
         "pages/member/member",
@@ -8,7 +9,6 @@
                                         "pages/couponNousedMember/couponNousedMember",
                                         "pages/registerAccount/registerAccount",
                     
-        "pages/addressIndexMember/addressIndexMember",
         "pages/couponUsedMember/couponUsedMember",
         "pages/baseinfoAccount/baseinfoAccount",                            
         "pages/messageAccount/messageAccount",           
@@ -51,8 +51,7 @@
     "pages/chooseGood/chooseGood",
     "pages/chooseCountry/chooseCountry",
     "pages/waybill/waybill",
-    "pages/expense/expense",
-    "pages/logs/logs"
+    "pages/expense/expense"
   ],
   "window": {
     "backgroundTextStyle": "light",

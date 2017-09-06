@@ -4,37 +4,34 @@
 
 <view class="address">
     <view class="namemobile">
-      <text class="name">收件人: <text class="common">{{item.name}}</text> </text>
+      <text class="name">收件人: <text class="common">{{item.receiver}}</text> </text>
       <text class="mobile">电话:<text class="common">{{item.mobile}}</text></text>
     </view>
     <view class="country">
         <text class="topic">
           国家/省州/城市/邮编：
-        </text>
+        </text> 
         <text class="cou-detail">
-          {{item.country}}
+          {{item.countryMore}}
         </text>
         <view class="detail">
           <text class="topic">
             收货地址: 
           </text>
           <text class="de-detail">
-            {{item.detail}}
+            {{item.detailAddress}}
           </text>
         </view>
       </view>
     <view class="hr"></view>
       <view class="bottom">
-      <view class="wrap">
-        <checkbox class="check" color="#f9364f" value="true" checked='{{item.default}}'/>
-        <text class="topic">默认地址{{item.default}}</text>
-      </view>
+      
         <view class="button-group">
-            <view class="edit">
+            <view class="edit" data-id='{{item.id}}' bindtap='editAddress'>
                 <image src="../../images/member/addressEdit.png" class="img"></image>
                 <text class="action">编辑</text>
             </view>
-            <view class="delete">
+            <view class="delete" data-id='{{itm.id}}' bindtap='deleteAddress'>
                 <image src="../../images/member/addressDelete.png" class="img"></image>
                 <text class="action">删除</text>
             </view>

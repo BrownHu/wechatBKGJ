@@ -6,11 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items: [
-      { name: '0', value: '男',checked:'true' },
-      { name: '1', value: '女' },
-      { name: '2', value: '保密' },
-    ]
+
   },
 
   /**
@@ -83,13 +79,11 @@ Page({
   formSubmit: function (e) {
     var form = {}
     form.name = e.detail.value.name;
-    form.sex = e.detail.value.sex;
     form.country = e.detail.value.country;
     form.province = e.detail.value.province;
     form.city = e.detail.value.city;
     form.address = e.detail.value.address;
     form.province = e.detail.value.province;
-    form.mailcode = e.detail.value.mailcode;
     form.mobile = e.detail.value.mobile
     var formComplete = utils.IsComplete(form)
 
