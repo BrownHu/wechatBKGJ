@@ -89,22 +89,32 @@ Page({
     form.description = e.detail.value.description;
     var formComplete = utils.IsComplete(form)
     if (formComplete) {
-      wx.showToast({
-        title: '提交成功',
-        icon: 'success',
-        mask: true,
-        duration: 3000,
-        complete: function () {
-          console.log(form)
-          // 接口存操作
-          setTimeout(function(){
-            wx.hideToast()
-            wx.switchTab({
-              url: '../member/member',
+      var url="advice"
+      var data={
+        "type":form.type,
+        "title":form.title,
+        "description": form.description
+      }
+      utils.allRequest(url,data,
+      function(res){
+        var img = res.error_code == 0 ? null : "../../icon/error.png"
+          var message=res.error_code ==0 ? "提交成功" : "请您稍后重试"
+            wx.showToast({
+              title: message,
+              icon:"success",
+              image:img
             })
-          },2000)
-        }
-      })
+            setTimeout(function(){
+                  wx.hideToast()
+                  wx.redirectTo({
+                    url: '../adviceAccount/adviceAccount',
+                  })
+            },1200)
+          
+      },
+      function(res){
+
+      },true)
     } else {
       wx.showToast({
         mask: true,

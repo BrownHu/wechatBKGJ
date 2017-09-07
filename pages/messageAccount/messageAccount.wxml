@@ -7,10 +7,10 @@
         <text class="right-in" data-url="adviceAccount" bindtap="jump">投诉建议</text>
     </view>
 </view>
-
+<view hidden='{{Emptyhidden}}' class='empty'>您暂时没有任何消息哦～</view>
 <block  wx:for="{{messages}}">
-<view class="record">
-    <view class="on" bindtap="toDetail" data-id="{{item.id}}" >
+<view class="record" bindtap="toDetail" data-id="{{item.id}}">
+    <view class="on"  >
        <text class="action">{{item.title}}</text>
        <text class="money">></text>
     </view>

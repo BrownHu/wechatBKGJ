@@ -99,10 +99,8 @@ App({
               }
             })
           },
-
         })
-
-      },2000)
+      },500)
         // wx.getStorage({
         //   key: 'openId',
         //   success: function (openidres) {

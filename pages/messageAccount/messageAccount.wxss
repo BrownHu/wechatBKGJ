@@ -57,3 +57,10 @@ color:#353535;
 color:#595959;
 
 }
+.empty{
+  text-align:center;
+margin-top:50px;
+color:#9a9a9a;
+font-size:13px;
+
+}

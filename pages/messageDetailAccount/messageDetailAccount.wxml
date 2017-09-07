@@ -1,16 +1,14 @@
 <!--announceDetail.wxml-->
 <view class="out_wrap">
-<view class="title">{{specific.title}}</view>
+<view class="title">{{message.title}}</view>
 <view class="hr"></view>
 <view class="body">
-<text class="welcome" style="color:rgba(0,0,0,0.8);font-size:18px;">致：尊敬的各位新老客户！</text>
-<!-- <text class="first">您们好！端午即将来临，为了方便大家提前安排好节日前后的出货计划，具体安排如下：</text> -->
-<text class="second">{{specific.body}}</text>
+<text class="second">{{message.body}}</text>
 <!-- <text class="third">大陆：5月29-30日晚不发车；5月31日正常发车，6月1号到港派件！</text> -->
 <!-- <text class="fourth">注：如有货要出客户请提前拉点咨询，不便之处敬请谅解！谢谢！</text> -->
 <!-- <text class="fivth"></text> -->
 </view>
 <view class="bottom">
-<text class="right">{{specific.date}}</text>
+<text class="right">{{message.date}}</text>
 </view>
 </view>

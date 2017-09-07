@@ -99,23 +99,22 @@ Page({
         key: 'openId',
         success: function(res) {
           // console.log(res.data)
-          wx.request({    
-          url:'https://api.beckbuy.com/api/bindAccount',
-          data:{
-            account:form.account,
-            password:form.password,
-            openId:res.data
-          },
-          success:suc=>{
-            if (suc.data.error_code==0){
-
+          var url ="bindAccount"
+          var data={
+            "account": form.account,
+            "password": form.password,
+            "openId": res.data
+          }
+          utils.allRequest(url,data,
+          function(res){
+            if (res.error_code == 0) {
               wx.showToast({
                 title: '绑定成功',
                 icon: 'success'
               })
               wx.setStorage({
                 key: 'userId',
-                data:suc.data.result.userId ,
+                data: res.result.userId,
               })
               setTimeout(function () {
                 wx.hideToast()
@@ -123,22 +122,64 @@ Page({
                   url: '../index/index?bind=true',
                 })
               }, 1000)
-             
-            } else if (suc.data.error_code >0){
-              var message = suc.data.reason
+            } else if (res.error_code > 0) {
+              var message = res.reason
               wx.showToast({
                 title: message,
                 image: '../../icon/error.png',
                 mask: true,
               })
-            }else{
-            wx.showToast({
-              title: '服务器错误',
-              image:'../../icon/error.png'
-            })
+            } else {
+              wx.showToast({
+                title: '服务器错误',
+                image: '../../icon/error.png'
+              })
             }
-          }
+          },
+          function(res){
+
           })
+        // sub
+          // wx.request({    
+          // url:'https://api.beckbuy.com/api/bindAccount',
+          // data:{
+          //   account:form.account,
+          //   password:form.password,
+          //   openId:res.data
+          // },
+          // success:suc=>{
+          //   if (suc.data.error_code==0){
+
+          //     wx.showToast({
+          //       title: '绑定成功',
+          //       icon: 'success'
+          //     })
+          //     wx.setStorage({
+          //       key: 'userId',
+          //       data:suc.data.result.userId ,
+          //     })
+          //     setTimeout(function () {
+          //       wx.hideToast()
+          //       wx.reLaunch({
+          //         url: '../index/index?bind=true',
+          //       })
+          //     }, 1000)
+             
+          //   } else if (suc.data.error_code >0){
+          //     var message = suc.data.reason
+          //     wx.showToast({
+          //       title: message,
+          //       image: '../../icon/error.png',
+          //       mask: true,
+          //     })
+          //   }else{
+          //   wx.showToast({
+          //     title: '服务器错误',
+          //     image:'../../icon/error.png'
+          //   })
+          //   }
+          // }
+          // })
         },
       })
 

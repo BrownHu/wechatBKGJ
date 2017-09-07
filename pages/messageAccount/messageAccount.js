@@ -1,24 +1,42 @@
 // messageAccount.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    messages:[
-      
-       {"id": 0, "title": "订单即将关闭", "body": "您有一笔订单即将关闭，再不付款宝贝就没啦，快去看看吧~", "date":"2017-04-15 14:20"},
-       { "id": 1, "title": "下单失败", "body": "抱歉，您的订单（020024646164)，因为当前库存不足，交易失败，请您稍后再试。感谢您对非越的厚爱和支持！", "date": "2017-04-12 11:18" },
-       { "id": 2, "title": "送您10元新人专享优惠券！", "body": "新人专享10元优惠券免费领，还有更多惊喜，快来领取吧~", "date": "2017-04-10 18:22" },
-      
-    ]
+    messages:null,
+    Emptyhidden:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+      var url="messages"
+      var data={}
+      utils.allRequest(url,data,
+      function(res){
+        console.log(res)
+          if(res.error_code==0){
+            var length = res.result.length
+            var Emptyhidden=length > 0 ? true : false
+            that.setData({
+              messages:res.result,
+              Emptyhidden: Emptyhidden
+            })
+          }else{
+            that.setData({
+              messages:null,
+            })
+          }
+      },
+      function(){
+            
+      },true)
+      
   },
 
   /**
@@ -84,7 +102,7 @@ Page({
   toDetail:function(e){
     var id=e.currentTarget.dataset.id;
     console.log(id)
-    wx.redirenavigateToctTo({
+    wx.navigateTo({
       url: '../../pages/messageDetailAccount/messageDetailAccount?id='+id,
     })
   }
