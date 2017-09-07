@@ -1,18 +1,35 @@
 // depotAddressAccount.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+      depot:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+        var that=this
+        var url ="getDepot"
+        var data={}
+        utils.allRequest(url,data,
+        function(res){
+          var depot = res.error_code == 0 ?res.result[0]:{}
+            that.setData({
+              depot:depot
+          })
+        },
+        function(){
+            wx.showToast({
+              title: '请重试',
+              image:'../../icon/error.png'
+            })
+        })
+        
   },
 
   /**

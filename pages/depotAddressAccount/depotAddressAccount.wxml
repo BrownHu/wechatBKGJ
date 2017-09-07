@@ -22,10 +22,10 @@
   <view class="all-wrap">
       
       <view class="address">
-          <text class="common">收件人：<text class="detail">佰客国际9218</text></text>
-          <text class="common">电话：<text class="detail">18681069319</text></text>
-          <text class="common">所在地区：<text class="detail">广东省 东莞市 虎门镇</text></text>
-          <text class="common" style="margin-bottom:0">地址：<text class="detail">广东省东莞市虎门镇金州梁屋新区8巷2号</text></text>
+          <text class="common">收件人：<text class="detail">{{depot.name}}</text></text>
+          <text class="common">电话：<text class="detail">{{depot.mobile}}</text></text>
+          <text class="common">所在地区：<text class="detail">{{depot.area}}</text></text>
+          <text class="common" style="margin-bottom:0">地址：<text class="detail">{{depot.address}}</text></text>
       </view>
   </view>
 </view>

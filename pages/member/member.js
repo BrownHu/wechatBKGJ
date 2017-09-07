@@ -7,28 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  userInfo:{},
+  userInfo:{'name':"点我登录"},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    var url = 'baseInfo'
-    var data = {}
-    util.allRequest(url, data,
-      function (res) {
-        console.log(res);
-          app.globalData.userInfo=res.result
-          that.setData({
-            userInfo:res.result
-          })
-      },
-      function (res) {
-        console.log(res)
-      },
-      true)
+    
   },
 
   /**
@@ -42,7 +28,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    console.log('onshow')
+    var that = this
+    var url = 'baseInfo'
+    var data = {}
+    util.allRequest(url, data,
+      function (res) {
+        console.log(res);
+        app.globalData.userInfo = res.result
+        that.setData({
+          userInfo: app.globalData.userInfo
+        })
+      },
+      function (res) {
+        that.setData({
+          userInfo: null
+        })
+      },  
+      true)
   },
 
   /**
@@ -90,5 +93,5 @@ Page({
         url: '../../pages/'+url+'/'+url,
       })
     }
-  }
+  },
 })

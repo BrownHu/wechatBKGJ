@@ -16,11 +16,27 @@ Page({
     duration: 1000
   },
   onLoad:function(options){
-    wx.getStorage({
-      key: 'userId',
-      success: function (res) {
-      }
-    })
+    var fromBind=options.bind
+    if(fromBind){
+      wx.getStorage({
+        key: 'userId',
+        success: function (res) {
+          var that = this
+          var url = 'baseInfo'
+          var data = {}
+          util.allRequest(url, data,
+            function (res) {
+              console.log(res);
+              app.globalData.userInfo = res.result
+            },
+            function (res) {
+              console.log('from  index.js onload')
+            },
+            true)    
+        }
+      })
+    }
+   
   },
   hubing:function(e){
     var height = util.ImageUtil(e);

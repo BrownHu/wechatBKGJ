@@ -134,8 +134,6 @@ Page({
     form.mailcode = e.detail.value.mailcode;
     form.mobile = e.detail.value.mobile;
     var formComplete = utils.IsComplete(form)
-
-
     // if(){ 逻辑判断 表单处理
 
     // // }

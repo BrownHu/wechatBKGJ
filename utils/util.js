@@ -75,10 +75,13 @@ const formatNumber = n => {
               });
             },
             fail: () => {
+              // console.log('userId not get from util')
               wx.showToast({
-                title: 'UserId未获取',
-                // 此处跳转到绑定注册页面
+                title: '请先登录',
+                image:'../../icon/tips.png',
+                duration:2000,
               })
+              getApp().globalData.userInfo=null
             }
           })
         }else{

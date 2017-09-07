@@ -97,9 +97,12 @@ Page({
         complete: function () {
           console.log(form)
           // 接口存操作
-          wx.switchTab({
-            url: '../member/member',
-          })
+          setTimeout(function(){
+            wx.hideToast()
+            wx.switchTab({
+              url: '../member/member',
+            })
+          },2000)
         }
       })
     } else {

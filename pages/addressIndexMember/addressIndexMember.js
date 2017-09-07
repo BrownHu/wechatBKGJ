@@ -117,7 +117,7 @@ Page({
               })
               setTimeout(function(){
                   wx.hideToast()
-                  wx.reLaunch({
+                  wx.navigateTo({
                     url: '../addressIndexMember/addressIndexMember',
                   })
               })

@@ -110,19 +110,28 @@ Page({
               'mobile':form.mobile,
           }
           utils.allRequest(url,data,function(res){
-      console.log(res)
+            console.log(res)
+              if(res.error_code==0){
+                wx.hideLoading();
+                setTimeout(function () {
+                  wx.reLaunch({
+                    url: '../member/member',
+                  })
+                }, 1500)
+              }else{
+                wx.showToast({
+                  title: '登录后操作',
+                  image: '../../icon/error.png'
+                })
+              }
           },
           function(){
-            
+            wx.showToast({
+              title: '请重试',
+              image:'../../icon/error.png'
+            })
           },true);
-          wx.hideLoading();
-          setTimeout(function(){
-
-  wx.reLaunch({
-    url: '../member/member',
-  })
-
-          },2000)
+          
         }
       })
     } else {

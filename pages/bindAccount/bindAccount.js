@@ -15,16 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
-      wx.getStorage({
-        key: 'userId',
-        success: function(res) {
-          that.setData({
-            submitDisable:true,
-            content:"已绑定"
-          })
-        },
-      })
+   
   },
 
   /**
@@ -122,12 +113,16 @@ Page({
                 title: '绑定成功',
                 icon: 'success'
               })
+              wx.setStorage({
+                key: 'userId',
+                data:suc.data.result.userId ,
+              })
               setTimeout(function () {
                 wx.hideToast()
                 wx.reLaunch({
-                  url: '../index/index',
+                  url: '../index/index?bind=true',
                 })
-              }, 2000)
+              }, 1000)
              
             } else if (suc.data.error_code >0){
               var message = suc.data.reason
@@ -146,8 +141,7 @@ Page({
           })
         },
       })
-           
- 
+
     }else{
       wx.showToast({
         mask:true,
