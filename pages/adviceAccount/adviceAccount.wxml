@@ -40,7 +40,7 @@
 
 <view class="submit">
     <button class="left-button" form-type="submit">提交问题</button>
-    <button class="right-botton" bindtap="clearQue">清空问题</button>
+    <button class="right-botton" formType="reset" >清空问题</button>
 </view>
 </form>
 

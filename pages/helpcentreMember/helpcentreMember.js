@@ -45,7 +45,9 @@ Page({
               Pname:Pname,
               child:child
             })
-          wx.hideLoading()
+            setTimeout(()=>{
+              wx.hideLoading()
+            },500)
         }
       })
   },
@@ -82,7 +84,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+      this.onLoad()
+      wx.stopPullDownRefresh()
+
   },
 
   /**

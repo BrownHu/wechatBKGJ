@@ -62,7 +62,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        wx.showLoading({
+          title: '正在刷新',
+        })
+        this.onLoad()
+      },
+      complete: res => {
+        setTimeout(function () {
+          wx.hideLoading()
+          wx.stopPullDownRefresh()
+        }, 500)
+
+      }
+    })  
   },
 
   /**

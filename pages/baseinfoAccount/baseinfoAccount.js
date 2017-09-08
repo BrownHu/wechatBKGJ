@@ -52,7 +52,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        wx.showLoading({
+          title: '正在刷新',
+        })
+        this.onLoad()
+      },
+      complete: res => {
+        setTimeout(function(){
+          wx.hideLoading()
+          wx.stopPullDownRefresh()
+        },500)
+        
+      }
+    })  
   },
 
   /**
@@ -113,11 +127,15 @@ Page({
             console.log(res)
               if(res.error_code==0){
                 wx.hideLoading();
+                wx.showToast({
+                  title: '操作成功',
+                })
                 setTimeout(function () {
+                  wx.hideToast()
                   wx.reLaunch({
                     url: '../member/member',
                   })
-                }, 1500)
+                }, 500)
               }else{
                 wx.showToast({
                   title: '登录后操作',

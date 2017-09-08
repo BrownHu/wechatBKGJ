@@ -75,38 +75,20 @@
           <view class="value">总价值(元)</view>
           <view class="action">操作</view>
       </view>
-      <view class="tr"> 
-          <view class="good-name">
-            <input class="tinput" placeholder="时尚女装" />
-
-          </view>
-          <view class="count">
-            <input class="tinput" placeholder="2" />
-
-          </view>
-          <view class="value">
-            <input class="tinput" placeholder="1285.00" />
-
-          </view>
-          <view class="action">
-            <button class="btn">删除</button>
-          </view>
-      </view>
+     
     <block wx:for="{{goods}}">
        <view class="tr"> 
           <view class="good-name">
-            <input class="tinput" placeholder=""/>
-
+            <input class="tinput" name="goodName{{index}}" placeholder=""/>
           </view>
           <view class="count">
-            <input class="tinput" placeholder="" />
-
+            <input class="tinput" type='number' name="goodCount{{index}}" placeholder="" />
           </view>
           <view class="value">
-            <input class="tinput" placeholder=""/>
+            <input class="tinput" type='digit' name="goodValue{{index}}" placeholder=""/>
           </view>
           <view class="action">
-            <button class="btn" data-index="{{index}}" ontap="deleteGood">删除</button>
+            <button class="btn" data-id="{{index}}" ontap="deleteGood">删除</button>
           </view>
       </view> 
      </block> 
@@ -125,7 +107,7 @@
   </view>
 </view>
 <view class="submit">
-  <button form-type="submit"  type="primary" style="background-color: #f9364f;"   data-jump="mergeTrans">
+  <button form-type="submit" disabled='{{submitDisable}}' type="primary" style="background-color: #f9364f;"   data-jump="mergeTrans">
     提交包裹预报
   </button>
 </view>

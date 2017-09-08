@@ -55,7 +55,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "red",
     "navigationBarTitleText": "佰客国际",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#7A7E83",

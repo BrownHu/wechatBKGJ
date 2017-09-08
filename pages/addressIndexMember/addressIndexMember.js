@@ -19,9 +19,16 @@ Page({
       util.allRequest(url,data,
       function(res){
         console.log(res)
-          that.setData({
-            address:res.result
+          wx.showLoading({
+            title: '加载中',
           })
+          that.setData({
+            address: res.result
+          })
+          setTimeout(()=>{
+            wx.hideLoading()
+          },500)
+          
       },
       function(res){
         console.log(res)
@@ -61,7 +68,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+        wx.startPullDownRefresh({
+          success:res=>{
+              this.onLoad()
+          },
+          complete:res=>{
+              wx.stopPullDownRefresh()
+          }
+        })  
   },
 
   /**

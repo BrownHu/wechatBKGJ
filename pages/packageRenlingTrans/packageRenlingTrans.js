@@ -80,13 +80,15 @@ Page({
   },
   jump: function (e) {
     var url = e.currentTarget.dataset.jump;
-    wx.navigateTo({
-      url: '../' + url + "/" + url,
-      complete: function () {
-        console.log('success')
-      }
-    })
-
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + url + '/' + url,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
   },
   formSubmit: function (e) {
     wx.showToast({
