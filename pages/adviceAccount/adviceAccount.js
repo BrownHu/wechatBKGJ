@@ -70,16 +70,7 @@ Page({
   
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.url;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../../pages/' + utl + '/' + url,
-      })
-    } else {
-      wx.navigateTo({
-        url: '../../pages/' + url + '/' + url,
-      })
-    }
+    utils.jump(e)
   },
   formSubmit: function (e) {
     var form = {}
@@ -123,9 +114,5 @@ Page({
       })
     }
   },
-  clearQue:function(){
-    wx.reLaunch({
-      url: '../../pages/adviceAccount/adviceAccount',
-    })
-  }
+  
 })

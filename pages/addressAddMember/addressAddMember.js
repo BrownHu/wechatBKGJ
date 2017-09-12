@@ -9,9 +9,6 @@ Page({
     provinceindex:0,
     countryindex: 0,
     cityindex:0,
-    country: ['--请选择--', '中国', '美国', '伊朗','新加坡','泰国','法国'],
-    province: ['--请选择--', '江苏', '浙江', '辽宁'],
-    city: ['--请选择--', '盘锦市', '沈阳市', '大连市'],
     forEdit:null,
     EditId:0
   },
@@ -112,16 +109,7 @@ Page({
     })
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.url;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../../pages/' + utl + '/' + url,
-      })
-    } else {
-      wx.redirectTo({
-        url: '../../pages/' + url + '/' + url,
-      })
-    }
+    utils.jump(e)
   },
   formSubmit: function (e) {
     var that=this

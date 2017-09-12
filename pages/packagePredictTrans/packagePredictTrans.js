@@ -11,12 +11,8 @@ Page({
     submitDisable: true,
     index: 0,
     depotindex:0,
-    array:
-    ["请选择","百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
-    
-    depot:[
-      "请选择","中国 广东 东莞仓","上海仓"
-    ],
+    depot:{},
+    express:{},
     goods:[
       {"name":"时尚女装","count":2,"value":1285}
     ]
@@ -27,14 +23,27 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    wx.getStorage({
-      key: 'userId',
-      success: function (res) {
-        that.setData({
-          submitDisable: false,
-          content: "已绑定"
-        })
-      },
+    var url ="advancePush"
+    var data={
+      "op":"before"
+    }
+    wx.showLoading({
+      title: '加载中',
+      success:()=>{
+        utils.allRequest(url, data, function (res) {
+          if (res.error_code == 0) {
+            that.setData({
+              submitDisable: false,
+              content: "已绑定",
+              depot: res.result.depot,
+              express: res.result.express
+            })
+            wx.hideLoading()
+          }
+        }, function (res) {
+          console.log(res)
+        }, true)
+      }
     })
     
   },
@@ -88,28 +97,17 @@ Page({
   
   },
   bindPickerChange: function (e) {
-
     this.setData({
       index: e.detail.value
     })
   },
   bindDepotChange: function (e) {
-
     this.setData({
       depotindex: e.detail.value
     })
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.jump;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../../pages/' + url + '/' + url,
-      })
-    } else {
-      wx.navigateTo({
-        url: '../../pages/' + url + '/' + url,
-      })
-    }
+    utils.jump(e)
   },
  
   deleteGood:function(e){
@@ -131,9 +129,10 @@ Page({
     })  
   },
   formSubmit: function (e) {
+    var thatwx=wx
     var form = {}
-    form.depot = e.detail.value.depot;
-    form.express = e.detail.value.express;
+    form.depotId = e.detail.value.depot;
+    form.expressId = e.detail.value.express;
     form.waybill = e.detail.value.waybill;
     form.remark = e.detail.value.remark;
      var goods=[]
@@ -147,35 +146,50 @@ Page({
         goods.push(arr)
        }
      }
-     console.log(goods)
-
-
-    // console.log("shit")
-    // console.log(e.detail.value.goodName[])
     var formComplete = utils.IsComplete(form)
-    // if (formComplete) {
-    //   wx.showToast({
-    //     title: '提交成功',
-    //     icon: 'success',
-    //     mask: true,
-    //     duration: 3000,
-    //     complete: function () {
-    //       console.log(form)
-    //       // wx.navigateTo({
-    //       //   url: '../mergeTrans/mergeTrans',
-    //       // })
-    //     }
-    //   })
-    // } else {
-    //   wx.showToast({
-    //     mask: true,
-    //     title: '所有字段必填',
-    //     image: '../../icon/error.png'
-    //   })
-    // }
+     var arr_complete=utils.arrJudge(goods)
+     if (formComplete && arr_complete ) {
+       form.packages = goods
+       form.op="push"
+       var url ="advancePush"
+       utils.allRequest(url,form,function(res){
+         console.log(res)
+         wx.showLoading({
+           title: '提交中',
+         })
+         var message = res.error_code == 0 ? "提交成功" : "操作错误"
+         var image = res.error_code == 0 ? null : "../../icon/error.png"
+         setTimeout(function () {
+           wx.hideLoading()
+           wx.showToast({
+            title: message,
+            image: image,
+            duration:3000,
+            complete:function(res){
+              thatwx.switchTab({
+                url: '../index/index',
+              })
+            }
+           })
+         }, 300)
+        
+       },
+       function(res){
+         wx.showToast({
+           title: '网络错误,返回重试',
+           image: '../../icon/error.png'
+         })
+       },true)
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '所有字段必填',
+        image: '../../icon/error.png'
+      })
+    }
   },
   addGood: function () {
-    var add = {}
+    var add = {"name":"","count":"","value":""}
     this.data.goods.push(add)
     this.setData({
       goods: this.data.goods

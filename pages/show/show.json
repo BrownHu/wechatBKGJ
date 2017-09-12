@@ -1,6 +1,5 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "展示",
-  "navigationBarTextStyle": "white"
+
+  "navigationBarTitleText": "展示"
+
 }

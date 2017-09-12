@@ -136,14 +136,16 @@ Page({
     })
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.jump;
-    wx.navigateTo({
-      url: '../' + url + "/" + url,
-      complete: function () {
-        console.log('success')
-      }
-    })
-
+    var url = e.currentTarget.dataset.url;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../' + url + '/' + url,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../' + url + '/' + url,
+      })
+    }
   },
   formSubmit: function (e) {
     console.log('传值处理..')

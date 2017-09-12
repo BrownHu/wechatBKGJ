@@ -25,9 +25,10 @@
           </view>
         
           <view class="fright">
-           <picker bindchange="bindDepotChange" name="depot" value="{{depotindex}}" range="{{depot}}">
+           <picker bindchange="bindDepotChange" range-key="name" value='{{depotindex}}' range="{{depot}}">
               <view class="picker">
-                  <text style="margin-left:5px;">{{depot[depotindex]}}</text>
+                  <input hidden='true' value="{{depot[depotindex].id}}" name="depot"></input> 
+                  <text style="margin-left:5px;">{{depot[depotindex].name}}</text> 
                   <view style="float:right;margin-right:5px;">
                         <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
                   </view>
@@ -35,8 +36,6 @@
             </picker>
           </view>
 
-          
-          
       </view>
       <view class="hr"></view>
        <view class="row">
@@ -45,9 +44,10 @@
               快递公司
           </view>
         <view class="fright">
-           <picker bindchange="bindPickerChange" name="express" value="{{index}}" range="{{array}}">
+           <picker bindchange="bindPickerChange" range-key="name"  value="{{index}}" range="{{express}}">
               <view class="picker">
-                  <text style="margin-left:5px;">{{array[index]}}</text>
+                   <input hidden='true' value="{{express[index].name}}" name="express"></input> 
+                  <text style="margin-left:5px;">{{express[index].name}}</text>
                   <view style="float:right;margin-right:5px;">
                         <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
                   </view>
@@ -102,7 +102,7 @@
   <view class="remark">
       <view class="re-left">备注</view>
       <view class="re-right">
-          <textarea name="remark" class="textarea" placeholder="填写商品名称，商品数量，特殊需求等......" placeholder-style="color:#6a6a6a;"  />
+          <textarea name="remark" class="textarea"   placeholder="填写商品名称，商品数量，特殊需求等......" placeholder-style="color:#6a6a6a;"  />
       </view>
   </view>
 </view>

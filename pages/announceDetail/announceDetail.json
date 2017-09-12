@@ -1,7 +1,6 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "公告",
-  "navigationBarTextStyle": "white",
-  "backgroundColor": "red"
+
+  "navigationBarTitleText": "公告"
+
+
 }

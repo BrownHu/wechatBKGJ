@@ -24,7 +24,20 @@ const formatNumber = n => {
     return com;
 
   }
-
+  var arrJudge=function(arr){
+    var back=true;
+    if(arr.length==0){
+      back=false;
+    }else{
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i].name == "" || arr[i].count == "" || arr[i].value == ""){
+          back=false;
+          break;
+        }
+      }
+    }
+     return back;
+  }
   var ForRegister=function (email) {
    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
    return reg.test(email);
@@ -102,8 +115,18 @@ const formatNumber = n => {
         
       },
     })
-  
-   
+  }
+  var jump=function (e) {
+    var url = e.currentTarget.dataset.jump;
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + url + '/' + url,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url,
+      })
+    }
   }
  
 module.exports = {
@@ -111,6 +134,7 @@ module.exports = {
   IsComplete: IsComplete,
   ForRegister: ForRegister,
   allRequest: allRequest,
-  judgeBind: judgeBind
-
+  judgeBind: judgeBind,
+  arrJudge: arrJudge,
+  jump: jump
 }

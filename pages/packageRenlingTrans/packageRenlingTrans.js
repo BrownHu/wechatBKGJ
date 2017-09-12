@@ -1,19 +1,22 @@
 // pages/packageRenlingTrans/packageRenlingTrans.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    currentWaybill: null,
+    currentExpress: null,
     allcheck:false,
-    array:
-    ["百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
-
+    array:{},
     index: 0,
-    detail:[
-      { name: "韵达快递", number: "5463134642", weight: "8.00", size: "200*87*65", status: "已到库", depot: "81"},
-      { name: "韵达快递", number: "5463134642", weight: "8.00", size: "200*87*65", status: "已到库", depot: "81" }
-      ]
+    items:
+      { name: 'confirm'}
+    ,
+    detail:[],
+    pending: null
+
 
   },
 
@@ -21,7 +24,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    var data={
+      "op":"before"
+    }
+    utils.allRequest("packageClaim",data,
+    function(res){
+        console.log(res)
+        that.setData({
+          array:res.result,
+          currentExpress:res.result[0].id
+        })
+    },
+    function(res){
+      console.log(res)
+    },true)
   },
 
   /**
@@ -42,7 +59,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    
   },
 
   /**
@@ -73,39 +90,102 @@ Page({
   
   },
   bindPickerChange: function (e) {
-
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      currentExpress: e.currentTarget.dataset.express
     })
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.jump;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../../pages/' + url + '/' + url,
-      })
-    } else {
-      wx.navigateTo({
-        url: '../../pages/' + url + '/' + url,
+    utils.jump(e)
+  },
+  formSubmit: function (e) {
+    var thatwx=wx 
+    var pending = this.data.pending
+    if (pending!=null){
+      var data={
+        "op":"push"
+      }
+      data.packageId = pending
+      console.log(data)
+      utils.allRequest("packageClaim",data,
+      function(res){
+        console.log(res)
+        wx.showLoading({
+          title: '正在认领',
+        })
+        var message= res.error_code ==0  ? "认领成功" : "操作错误"
+        var image=res.error_code==0 ? null : "../../icon/error.png"
+        setTimeout(function(){
+          wx.hideLoading()
+            wx.showToast({
+              title: message,
+              image:image,
+              duration:3000,
+              complete: function (res) {
+                thatwx.switchTab({
+                  url: '../index/index',
+                })
+              }
+            })
+        },300)
+      },
+      function(res){
+          wx.showToast({
+            title: '网络错误,返回重试',
+            image:'../../icon/error.png',
+            duration:3000,
+            complete: function (res) {
+              thatwx.switchTab({
+                url: '../index/index',
+              })
+            }
+          })
+      },true)
+    }else{
+      wx.showToast({
+        title: '请勾选待认领包裹',
+        image:'../../icon/error.png',
+        duration:3000
       })
     }
   },
-  formSubmit: function (e) {
-    wx.showToast({
-      title: '认领成功',
-      icon: 'success',
-      duration: 5000,
-      success: function () {
-        wx.redirectTo({
-          url: '../../pages/arrivedPackageTrans/arrivedPackageTrans',
+  waybillBlur:function(e){
+        this.setData({
+          currentWaybill:e.detail.value
+        })
+  },
+  packageSearch:function(){
+    var that=this
+    var data={}
+    data.expressId = this.data.currentExpress
+    data.waybill = this.data.currentWaybill
+    data.op="search"
+    console.log(data)
+    utils.allRequest("packageClaim",data,function(res){
+      console.log(res)
+      if (res.error_code==0 && res.result.length >0 ){
+        that.setData({
+          detail: res.result,
+        })
+      }else{
+        wx.showToast({
+          title: '未找到包裹',
+          image:'../../icon/error.png'
+        })
+        that.setData({
+          detail:null,
+          pending:null
         })
       }
-    })
+      
+    },function(res){
+      console.log(res)
+    },true)
   },
-  allSelect:function(){
-    var allcheck = this.data.allcheck===false?true:false;
-    this.setData({
-      allcheck: allcheck,
-    })
+  checkboxChange:function(e){
+    var flag = e.detail.value.length == 1 ? this.data.detail[0].waybill : null
+     this.setData({
+       pending: flag
+     })
   }
 })

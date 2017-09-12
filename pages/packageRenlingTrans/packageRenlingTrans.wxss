@@ -269,5 +269,5 @@ margin-top:3px;
 .commonword{
   color:#9a9a9a;
   margin-left: 3px;
-  
+  display: block;
 }

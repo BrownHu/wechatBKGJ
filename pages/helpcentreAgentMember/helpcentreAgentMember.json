@@ -1,6 +1,5 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "帮助中心",
-  "navigationBarTextStyle": "white"
+
+  "navigationBarTitleText": "帮助中心"
+
 }

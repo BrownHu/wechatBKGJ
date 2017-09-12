@@ -24,9 +24,9 @@
           </view>
         
           <view class="fright">
-           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+           <picker bindchange="bindPickerChange" data-express="{{array[index].id}}" range-key="name" value="{{index}}" range="{{array}}">
               <view class="picker">
-                  <text style="margin-left:5px;">{{array[index]}}</text>
+                  <text style="margin-left:5px;">{{array[index].name}}</text>
                   <view style="float:right;margin-right:5px;">
                         <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
                   </view>
@@ -41,35 +41,41 @@
               <text class="red">*</text>
               快递单号
           </view>
-           <input value='5464313426' class="input" placeholder="" auto-focus/>
+           <input  bindblur='waybillBlur' class="input" placeholder="请输入订单号"/>
           <view class="search">
-            <button size="mini" style="line-height:18px;padding:5px 0 " class="sbtn">搜索</button>
+            <button bindtap='packageSearch' size="mini" style="line-height:18px;padding:5px 0 " class="sbtn">搜索</button>
           </view>
       </view>
       <view class="shorthr"></view>
   </view>
   <view class="table">
       <view class="tr"> 
-          <view class="value">
+           <!-- <view class="value">
                           <checkbox value="" color="#f9364f" bindtap="allSelect"/>全选
-          </view>
+          </view>  -->
           <view class="count">物品详情</view>
       </view>
     <block wx:for="{{detail}}">
       <view class="tr"> 
           <view class="value">
-                <checkbox value="" color="#f9364f" checked="{{allcheck}}" />
+                <!-- <checkbox value="shit"  name="checkme" color="#f9364f" />
+                 -->
+                 <checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</checkbox-group>
           </view>
           <view class="count detail">
             <view class="detail-left">
-                <view class="same">快递名称：<text class="commonword">{{item.name}}</text></view>
-                <view class="same">快递单号：<text class="commonword">{{item.number}}</text></view>
-                <view class="same">重量(KG):<text class="commonword">{{item.weight}}</text></view>
+                <view class="same">快递名称<text class="commonword">{{item.express}}</text></view>
+                <view class="same">快递单号<text class="commonword">{{item.waybill}}</text></view>
+                <view class="same">重量(KG)<text class="commonword">{{item.weight}}</text></view>
             </view>
             <view class="detail-right">
-                <view class="same">尺寸(CM)：<text class="commonword">{{item.size}}</text></view>
-                <view class="same">状态：<text class="commonword">{{item.status}}</text></view>
-                <view class="same">仓库号:<text class="commonword">{{item.depot}}</text></view>
+                <view class="same">尺寸(CM)<text class="commonword">{{item.size}}</text></view>
+                <view class="same">状态<text class="commonword">{{item.status}}</text></view>
+                <view class="same">仓库号<text class="commonword">{{item.depotId}}</text></view>
             </view>
           </view>
       </view>

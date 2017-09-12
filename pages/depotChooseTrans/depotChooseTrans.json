@@ -1,6 +1,5 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "选择仓库",
-  "navigationBarTextStyle": "white"
+
+  "navigationBarTitleText": "选择仓库"
+
 }

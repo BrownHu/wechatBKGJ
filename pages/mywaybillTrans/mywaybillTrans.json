@@ -1,6 +1,5 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "我的运单",
-  "navigationBarTextStyle": "white"
+
+
+  "navigationBarTitleText": "我的运单"
 }

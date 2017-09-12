@@ -1,6 +1,5 @@
 {
-  "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "red",
-  "navigationBarTitleText": "运输方式",
-  "navigationBarTextStyle": "white"
+
+  "navigationBarTitleText": "运输方式"
+
 }

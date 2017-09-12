@@ -2,7 +2,7 @@
 <form bindsubmit="formSubmit">
 <view class="in">
     <view class="left">
-        <text class="left-in" data-url="messageAccount" bindtap="jump">系统通知</text>
+        <text class="left-in" data-jump="messageAccount" bindtap="jump">系统通知</text>
     </view>
     <view class="right">
         <text class="right-in">投诉建议</text>
