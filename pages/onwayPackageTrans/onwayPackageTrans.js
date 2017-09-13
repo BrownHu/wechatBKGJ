@@ -1,4 +1,5 @@
 // pages/onwayPackageTrans/onwayPackageTrans.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
@@ -71,14 +72,7 @@ Page({
   
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.jump;
-    wx.navigateTo({
-      url: '../' + url + "/" + url,
-      complete: function () {
-        console.log('success')
-      }
-    })
-
+   utils.jump(e)
   },
   formSubmit: function (e) {
     console.log('传值处理..')
@@ -90,6 +84,20 @@ Page({
     var allcheck = this.data.allcheck === false ? true : false;
     this.setData({
       allcheck: allcheck,
+    })
+  },
+  deletePackage:function(e){
+    var id=e.currentTarget.dataset.id
+    wx.showModal({
+      title: '在途包裹',
+      content: '确定删除？',
+      success:function(res){
+        if(res.confirm){
+            //删除物品请求 带id
+        }else{
+
+        }
+      }
     })
   }
 })

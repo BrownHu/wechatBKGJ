@@ -88,7 +88,6 @@ const formatNumber = n => {
               });
             },
             fail: () => {
-              // console.log('userId not get from util')
               wx.showToast({
                 title: '请先登录',
                 image:'../../icon/tips.png',

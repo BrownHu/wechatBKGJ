@@ -2,10 +2,10 @@
 <form bindsubmit="formSubmit">
 <view class="top">
   <view class="left">
-    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%;" bindtap="jump" data-url="packagePredictTrans">包裹预报</button>
+    <button type="primary"  class="common" style="color:#f9364f;background-color: #ffffff;width:95%;" bindtap="jump" data-jump="packagePredictTrans">包裹预报</button>
   </view>
   <view class="center">
-    <button type="primary"  class="special" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-url="packageRenlingTrans">包裹认领</button>
+    <button type="primary"  class="special" style="color:#f9364f;background-color: #ffffff;width:95%" bindtap="jump" data-jump="packageRenlingTrans">包裹认领</button>
   </view>
   <view class="right">
     <button type="primary" class="common" style="background-color: #f9364f;width:95%;" >我的包裹</button>
@@ -15,7 +15,7 @@
 <view class="middle-form">
   <view class="top-wrap">
       <image src="../../images/trans/2.png" class="img"></image>
-      <text class="word-tip">包裹认领</text>
+      <text class="word-tip">我的包裹</text>
   </view>
   <view class="switch-btn">
     <view class="arrive">
@@ -25,7 +25,7 @@
       <button style="margin:0;background-color:#ffffff;color:#0398e7;width:90%;line-height:2;border:2px solid #0398e7;" bindtap="jump" data-jump="onwayPackageTrans">在途包裹</button>
     </view>
   </view>
-  <view class="row">
+  <!-- <view class="row">
           <view class="fleft">
               快递公司
           </view>
@@ -40,7 +40,7 @@
               </view>
             </picker>
           </view>
-      </view>
+      </view> -->
       <view class="hr"></view>
       <view class="table">
         <view class="top-row">

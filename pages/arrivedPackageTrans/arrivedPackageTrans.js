@@ -1,4 +1,5 @@
 // pages/arrivedPackageTrans/arrivedPackageTrans.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
@@ -136,16 +137,7 @@ Page({
     })
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.url;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../' + url + '/' + url,
-      })
-    } else {
-      wx.navigateTo({
-        url: '../' + url + '/' + url,
-      })
-    }
+    utils.jump(e)
   },
   formSubmit: function (e) {
     console.log('传值处理..')

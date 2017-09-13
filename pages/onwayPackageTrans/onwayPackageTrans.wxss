@@ -138,17 +138,17 @@ align-items:center;
 width:10%;
 }
 .top-detail{
-width:40%;
+width:50%;
 
 
 }
 .top-weight{
-width:20%;
+width:25%;
 
 
 }
 .top-action{
-width:20%;
+width:25%;
 
 
 }
@@ -170,11 +170,12 @@ width:10%;
 
 }
 .wrap{
-width:90%;
+width:100%;
 display:flex;
 background-color:#ffffff;
 border: 1px solid #ababab;
 font-size:13px;
+margin-bottom: 5px;
 }
 .detail{
 width:55%;
@@ -209,7 +210,8 @@ margin-bottom:5px;
 margin-left:5px;
 }
 .detail-btn{
-margin:0;
+
+margin:3px 0;
 line-height:2;
 padding:0;
 width:80%;

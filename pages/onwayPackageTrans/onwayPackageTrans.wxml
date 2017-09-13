@@ -15,17 +15,17 @@
 <view class="middle-form">
   <view class="top-wrap">
       <image src="../../images/trans/2.png" class="img"></image>
-      <text class="word-tip">包裹认领</text>
+      <text class="word-tip">我的包裹</text>
   </view>
   <view class="switch-btn">
     <view class="arrive">
       <button style="margin:0;background-color:#ffffff;color:#0398e7;width:90%;line-height:2;border:2px solid #0398e7;" bindtap="jump" data-jump="arrivedPackageTrans" >到库包裹</button>
     </view>
     <view class="onway">
-      <button style="margin:0;background-color:#0398e7;color:#ffffff;width:90%;line-height:2" bindtap="jump" data-jump="onwayPackageTrans" >在途包裹</button>
+      <button style="margin:0;background-color:#0398e7;color:#ffffff;width:90%;line-height:2">在途包裹</button>
     </view>
   </view>
-  <view class="row">
+  <!-- <view class="row">
           <view class="fleft">
               快递公司:
           </view>
@@ -40,14 +40,10 @@
               </view>
             </picker>
           </view>
-      </view>
+      </view> -->
       <view class="hr"></view>
       <view class="table">
         <view class="top-row">
-          <view class="top-all-select">
-            <checkbox value="" color="#f9364f" bindtap="allSelect" />
-          </view>
-          <view style="width:10%">全选</view>
           <view class="top-detail">物品详情</view>
           <view class="top-weight">重量(KG)</view>
           <view class="top-action">操作</view>
@@ -55,9 +51,6 @@
         <!--block area  -->
       <block wx:for="{{packages}}">
         <view class="row">
-          <view class="all-select">
-            <checkbox value="" color="#f9364f" checked="{{allcheck}}"/>
-          </view>
           <view class="wrap">
             <view class="detail">
                 <view class="label">
@@ -75,6 +68,8 @@
             <view class="action">
                 <button class="detail-btn" bindtap="jump" data-jump="detailMypackageTrans">详情</button>
                 <button class="detail-btn" bindtap="jump" data-jump="editMypackageTrans">编辑</button>
+             <button class="detail-btn" bindtap="deletePackage" data-id="{{item.id}}">删除</button>
+
             </view>
           </view>
         </view>
@@ -94,9 +89,9 @@
       </view>
 </view>
 
-<view class="btnWrap">
+<!-- <view class="btnWrap">
   <button disabled="true" style="background-color:#c9c9c9;color:#ffffff">提交合箱转运</button>
-</view>
+</view> -->
 
 
 
