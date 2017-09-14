@@ -57,14 +57,14 @@
                     包裹ID: <text class="word">{{item.id}}</text>
                 </view>
                <view class="label">
-                    快递单号: <text class="word">{{item.waybillNum}}</text>
+                    快递单号: <text class="word">{{item.waybill}}</text>
                 </view><view class="label">
-                    状态: <text class="word">{{item.status}}</text>
+                    状态: <text class="word">在途</text>
                 </view><view class="label">
                     库存(天): <text class="word">{{item.stock}}</text>
                 </view>
             </view>
-            <view class="weight">{{item.weight}}</view>
+            <view class="weight">0.00</view>
             <view class="action">
                 <button class="detail-btn" bindtap="jump" data-jump="detailMypackageTrans">详情</button>
                 <button class="detail-btn" bindtap="jump" data-jump="editMypackageTrans">编辑</button>
@@ -78,7 +78,7 @@
         <view class="free"></view>
         <view class="count">
             <view class="num">
-              共计：<text style="margin:0 5px">2</text>件
+              共计：<text style="margin:0 5px">{{count}}</text>件
             </view>
             <view class="fee">
               总重: <text class="red">0.00</text>

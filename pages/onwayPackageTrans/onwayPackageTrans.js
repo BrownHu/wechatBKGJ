@@ -6,21 +6,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    allcheck: false,
-    array:
-    ["百事汇通", "京东商城", "快捷快递", "顺丰快递", "申通E物流", "EMS快递", "圆通快递", "天天快递", "国通快递", "一店通", "申通快递", '急宅送', '全峰速运', '中国邮政'],
+    count:0,
     index: 0,
-    packages: [
-      { 'id': "A2456", "waybillNum": "54643134642", "status": "已到库", "stock": "10", "weight": "28.20" },
-      { 'id': "A2600", "waybillNum": "15646545648", "status": "已到库", "stock": "20", "weight": "21.58" },
-    ]
+    packages:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var that=this
+      var url ="package"
+      var data={
+        op:"onway"
+      }
+      utils.allRequest(url,data,function(res){
+          if(res.error_code==0){
+              var packages=res.result
+              var count=res.result.length
+              that.setData({
+                count:count,
+                packages: packages
+              })
+          }
+      },function(res){
+
+      },true)
   },
 
   /**
@@ -55,7 +66,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })  
   },
 
   /**
@@ -80,12 +98,6 @@ Page({
       url: '../../pages/mergeTrans/mergeTrans',
     })
   },
-  allSelect: function () {
-    var allcheck = this.data.allcheck === false ? true : false;
-    this.setData({
-      allcheck: allcheck,
-    })
-  },
   deletePackage:function(e){
     var id=e.currentTarget.dataset.id
     wx.showModal({
@@ -93,7 +105,17 @@ Page({
       content: '确定删除？',
       success:function(res){
         if(res.confirm){
-            //删除物品请求 带id
+          var data={
+            op:"delete",
+            id:id
+          }
+          utils.allRequest('onwayPackage',data,function(res){
+          wx.redirectTo({
+            url: '../onwayPackageTrans/onwayPackageTrans',
+          })
+          },function(res){
+              
+          },true)
         }else{
 
         }

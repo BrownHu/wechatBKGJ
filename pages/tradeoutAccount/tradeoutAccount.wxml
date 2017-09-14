@@ -9,17 +9,19 @@
     </view>
 </view>
 
+<block wx:for="{{record}}">
 <view class="record">
     <view class="on">
-       <text class="action">提取金额</text>
-       <text class="money">微信支付：¥170.00</text>
+       <text class="action">{{item.remark}}</text>
+       <text class="money">余额支付：¥{{item.money}}</text>
     </view>
   <view class="under">
-       <text class="time">交易时间: <text class="detail">2017-07-18 09:18</text> </text>
+       <text class="time">交易时间: <text class="detail">{{item.date}}</text> </text>
        <text class="succerr">交易成功</text>
   </view>
 </view>
-<view class="record">
+</block>
+<!-- <view class="record">
     <view class="on">
        <text class="action">支付-订单号(0214528765)</text>
        <text class="money">微信支付：¥300.00</text>
@@ -38,8 +40,8 @@
        <text class="time">交易时间: <text class="detail">2017-07-05 10:21</text> </text>
        <text class="succerr">交易成功</text>
   </view>
-</view>
-
+</view> -->
+<view hidden='{{emptyHidden}}' class="tips" style='text-align:center;'>没有记录哟~</view>
 <view class="tips">
   温馨提示：充值与提现请到电脑端进行操作！
 </view>

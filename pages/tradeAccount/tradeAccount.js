@@ -1,18 +1,41 @@
 // tradeAccount.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    record:null,
+    emptyHide:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    var url = "finance"
+    var data = {
+      op: "tradein"
+    }
+    utils.allRequest(url, data, function (res) {
+      console.log(res)
+      if (res.error_code == 0) {
+        var length = res.result.length
+        var hide = length == 0 ? false : true
+        var record = length == 0 ? null : res.result
+        that.setData({
+          record: record,
+          emptyHide: hide
+        })
+      }
+    }, function (res) {
+      wx.showToast({
+        title: "错误",
+        image: '../../icon/error.png'
+      })
+    }, true)
   },
 
   /**

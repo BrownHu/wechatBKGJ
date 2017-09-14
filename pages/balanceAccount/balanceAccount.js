@@ -1,18 +1,35 @@
 // balanceAccount.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    balance:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    var url ="finance"
+    var data={
+        op:"balance"
+    }
+    utils.allRequest(url,data,function(res){
+        if(res.error_code==0){
+        that.setData({
+          balance: res.result.balance
+        })
+        }
+    },
+    function(res){
+      wx.showToast({
+        title: '请先登录',
+      })
+    },true)
   },
 
   /**

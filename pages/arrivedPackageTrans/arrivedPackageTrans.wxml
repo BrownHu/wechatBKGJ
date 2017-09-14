@@ -67,9 +67,9 @@
                     包裹ID: <text class="word">{{item.id}}</text>
                 </view>
                <view class="label">
-                    快递单号: <text class="word">{{item.waybillNum}}</text>
+                    快递单号: <text class="word">{{item.waybill}}</text>
                 </view><view class="label">
-                    状态: <text class="word">{{item.status}}</text>
+                    状态: <text class="word">已到库</text>
                 </view><view class="label">
                     库存(天): <text class="word">{{item.stock}}</text>
                 </view>
@@ -85,10 +85,10 @@
         <view class="free"></view>
         <view class="count">
             <view class="num">
-              共计：<text style="margin:0 5px">2</text>件
+              共计：<text style="margin:0 5px">{{allCount}}</text>件
             </view>
             <view class="fee">
-              总重: <text class="red">50.00</text>
+              总重: <text class="red">{{allWeight}}</text>
             </view>
         </view>
       </view>

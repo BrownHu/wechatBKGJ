@@ -3,7 +3,7 @@
   <view class="icon">
       <image class="img" src="../../images/member/money.png" mode="aspectFit"></image>
   </view>
-  <text class="show">账户余额:<text class="money">¥10.00</text> </text>
+  <text class="show">账户余额:<text class="money">¥{{balance}}</text> </text>
 </view>
 
 <view class="detail" bindtap="jump" data-url="tradeoutAccount">
