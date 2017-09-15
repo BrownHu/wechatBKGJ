@@ -3,8 +3,9 @@
 <view class="area">
     <view class="left">选择配送的区域</view>
     <view class="right">
-          <picker name='area' bindchange="bindAreaChange" value="{{index}}" range="{{area}}">
-            <text class="country">{{area[index]}}</text>
+          <picker name='area' bindchange="bindAreaChange" range-key='name' value="{{index}}" range="{{area}}">
+            <input hidden='true' value="{{area[index].id}}" name="area"></input>
+            <text class="country">{{area[index].name}}</text>
           </picker>
           <view>
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
@@ -15,8 +16,10 @@
 <view class="area">
     <view class="left">选择配送方式</view>
     <view class="right">
-          <picker name="method" bindchange="bindMethodChange" value="{{methodindex}}" range="{{method}}">
-            <text class="country">{{method[methodindex]}}</text>
+          <picker name="method" bindchange="bindMethodChange" range-key='name' value="{{methodindex}}" range="{{method}}">
+            <input hidden='true' value="{{method[methodindex].id}}" name="express"></input>
+            <text class="country">{{method[methodindex].name}}</text>
+           <text wx:if="{{method.length == 0}}" class="country">请先选择区域</text>
           </picker>
           <view>
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
@@ -24,22 +27,32 @@
     </view>
 </view>
 
+<view class="area">
+    <view class="left">选择包装</view>
+    <view class="right">
+         <radio-group class="radio-group" name="pack" bindchange="packChange">
+  <label class="radio" wx:for="{{radioItem}}">
+    <radio color='red' value="{{item.price}},{{item.value}}" checked="{{item.checked}}"/>{{item.name}}<text class='price'>¥{{item.price}}</text>
+  </label>
+</radio-group>
+    </view>
+</view>
+
 <view class="area address-border address-border-assit">
     <view class="sleft">
         <view class="left-on">
             <view class="person">
-              收件人： <text class="word">布兰奇MA</text>
+              收件人： <text class="word">{{receiver.name}}</text>
             </view>
             <view class="mobile">
-              电话： <text class="word">18866880008</text> 
+              电话： <text class="word">{{receiver.mobile}}</text> 
             </view>
         </view>
         <view class="left-under">
-           收货地址：<text class="word">泰国曼安努蒂第四大街305</text>
+           收货地址：<text class="word">{{receiver.address}}</text>
         </view>
     </view>
-    <view class="sright" bindtap="jump"  data-url="addressIndexMember">
-          
+    <view class="sright" bindtap="chooseAddress">
           <view>
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
           </view>
@@ -63,41 +76,28 @@
 </view>
 
 <view class="area-column" >
-    <view class="row bb">
-      <view class="first">
-        <view class="pid">
-          包裹ID:<text class="detail">A2456</text>
-        </view>
-        <view class="weight">
-          重量(KG):<text class="red">0.85</text>
-        </view>
-      </view>
-      <view class="last">
-        <view class="waybillnum">快递单号:<text class="detail">54643134642</text></view>
-        <view class="count">x2</view>
-      </view>
-    </view>
+<block wx:for="{{packages}}">
     <view class="row">
       <view class="first">
         <view class="pid">
-          包裹ID: <text class="detail">54565</text>
+          包裹ID:<text class="detail">{{item.id}}</text>
         </view>
         <view class="weight">
-          重量(KG):<text class="red">0.85</text>
+          重量(KG):<text class="red">{{item.weight}}</text>
         </view>
       </view>
       <view class="last">
-        <view class="waybillnum">快递单号:<text class="detail">54643134642</text></view>
-        <view class="count">x2</view>
+        <view class="waybillnum">快递单号:<text class="detail">{{item.waybill}}</text></view>
       </view>
     </view>
+    </block>
 </view>
 <view class="countbar">
     <view >
-      <text class="count-left">共计<text class="allplus">3</text>件商品</text>总重(KG):<text class="red">1.4</text>
+      <text class="count-left">共计<text class="allplus">{{allCount}}</text>件包裹</text>总重(KG):<text class="red">{{allWeight}}</text>
     </view>
 </view>
-<view class="area" bindtap="jump" data-url="couponNousedMember">
+<!-- <view class="area" bindtap="jump" data-url="couponNousedMember">
     <view class="left">优惠券</view>
     <view class="right">
           <text style="margin-right:10px;color:#757575"><text class="red" style="margin-right:5px">2</text>张可用</text>
@@ -105,7 +105,7 @@
             <image src="../../images/common/Arrow-right.png" class="arrow"></image>
           </view>
     </view>
-</view>
+</view> -->
 <view class="area-column">
     <view class="fee">
         <view class="feeleft">运费</view>
@@ -121,16 +121,16 @@
     </view>
     <view class="fee">
         <view class="feeleft">包装费</view>
-        <view class="feeright red">¥5.00</view>
+        <view class="feeright red">¥{{packfee}}</view>
     </view>
-    <view class="fee">
+    <!-- <view class="fee">
         <view class="feeleft">优惠券减</view>
         <view class="feeright red">-¥0.00</view>
     </view>
     <view class="fee">
         <view class="feeleft">运费</view>
         <view class="feeright red">¥55.00</view>
-    </view>
+    </view> -->
 </view>
 <view class="area">
   <view class="left">

@@ -25,22 +25,6 @@
       <button style="margin:0;background-color:#ffffff;color:#0398e7;width:90%;line-height:2;border:2px solid #0398e7;" bindtap="jump" data-jump="onwayPackageTrans">在途包裹</button>
     </view>
   </view>
-  <!-- <view class="row">
-          <view class="fleft">
-              快递公司
-          </view>
-        
-          <view class="fright">
-           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-              <view class="picker">
-                  <text style="margin-left:5px;color:#848484;">{{array[index]}}</text>
-                  <view style="float:right;margin-right:5px;">
-                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
-                  </view>
-              </view>
-            </picker>
-          </view>
-      </view> -->
       <view class="hr"></view>
       <view class="table">
         <view class="top-row">
@@ -55,11 +39,13 @@
           <view class="top-action">操作</view>
         </view>
         <!--block area  -->
+        <checkbox-group bindchange="checkboxChange" name="package">
       <block wx:for="{{packages}}">
+        <block wx:if="{{item.weight!='0.00'}}">
         <view class="row">
           <view class="all-select">
             <!-- <radio value="" checked=""/> -->
-            <checkbox value="" color="#f9364f" checked="{{allcheck}}"/>
+            <checkbox value="{{item.id}}" color="#f9364f" checked='{{allcheck}}'/>
           </view>
           <view class="wrap">
             <view class="detail">
@@ -71,7 +57,7 @@
                 </view><view class="label">
                     状态: <text class="word">已到库</text>
                 </view><view class="label">
-                    库存(天): <text class="word">{{item.stock}}</text>
+                    库位: <text class="word">{{item.stock}}</text>
                 </view>
             </view>
             <view class="weight">{{item.weight}}</view>
@@ -80,7 +66,9 @@
             </view>
           </view>
         </view>
+        </block>
       </block>
+      </checkbox-group>
       <view class="count-row">
         <view class="free"></view>
         <view class="count">

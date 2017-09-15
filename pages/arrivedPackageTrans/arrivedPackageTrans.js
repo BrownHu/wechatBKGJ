@@ -12,9 +12,6 @@ Page({
     allCount:0,
     allWeight:0.00
   },
-      // {'id':"A2456","waybillNum":"54643134642","status":"已到库","stock":"10","weight":"28.20"},
-      // { 'id': "A2600", "waybillNum": "15646545648", "status": "已到库", "stock": "20", "weight": "21.58" },
-    
 
   /**
    * 生命周期函数--监听页面加载
@@ -28,11 +25,11 @@ Page({
     utils.allRequest(url,data,function(res){
         console.log(res)
         if(res.error_code==0){
-          var length=res.result.length
-          var count = length == 0 ? 0 : length;
-          var weight = length == 0 ? 0.00 : res.result.allWeight
+          var count = res.result.allCount
+          var weight = res.result.allWeight
+          // console.log(typeof (res.result.packages[0].weight))
         that.setData({
-          packages:res.result,
+          packages: res.result.packages,
           allCount: count,
           allWeight:weight
         })
@@ -110,15 +107,27 @@ Page({
     utils.jump(e)
   },
   formSubmit: function (e) {
-    console.log('传值处理..')
-    wx.redirectTo({
-      url: '../../pages/mergeTrans/mergeTrans',
+    var pack=e.detail.value.package
+    console.log(pack)
+    if(pack.length==0 || pack==undefined){
+      wx.showToast({
+        title: '当前未选择包裹',
+        image:"../../icon/error.png"
+      })
+    }else{
+      wx.navigateTo({
+      url: '../../pages/mergeTrans/mergeTrans?packs='+pack,
     })
+    }
+
   },
   allSelect: function () {
     var allcheck = this.data.allcheck === false ? true : false;
     this.setData({
       allcheck: allcheck,
     })
+  },
+  checkboxChange:function(e){
+    console.log(e.detail.value)
   }
 })

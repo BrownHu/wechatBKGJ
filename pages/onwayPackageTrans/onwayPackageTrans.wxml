@@ -25,22 +25,6 @@
       <button style="margin:0;background-color:#0398e7;color:#ffffff;width:90%;line-height:2">在途包裹</button>
     </view>
   </view>
-  <!-- <view class="row">
-          <view class="fleft">
-              快递公司:
-          </view>
-        
-          <view class="fright">
-           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-              <view class="picker">
-                  <text style="margin-left:5px;color:#848484;">{{array[index]}}</text>
-                  <view style="float:right;margin-right:5px;">
-                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
-                  </view>
-              </view>
-            </picker>
-          </view>
-      </view> -->
       <view class="hr"></view>
       <view class="table">
         <view class="top-row">
@@ -89,13 +73,6 @@
       </view>
 </view>
 
-<!-- <view class="btnWrap">
-  <button disabled="true" style="background-color:#c9c9c9;color:#ffffff">提交合箱转运</button>
-</view> -->
-
-
-
-<!--table  -->
 
 
 

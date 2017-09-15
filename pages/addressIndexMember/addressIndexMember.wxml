@@ -2,7 +2,7 @@
 
 <block wx:for="{{address}}">
 
-<view class="address">
+<view class="address" data-id='{{item.id}}' bindtap='{{jumpable}}'>
     <view class="namemobile">
       <text class="name">收件人: <text class="common">{{item.receiver}}</text> </text>
       <text class="mobile">电话:<text class="common">{{item.mobile}}</text></text>
@@ -39,6 +39,6 @@
       </view>
 </view>
 </block>
-<view class="add-button">
+<view class="add-button" hidden='{{mergeHide}}'>
   <button class="btn" size="default" type="primary" style="background-color:#0398e7;" bindtap="addNewOrEdit"  data-type='add'>+添加新地址</button>
 </view>

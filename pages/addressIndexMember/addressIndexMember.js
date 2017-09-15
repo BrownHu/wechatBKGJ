@@ -1,39 +1,28 @@
 // pages/addressIndexMember/addressIndexMember.js
 var util=require('../../utils/util.js')
+var notifycation = require('../../utils/WxNotificationCenter.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    address:null
+    address:null,
+    jumpable:null,
+    mergeHide:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this
-    var url ="shipAddress";
-    var data={}
-      util.allRequest(url,data,
-      function(res){
-        console.log(res)
-          wx.showLoading({
-            title: '加载中',
-          })
-          that.setData({
-            address: res.result
-          })
-          setTimeout(()=>{
-            wx.hideLoading()
-          },500)
-          
-      },
-      function(res){
-        console.log(res)
-
-      },true)
+    var   jumpable=options.from=="merge"? "say":null
+    var hide = options.from == "merge" ? true :false
+    this.setData({
+      jumpable: jumpable,
+      mergeHide: hide
+    })
+    
   },
 
   /**
@@ -47,7 +36,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    var url = "shipAddress";
+    var data = {}
+    util.allRequest(url, data,
+      function (res) {
+        console.log(res)
+        wx.showLoading({
+          title: '加载中',
+        })
+        that.setData({
+          address: res.result
+        })
+        setTimeout(() => {
+          wx.hideLoading()
+        }, 500)
+
+      },
+      function (res) {
+        console.log(res)
+
+      }, true)
   },
 
   /**
@@ -142,5 +151,28 @@ Page({
     wx.navigateTo({
       url: url,
     })
+  },
+  say:function(e){
+    var addressId=e.currentTarget.dataset.id
+    var data={
+      op:"single",
+      id: addressId
+    }
+    util.allRequest("shipAddress",data,function(res){
+      var newRe={}
+      newRe.id = addressId
+        newRe.name = res.result.receiver
+        newRe.mobile = res.result.mobile
+        newRe.address = res.result.detailAddress
+      notifycation.postNotificationName("fromShipAddress", newRe);
+      wx.navigateBack({
+        delta: 1
+      })
+    },
+    function(res){
+
+    },true)
+    
   }
+
 })

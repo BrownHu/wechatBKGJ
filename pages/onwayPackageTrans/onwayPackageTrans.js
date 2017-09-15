@@ -22,8 +22,8 @@ Page({
       }
       utils.allRequest(url,data,function(res){
           if(res.error_code==0){
-              var packages=res.result
-              var count=res.result.length
+            var packages = res.result.packages
+              var count = res.result.allCount
               that.setData({
                 count:count,
                 packages: packages

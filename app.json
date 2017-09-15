@@ -1,10 +1,12 @@
 {
   "pages": [          
+                    
         "pages/index/index",
         "pages/packagePredictTrans/packagePredictTrans",
         "pages/member/member",
-        "pages/addressIndexMember/addressIndexMember",               
-        "pages/mergeTrans/mergeTrans",
+                            "pages/mergeTrans/mergeTrans",
+                            
+        "pages/addressIndexMember/addressIndexMember",
         "pages/couponNousedMember/couponNousedMember",
         "pages/registerAccount/registerAccount",
         "pages/couponUsedMember/couponUsedMember",

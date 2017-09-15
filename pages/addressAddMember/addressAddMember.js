@@ -149,9 +149,12 @@ Page({
               })
               setTimeout(function(){
                 wx.hideToast()
-                wx.redirectTo({
-                  url: '../addressIndexMember/addressIndexMember',
+                wx.navigateBack({
+                  delta:1
                 })
+                // wx.redirectTo({
+                //   url: '../addressIndexMember/addressIndexMember',
+                // })
               },1000)
           }
         },
