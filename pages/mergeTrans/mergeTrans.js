@@ -7,13 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    packfee:2.50,
-    allCount:0,
+    expressFee:0.00,
+    packFee:0.00,
+    totalFee:0.00,
+    allCount:0.00,
     allWeight:"0.00",
     me:"展示",
     selectaddress:null,
     index: 0,
+    pids:null,
     methodindex: 0,
+    radioItem:[{
+      "name":"普通麻袋包装(免费但是不能包装易碎物品)","value":"0","price":"0.00"
+    }],
     // radioItem:[
     //   {name: 0, value: '小盒' },
     //   { name: 1, value: '标准', checked:true },
@@ -60,14 +66,19 @@ Page({
     utils.allRequest("mergeTrans",data,function(res){
       console.log(res)
       if (res.error_code==0){
+        that.data.radioItem.push.apply(that.data.radioItem,res.result.case)
+        
         that.setData({
+          pids: options.packs,
           receiver: res.result.receiever[0],
           area: res.result.area,
           selectaddress: res.result.addressId,
           allCount:res.result.allCount,
           allWeight: res.result.allWeight,
-          radioItem: res.result.case,
-          packages: res.result.packages
+          radioItem: that.data.radioItem,
+          packages: res.result.packages,
+          balance:res.result.balance,
+          // method:
         })
       }
     },function(res){
@@ -124,60 +135,75 @@ Page({
   
   },
   bindAreaChange: function (e) {
+    var that=this
     var areaIndex = e.detail.value
     var data = {
       id: this.data.area[areaIndex].id
     }
     utils.allRequest("getExpress", data, function (res) {
       console.log(res)
-      // this.setData({
-      //   index: areaIndex,
-      //   method: express
-      // })
+      var express=res.result.express
+      that.setData({
+        // index: areaIndex,
+        method: express
+      })
     }, function (res) {
 
     })
-    "/^src='[/s/S]+'$/"
     
   },
   bindMethodChange: function (e) {
+    var packFee = parseFloat(this.data.packFee) 
+    var expressDetail = this.data.method[e.detail.value]
+    var startWeight = parseFloat(expressDetail.start_weight)
+    var startPrice = parseFloat(expressDetail.start_price)
+    var continueWeight = parseFloat(expressDetail.continue_weight)
+    var continuePrice = parseFloat(expressDetail.continue_price)
+    var allWeight = parseFloat(this.data.allWeight) * 1000
+    var expressFee = allWeight <= startWeight ? startPrice : Math.ceil((allWeight - startWeight) / continueWeight) * continuePrice + startPrice
+    var total = packFee + expressFee
     this.setData({
-      methodindex: e.detail.value
+      methodindex: e.detail.value,
+        expressFee:expressFee,
+        totalFee:total
     })
-    var id=e.detail.value
-    var area=this.data.area[id].id
+    
+    
   },
   jump: function (e) {
     utils.jump(e)
   },
   formSubmit: function (e) {
+    console.log(e.currentTarget.dataset.id)
     var form = {}
+    form.payorigin="balance"
     form.area = e.detail.value.area
     form.method = e.detail.value.express
-    form.remark = e.detail.value.remark
+    form.remark = e.detail.value.remark == "" ? "无备注" : e.detail.value.remark
     form.pack = e.detail.value.pack.split(',')[1]
     form.address = this.data.selectaddress
+    form.pids = this.data.pids
     console.log(form)
-    // var formComplete = utils.IsComplete(form)
-    // if (formComplete) {
-    //   wx.showToast({
-    //     title: '支付中',
-    //     icon: 'loading',
-    //     mask: true,
-    //     duration: 3000,
-    //     complete: function () {
-    //       wx.redirectTo({
-    //         url: '../paySuccessTrans/paySuccessTrans',
-    //       })
-    //     }
-    //   })
-    // } else {
-    //   wx.showToast({
-    //     mask: true,
-    //     title: '所有字段必填',
-    //     image: '../../icon/error.png'
-    //   })
-    // }
+    var formComplete = utils.IsComplete(form)
+    if (formComplete) {
+      wx.showToast({
+        title: '支付中',
+        icon: 'loading',
+        mask: true,
+        duration: 3000,
+        // complete: function () {
+        //   wx.redirectTo({
+        //     url: '../paySuccessTrans/paySuccessTrans',
+        //   })
+        // }
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '必填字段为空',
+        image: '../../icon/error.png'
+      })
+    }
 
   },
   chooseAddress:function(){
@@ -192,13 +218,12 @@ Page({
      })
   },
   packChange:function(e){
-    
     var res=e.detail.value.split(',')[0]
+    var totalFee = parseFloat(res) + parseFloat(this.data.expressFee)
     this.setData({
-      packfee:res
+      packFee:parseFloat(res),
+      totalFee: totalFee
     })
-
-    
   }
 
 })

@@ -16,9 +16,9 @@
 <view class="area">
     <view class="left">选择配送方式</view>
     <view class="right">
-          <picker name="method" bindchange="bindMethodChange" range-key='name' value="{{methodindex}}" range="{{method}}">
+          <picker name="method" bindchange="bindMethodChange" range-key='shipping_way' value="{{methodindex}}" range="{{method}}">
             <input hidden='true' value="{{method[methodindex].id}}" name="express"></input>
-            <text class="country">{{method[methodindex].name}}</text>
+            <text class="country">{{method[methodindex].shipping_way}}</text>
            <text wx:if="{{method.length == 0}}" class="country">请先选择区域</text>
           </picker>
           <view>
@@ -109,19 +109,19 @@
 <view class="area-column">
     <view class="fee">
         <view class="feeleft">运费</view>
-        <view class="feeright red">¥55.00</view>
+        <view class="feeright red">¥{{expressFee}}</view>
     </view>
-    <view class="fee">
+    <!-- <view class="fee">
         <view class="feeleft">服务费</view>
         <view class="feeright red">¥20.00</view>
     </view>
     <view class="fee">
         <view class="feeleft">报关费</view>
         <view class="feeright red">¥8.00</view>
-    </view>
+    </view> -->
     <view class="fee">
         <view class="feeleft">包装费</view>
-        <view class="feeright red">¥{{packfee}}</view>
+        <view class="feeright red">¥{{packFee}}</view>
     </view>
     <!-- <view class="fee">
         <view class="feeleft">优惠券减</view>
@@ -134,10 +134,10 @@
 </view>
 <view class="area">
   <view class="left">
-    账户余额：¥0.00
+    账户余额：¥{{balance}}
   </view>
   <view class="right" style="color:#757575">
-    合计： <text class="red">¥88.00</text>
+    合计： <text class="red">¥{{totalFee}}</text>
   </view>
 </view>
 
@@ -146,7 +146,7 @@
     <button form-type="submit" style="background-color:#1aad19;color:#ffffff">微信支付</button>
   </view>
   <view class="rest">
-    <button form-type="submit" style="background-color:#bfbfbf;color:#fbfbfb">余额支付</button>
+    <button  data-id="button" form-type="submit"  wx:if="{{balance >= totalFee}}" style="background-color:#1aad19;color:#ffffff">余额支付</button>
   </view>
 </view>
 </form>

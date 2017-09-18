@@ -26,7 +26,7 @@
     <view class="hr"></view>
       <view class="bottom">
       
-        <view class="button-group">
+        <view class="button-group" hidden='{{mergeHide}}'>
             <view class="edit" data-id='{{item.id}}' data-type="edit" bindtap='addNewOrEdit'>
                 <image src="../../images/member/addressEdit.png" class="img"></image>
                 <text class="action">编辑</text>

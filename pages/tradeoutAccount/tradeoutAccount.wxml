@@ -19,6 +19,7 @@
        <text class="time">交易时间: <text class="detail">{{item.date}}</text> </text>
        <text class="succerr">交易成功</text>
   </view>
+  <view style='clear: both;'></view>
 </view>
 </block>
 <!-- <view class="record">
