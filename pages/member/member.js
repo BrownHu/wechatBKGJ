@@ -33,6 +33,7 @@ Page({
     var data = {}
     util.allRequest(url, data,
       function (res) {
+        console.log(res)
         app.globalData.userInfo = res.result
         that.setData({
           userInfo: res.result

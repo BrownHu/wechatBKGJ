@@ -127,6 +127,31 @@ const formatNumber = n => {
       })
     }
   }
+
+  var getChinesStatusName= function (num) {
+    var chinese = "网络异常"
+    var status = parseInt(num)
+    var arr = {
+      1: '未处理',
+      2: '处理中',
+      3: '配送中',
+      4: '已发货',
+      5: '确定收货',
+      6: '信息有误',
+      7: '已撤销',
+      8: '海关退包',
+      9: '海关退包',
+      10: '无法投递退包',
+      11: '等待补款'
+    }
+    for (var key in arr) {
+      if (key == status) {
+        chinese = arr[key]
+        break;
+      }
+    }
+    return chinese
+  }
  
 module.exports = {
   formatTime: formatTime,
@@ -135,5 +160,6 @@ module.exports = {
   allRequest: allRequest,
   judgeBind: judgeBind,
   arrJudge: arrJudge,
-  jump: jump
+  jump: jump,
+  getChinesStatusName: getChinesStatusName
 }

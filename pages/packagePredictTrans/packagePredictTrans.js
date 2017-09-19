@@ -135,6 +135,7 @@ Page({
     form.expressId = e.detail.value.express;
     form.waybill = e.detail.value.waybill;
     form.remark = e.detail.value.remark;
+    
      var goods=[]
      for(var i=0;i<10;i++){
        var para=e.detail.value
@@ -150,6 +151,7 @@ Page({
      var arr_complete=utils.arrJudge(goods)
      if (formComplete && arr_complete ) {
        form.packages = goods
+       console.log(form)
        form.op="push"
        var url ="advancePush"
        utils.allRequest(url,form,function(res){

@@ -20,7 +20,7 @@
   </view>
 </view>
 </block>
-<view hidden='{{emptyHidden}}' class="tips" style='text-align:center;'>没有记录哟~</view>
+<view hidden='{{emptyHide}}' class="tips" style='text-align:center;'>没有记录哟~</view>
 <view class="tips">
   温馨提示：充值与提现请到电脑端进行操作！
 </view>

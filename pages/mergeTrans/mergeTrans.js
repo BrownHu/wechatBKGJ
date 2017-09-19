@@ -135,6 +135,7 @@ Page({
   
   },
   bindAreaChange: function (e) {
+    
     var that=this
     var areaIndex = e.detail.value
     var data = {
@@ -144,15 +145,16 @@ Page({
       console.log(res)
       var express=res.result.express
       that.setData({
-        // index: areaIndex,
+        index: areaIndex,
         method: express
       })
     }, function (res) {
 
-    })
+    },false)
     
   },
   bindMethodChange: function (e) {
+
     var packFee = parseFloat(this.data.packFee) 
     var expressDetail = this.data.method[e.detail.value]
     var startWeight = parseFloat(expressDetail.start_weight)
@@ -174,36 +176,45 @@ Page({
     utils.jump(e)
   },
   formSubmit: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    console.log(e)
     var form = {}
-    form.payorigin="balance"
+    form.payorigin = e.detail.target.dataset.origin
     form.area = e.detail.value.area
+    form.ware_id="0"
     form.method = e.detail.value.express
     form.remark = e.detail.value.remark == "" ? "无备注" : e.detail.value.remark
     form.pack = e.detail.value.pack.split(',')[1]
     form.address = this.data.selectaddress
     form.pids = this.data.pids
+    form.op="pay"
     console.log(form)
     var formComplete = utils.IsComplete(form)
-    if (formComplete) {
-      wx.showToast({
-        title: '支付中',
-        icon: 'loading',
-        mask: true,
-        duration: 3000,
-        // complete: function () {
-        //   wx.redirectTo({
-        //     url: '../paySuccessTrans/paySuccessTrans',
-        //   })
-        // }
-      })
-    } else {
-      wx.showToast({
-        mask: true,
-        title: '必填字段为空',
-        image: '../../icon/error.png'
-      })
-    }
+    // if (formComplete) {
+    //   wx.showToast({
+    //     title: '支付中',
+    //     icon: 'loading',
+    //     mask: true,
+    //     success:()=>{
+    //       var url ="mergeTrans";
+    //       utils.allRequest(url,form,function(res){
+    //     console.log(res)
+    //     if(res.errcode==0){
+    //       wx.hideLoading()
+    //     }
+    //       },function(res){
+    //     console.log(res)
+    //       },true)
+        
+    //     }
+        
+    //   })
+    // } else {
+    //   wx.showToast({
+    //     mask: true,
+    //     title: '必填字段为空',
+    //     image: '../../icon/error.png'
+    //   })
+    // }
 
   },
   chooseAddress:function(){

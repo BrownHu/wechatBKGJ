@@ -23,11 +23,11 @@ Page({
       console.log(res)
       if(res.error_code==0){
           var length=res.result.length
-          var hide=length ==0 ?false:true
+          var hideme= length== 0 ? false: true
           var record=length==0 ? null:res.result
           that.setData({
             record:record,
-            emptyHide:hide
+            emptyHide:hideme
           })
       }
     },function(res){

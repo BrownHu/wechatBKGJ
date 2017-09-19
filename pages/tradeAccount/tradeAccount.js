@@ -23,11 +23,11 @@ Page({
       console.log(res)
       if (res.error_code == 0) {
         var length = res.result.length
-        var hide = length == 0 ? false : true
+        var hideornot = length == 0 ? false : true
         var record = length == 0 ? null : res.result
         that.setData({
           record: record,
-          emptyHide: hide
+          emptyHide: hideornot
         })
       }
     }, function (res) {
@@ -87,15 +87,6 @@ Page({
   
   },
   jump: function (e) {
-    var url = e.currentTarget.dataset.url;
-    if (url == "index" || url == "packagePredictTrans" || url == "member") {
-      wx.switchTab({
-        url: '../../pages/' + utl + '/' + url,
-      })
-    } else {
-      wx.navigateTo({
-        url: '../../pages/' + url + '/' + url,
-      })
-    }
+   utils.jump(e)
   },
 })

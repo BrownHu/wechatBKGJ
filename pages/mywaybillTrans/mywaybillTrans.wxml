@@ -20,18 +20,19 @@
       </view>
       <block wx:for="{{waybills}}" >
        <view class="row detail">
-          <view class="commitTime center">{{item.date}}</view>
+          <view class="commitTime center">{{item.commitDate}}</view>
           <view class="peopleWay center">
-             <text class="name">{{item.people}}</text>
-             <text class="number">{{item.number}}</text>
+             <text class="name">{{item.receiver}}</text>
+             <text class="number">{{item.id}}</text>
           </view>
           <view class="trace center">
-          <text class="status">{{item.status ==1 ?   "处理中" :  (item.status==2 ? "已发货" : "已签收") }}</text>
+          <!-- <text class="status">{{item.status ==1 ?   "处理中" :  (item.status==2 ? "已发货" : "已签收") }}</text> -->
+          <text class="status">{{item.statusChinese}}</text>
              <text class="traceNum">{{item.trace}}</text>
           </view>
           <view class="action centerme">
-            <button  type="default" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini" data-trace="{{item.trace}}" bindtap="see">查看</button>
-            <button wx:if="{{item.status==2}}" type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " data-trace="{{item.trace}}" bindtap="see" size="mini">收货</button>
+            <button  type="default" data-id="{{item.id}}" class="see" style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#279edb;line-height:12px;padding:5px 0 " size="mini"  bindtap="see">查看</button>
+            <button wx:if="{{item.status==4}}" type="default" class="get"  style="background:linear-gradient(to bottom,#d6d6d6 0%,#bcbcbc 100%);color:#fa344a;line-height:12px;padding:5px 0 " data-id="{{item.id}}" bindtap="confirm" size="mini">收货</button>
 
           </view>
       </view>

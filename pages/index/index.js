@@ -59,5 +59,15 @@ Page({
       }
     })
     }
+  },
+  onPullDownRefresh: function () {
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })
   }
 })

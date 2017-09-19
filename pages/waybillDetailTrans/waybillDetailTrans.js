@@ -1,20 +1,41 @@
 // pages/waybillDetailTrans/waybillDetailTrans.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    detail:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      var trace=options.trace
-      console.log(trace+" 当前跟踪号，调用接口，重置当前页数据");
+      var id=options.id
+      var that=this
+      var data={
+        "id":id,
+        "op":"check"
+      }
+      utils.allRequest("waybill",data,function(res){
+        if (res.error_code == 0) {
+          var origin = res.result
+          origin.statusChinese = utils.getChinesStatusName(origin.status)
+          that.setData({
+            detail: origin
+          })
+        } else {
+          wx.showToast({
+            title: '网络异常，请重试',
+            image: "../../icon/error.png"
+          })
+        }
 
+      },function(res){
+
+      },true)
   },
 
   /**
@@ -49,7 +70,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })  
   },
 
   /**
