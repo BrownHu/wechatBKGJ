@@ -159,10 +159,12 @@ margin:5px;
   padding: 10px;
 }
 .wechat{
+margin-bottom:20px;
 
 }
 .rest{
   margin-top:10px;
+margin-bottom:20px;
 
 }
 .fee-left{

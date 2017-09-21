@@ -2,10 +2,10 @@
 
 <view class="in">
     <view class="left">
-        <text class="left-in">支出记录</text>
+        <text class="left-in" >支出记录</text>
     </view>
     <view class="right">
-        <text class="right-in" bindtap="jump"  data-url="tradeAccount">收入记录</text>
+        <text class="right-in" bindtap="jump"  data-jump="tradeAccount">收入记录</text>
     </view>
 </view>
 

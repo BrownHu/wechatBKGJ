@@ -50,10 +50,9 @@
             </view>
             <view class="weight">0.00</view>
             <view class="action">
-                <button class="detail-btn" bindtap="jump" data-jump="detailMypackageTrans">详情</button>
-                <button class="detail-btn" bindtap="jump" data-jump="editMypackageTrans">编辑</button>
+                <button class="detail-btn" bindtap="jump" data-id='{{item.id}}' data-jump="detailMypackageTrans">详情</button>
+                <!-- <button class="detail-btn" bindtap="jump" data-id='{{item.id}}' data-jump="editMypackageTrans">编辑</button> -->
              <button class="detail-btn" bindtap="deletePackage" data-id="{{item.id}}">删除</button>
-
             </view>
           </view>
         </view>

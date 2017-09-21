@@ -62,7 +62,7 @@
             </view>
             <view class="weight">{{item.weight}}</view>
             <view class="action">
-                <button class="detail-btn"  bindtap="jump" data-jump="detailMypackageTrans">详情</button>
+                <button class="detail-btn" data-id='{{item.id}}'  bindtap="jump" data-jump="detailMypackageTrans">详情</button>
             </view>
           </view>
         </view>

@@ -17,6 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that=this
     var url ="package"
     var data={
@@ -25,8 +28,9 @@ Page({
     utils.allRequest(url,data,function(res){
         console.log(res)
         if(res.error_code==0){
+          wx.hideLoading()
           var count = res.result.allCount
-          var weight = res.result.allWeight
+          var weight = res.result.allWeight == null ? "0.00" : res.result.allWeight
           // console.log(typeof (res.result.packages[0].weight))
         that.setData({
           packages: res.result.packages,
@@ -35,6 +39,7 @@ Page({
         })
         }
     },function(res){
+      wx.hideLoading()
           wx.showToast({
             title: '出现错误',
             image:"../../icon/error.png"
@@ -104,7 +109,17 @@ Page({
     })
   },
   jump: function (e) {
-    utils.jump(e)
+    var url = e.currentTarget.dataset.jump
+    var id = e.currentTarget.dataset.id
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + url + '/' + url+"?id="+id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url+"?id="+id,
+      })
+    }
   },
   formSubmit: function (e) {
     var pack=e.detail.value.package

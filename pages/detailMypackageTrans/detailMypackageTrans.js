@@ -1,18 +1,51 @@
 // pages/detailMypackageTrans/detailMypackageTrans.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    depot:null,
+    express:null,
+    trace:null,
+    goods:[],
+    allValue:0,
+    allCount:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that=this
+    var id=options.id
+    var data={
+      op:"check",
+      id:id
+    }
+    utils.allRequest("package",data,function(res){
+      var goods = res.result.goods
+         var  allCount=0
+         var  allValue=0
+         var sort=1
+          for(var i in goods){
+            goods[i].sort=sort
+            sort=sort+1
+            allCount = allCount + parseInt(goods[i].count)
+            allValue = allValue + parseFloat(goods[i].value)
+          }
+        that.setData({
+          depot: res.result.depot,
+          express: res.result.express,
+          trace: res.result.trace,
+          goods:goods,
+          allCount: allCount,
+          allValue: allValue.toFixed(2)
+        })
+    },function(res){
+
+    },true)
   },
 
   /**

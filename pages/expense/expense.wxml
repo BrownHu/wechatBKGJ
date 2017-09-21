@@ -9,9 +9,18 @@
     <view class="wrap">
     <view class="des_all">
         <view class="label">目的地：</view>
-        <view class="region"><picker mode="region" name="destination" bindchange="bindRegionChange" value="{{region}}">
+        <view class="region">
+        <!-- <picker mode="region" name="destination" bindchange="bindRegionChange" value="{{region}}">
           <text class="left">{{region[0]}}-{{region[1]}}-{{region[2]}}</text> <text class="right">></text>
-        </picker>
+        </picker> -->
+        <picker bindchange="bindPickerChange" range-key="name" value="{{index}}" range="{{array}}">
+        <input hidden='true' value="{{array[index].id}}" name="destination"></input>
+                  <text class="left">{{array[index].name}}</text>
+                  <view style="float:right;margin-right:5px;">
+                        <image src="../../images/common/Arrow-bottom.png" class="arrow"></image>
+                  </view>
+<view style='clear:both'></view>
+            </picker>
         </view>
     </view>
     <view class="weight_all">
@@ -30,34 +39,25 @@
   <view class="tr bg-w">
     <view class="th">运输方式</view>
     <view class="th colorful">预计运期</view>
-    <view class="th">首价/首重</view>
-    <view class="th">续假/续重</view>
-    <view class="th" style="border-right:1rpx solid #c8c8c8;">限重(KG)</view>
+    <view class="fee">总价</view>
   </view>
-     <view class="tr">
-     <view class="td">DHL</view>
-     <view class="td colorful">3-15个工作日</view>
-     <view class="td">90.00</view>
-     <view class="td"><text class="price">26.00</text>/500克</view>
-     <view class="td" style="border-right:1rpx solid #c8c8c8;">30</view>
-    </view>
-    <view class="tr" style="border-bottom:1rpx solid #c8c8c8;">
-     <view class="td">FEDEX</view>
-     <view class="td colorful">3-5个工作日</view>
-     <view class="td">85.00</view>
-     <view class="td"><text class="price">20.00</text>/500克</view>
-     <view class="td" style="border-right:1rpx solid #c8c8c8;">30</view>
-    </view>
-    <!--end tr + border-bottom  end td + border-right  -->
-    <!-- <block wx:for="{{listData}}">
+  <block wx:for="{{listData}}">
     <view class="tr">
-     <view class="td">{{item.method}}</view>
-     <view class="td colorful">{{item.day}}</view>
-     <view class="td">{{item.fprice}}</view>
-     <view class="td"><text class="price">{{item.aprice}}</text>/500克</view>
-     <view class="td" style="border-right:1rpx solid #c8c8c8;">{{item.weightlimit}}</view>
+        <view class="td">{{item.method}}</view>
+        <view class="td colorful">{{item.readyDate}}</view>
+        <view class="fee_td">¥ {{item.expense}}</view>
     </view>
-  </block>   -->
+    </block>
+    <!-- <view class="tr">
+        <view class="td">DHL</view>
+        <view class="td colorful">3-15个工作日</view>
+        <view class="fee_td">¥ 90.00</view>
+    </view>
+    <view class="tr">
+        <view class="td">DHL</view>
+        <view class="td colorful">3-15个工作日</view>
+        <view class="fee_td">¥ 90.00</view>
+    </view> -->
 </view>
     </view>
 </view>

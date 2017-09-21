@@ -6,19 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    balance:null
+    balance:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that=this
     var url ="finance"
     var data={
         op:"balance"
     }
     utils.allRequest(url,data,function(res){
+        wx.hideLoading()
         if(res.error_code==0){
         that.setData({
           balance: res.result.balance
@@ -26,6 +30,7 @@ Page({
         }
     },
     function(res){
+      wx.hideLoading()
       wx.showToast({
         title: '请先登录',
       })
@@ -64,7 +69,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })  
   },
 
   /**

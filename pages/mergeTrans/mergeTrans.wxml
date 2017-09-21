@@ -146,7 +146,7 @@
     <button form-type="submit" data-origin="wechat" style="background-color:#1aad19;color:#ffffff">微信支付</button>
   </view>
   <view class="rest">
-    <button  data-origin="balance"  form-type="submit"  wx:if="{{balance >= totalFee}}" style="background-color:#1aad19;color:#ffffff">余额支付</button>
+    <button  data-origin="balance"  form-type="submit"  wx:if="{{balance >= intTotalFee}}" style="background-color:#1aad19;color:#ffffff">余额支付</button>
   </view>
 </view>
 </form>

@@ -1,5 +1,6 @@
 // pages/mergeTrans/mergeTrans.js
 var utils=require('../../utils/util.js')
+var md5=require("../../utils/MD5.js")
 var notification = require('../../utils/WxNotificationCenter.js')
 Page({
 
@@ -10,6 +11,7 @@ Page({
     expressFee:0.00,
     packFee:0.00,
     totalFee:0.00,
+    intTotalFee:0,
     allCount:0.00,
     allWeight:"0.00",
     me:"展示",
@@ -78,6 +80,7 @@ Page({
           radioItem: that.data.radioItem,
           packages: res.result.packages,
           balance:res.result.balance,
+          intbalance: parseFloat(res.result.balance)
           // method:
         })
       }
@@ -166,8 +169,9 @@ Page({
     var total = packFee + expressFee
     this.setData({
       methodindex: e.detail.value,
-        expressFee:expressFee,
-        totalFee:total
+        expressFee:expressFee.toFixed(2),
+        totalFee:total.toFixed(2),
+        intTotalFee:total
     })
     
     
@@ -176,9 +180,19 @@ Page({
     utils.jump(e)
   },
   formSubmit: function (e) {
-    console.log(e)
+    var that=this
+    var openId=null
     var form = {}
-    form.payorigin = e.detail.target.dataset.origin
+    form.payOrigin = e.detail.target.dataset.origin
+    console.log(form.payOrigin)
+    if (form.payOrigin=="wechat"){
+          wx.getStorage({
+            key: 'openId',
+            success: function(res) {
+             form.openId=res.data
+            },
+          })
+    }
     form.area = e.detail.value.area
     form.ware_id="0"
     form.method = e.detail.value.express
@@ -189,32 +203,72 @@ Page({
     form.op="pay"
     console.log(form)
     var formComplete = utils.IsComplete(form)
-    // if (formComplete) {
-    //   wx.showToast({
-    //     title: '支付中',
-    //     icon: 'loading',
-    //     mask: true,
-    //     success:()=>{
-    //       var url ="mergeTrans";
-    //       utils.allRequest(url,form,function(res){
-    //     console.log(res)
-    //     if(res.errcode==0){
-    //       wx.hideLoading()
-    //     }
-    //       },function(res){
-    //     console.log(res)
-    //       },true)
+    console.log(form)
+    if (formComplete) {
+      wx.showToast({
+        title: '支付中',
+        icon: 'loading',
+        mask: true,
+        success:()=>{
+          var url ="mergeTrans";
+          utils.allRequest(url,form,function(res){
+            // console.log(res)
+
+        if(res.error_code==0){
+          console.log(res)
+          wx.hideLoading()
+          var pay = res.result
+          var temp = "appId=" + pay.appId + "&nonceStr=" + pay.nonceStr + "&package=" + pay.package + "&signType=" + pay.signType + "&timeStamp=" + pay.timeStamp+"&key="+pay.key
+          var paySign = md5.hexMD5(temp).toUpperCase()
+          console.log(paySign)
+          wx.requestPayment({
+            'timeStamp': pay.timeStamp,
+            'nonceStr': pay.nonceStr,
+            'package': pay.package,
+            'signType': pay.signType,
+            'paySign': paySign,
+            success:function(e){
+                  wx.showToast({
+                    title: '下单成功',
+                  })
+                  setTimeout(function () {
+                    wx.redirectTo({
+                      url: '../arrivedPackageTrans/arrivedPackageTrans',
+                    })
+                  }, 800)
+            },
+            fail:function(e){
+                wx.showToast({
+                  title: '支付出错,请重新下单',
+                  image:"../../icon/error.png"
+                })
+                setTimeout(function(){
+                    wx.redirectTo({
+                      url: '../arrivedPackageTrans/arrivedPackageTrans',
+                    })
+                },800)
+            }
+          })
+        }else{
+          wx.showToast({
+            title: '网络异常,请重试',
+            image:"../../icon/error.png"
+          })
+        }
+          },function(res){
+        console.log(res)
+          },true)
         
-    //     }
+        }
         
-    //   })
-    // } else {
-    //   wx.showToast({
-    //     mask: true,
-    //     title: '必填字段为空',
-    //     image: '../../icon/error.png'
-    //   })
-    // }
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '必填字段为空',
+        image: '../../icon/error.png'
+      })
+    }
 
   },
   chooseAddress:function(){
@@ -232,8 +286,9 @@ Page({
     var res=e.detail.value.split(',')[0]
     var totalFee = parseFloat(res) + parseFloat(this.data.expressFee)
     this.setData({
-      packFee:parseFloat(res),
-      totalFee: totalFee
+      packFee:parseFloat(res).toFixed(2),
+      totalFee: totalFee.toFixed(2),
+      intTotalFee:totalFee
     })
   }
 

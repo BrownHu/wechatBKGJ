@@ -1,12 +1,15 @@
 // waybill.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listData: [
-      { "time": "2017-07-10", "place": "邯郸市" }
+    trace: [
+      { "date": "2017-07-10", "detail": "邯郸市|发件【邯郸市集散中心】" },
+      { "date": "2017-07-10", "detail": "邯郸市|发件【邯郸市集散中心】" },
+      { "date": "2017-07-10", "detail": "邯郸市|发件【邯郸市集散中心】" }
     ]
   },
 
@@ -67,11 +70,31 @@ Page({
   },
     // 查询按钮
   formSubmit:function(e){
-        var num=e.detail.value.number;
-      // 处理
-      this.setData({
-        
-      })
+      var that=this
+      var data={
+        waybill:e.detail.value.number
+      }
+      utils.allRequest("waybillSearch",data,function(res){
+        console.log(res.reason)
+        var mes = typeof (res.reason) =="undefined" ? "参数未定义":"网络错误"
+        if (res.error_code == 0) {
+          that.setData({
+            trace: res.result.trace
+          })
+        } else {
+          wx.showToast({
+            title: mes,
+            image: "../../icon/error.png"
+          })
+          that.setData({
+            trace:null
+          })
+        }
+      },function(res){
+
+      },true)
+      
+      
   }
   
 })

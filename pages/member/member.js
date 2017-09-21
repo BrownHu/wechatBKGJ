@@ -28,11 +28,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // wx.showLoading({
+    //   title: '努力加载中',
+    // })
     var that = this
     var url = 'baseInfo'
     var data = {}
     util.allRequest(url, data,
       function (res) {
+        // wx.hideLoading()
         console.log(res)
         app.globalData.userInfo = res.result
         that.setData({
@@ -40,6 +44,7 @@ Page({
         })
       },
       function (res) {
+        // wx.hideLoading()
         that.setData({
           userInfo: { 'name': "点我登录" }
         })
@@ -64,7 +69,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })
   },
 
   /**

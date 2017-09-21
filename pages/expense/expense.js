@@ -1,21 +1,31 @@
 // expense.js
+var utils=require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    index:0,
     listData:[
-    {"method":"DHL","day":"3-15个工作日","fprice":"90.00","aprice":"26.00","weightlimit":"30"}
+      { "method": "DHL", "readyDate": "3-15个工作日","expense":"99.00"},
+      { "method": "DHL", "readyDate": "3-15个工作日", "expense": "99.00" },
+      { "method": "DHL", "readyDate": "3-15个工作日", "expense": "99.00" },
+      { "method": "DHL", "readyDate": "3-15个工作日", "expense": "99.00" }
+
     ],
-    region: ['--请', '选', '择--']
+    // region: ['--请', '选', '择--']
+    array:[
+      {"id":1,"name":"英国"},
+      {"id":2,"name":"泰国"}
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      
   },
 
   /**
@@ -50,7 +60,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    }) 
   },
 
   /**
@@ -66,20 +83,44 @@ Page({
   onShareAppMessage: function () {
   
   },
-   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+  
+  bindPickerChange: function (e) {
     this.setData({
-      region: e.detail.value
+      index: e.detail.value,
     })
   },
-  formSubmit:function(e){
-    var info={}
-    info.destination=e.detail.value.destination;
-    info.weight=e.detail.value.weight;
-    // 处理
-    console.log(info)
-    this.setData({
 
-    })
+  formSubmit:function(e){
+    var that=this
+    var info={}
+    info.destination=e.detail.value.destination
+    info.weight=e.detail.value.weight
+    // 处理
+    var complete = utils.IsComplete(info)
+    if (complete){
+      utils.allRequest("expense",info,function(res){
+            if(res.error_code==0){
+                  that.setData({
+                    listData: res.result.detail
+                  })
+            }else{
+              wx.showToast({
+                title: '刷新重试',
+                image:"../../icon/error.png"
+              })
+              that.setData({
+                listData:null
+              })
+            }
+      },function(res){
+
+      })
+    } else {
+      wx.showToast({
+        mask: true,
+        title: '所有字段必填',
+        image: '../../icon/error.png'
+      })
+    }
   }
 })

@@ -53,8 +53,9 @@
         </view>
         <text class="right-arrow">></text>
     </view>
-    <view class="sep"></view>
-    <view class="part-wrap" data-url="couponNousedMember" bindtap="jump">
+      <!-- 优惠券开始 -->
+    <view hidden='true' class="sep"></view>
+    <view hidden='true' class="part-wrap" data-url="couponNousedMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/22.png" mode="aspectFit"></image>
         </view>
@@ -64,6 +65,7 @@
         <text class="right-arrow">></text>
     </view>
      <view class="sep"></view>
+     <!--优惠券结束  -->
     <view class="part-wrap" data-url="addressIndexMember" bindtap="jump">
         <view class="icon">
             <image class="icon-img" src="../../images/member/33.png" mode="aspectFit"></image>

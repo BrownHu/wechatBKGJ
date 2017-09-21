@@ -34,11 +34,8 @@ page{
     margin:10px 0;
   }
   .label{
-    width: 10%;
-    display: inline;
-    color: rgba(0,0,0,0.7);
-    position:relative;
-     top:5px;
+    width: 20%;
+   
 
   }
   .region{
@@ -55,15 +52,15 @@ page{
   .weight_all{
     margin-top:20px; 
     width: 100%;
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+
   }
   .weight{
   border:1px solid   rgba(0,0,0,0.3);
-  position: relative;
-  top: 5px;
-  left: 5px;
-  display:inline-block;
   padding:5px;
-  width:50%;
+  width:80%;
   }
   .cal_button{
     display:inline-block;
@@ -99,18 +96,26 @@ page{
 }
 .td {
   color:#bebeb3;
-  height:39px;
+  height:100px;
   padding:5px 5px 5px 5px;
   width:25%;
-  justify-content:center;
+  display:flex;
+  flex-flow:row;
+  align-items:center;
   text-align:center;
   border:1rpx solid #c8c8c8;
   overflow:scroll;
-  font-size:10px;
+  font-size:12px;
   border-right: none;
+  justify-content:center;
 
 }
-
+.tipIn{
+  color: #0096e6;
+}
+.pad-top{
+  padding-top:10px 
+}
 .bg-w{
   background: snow;
 }
@@ -128,7 +133,7 @@ page{
   border-right: none; 
   display: flex;
   align-items: center;
-  font-size: 8px;
+  font-size: 12px;
 }
 .colorful{
   color: #0096e6;
@@ -157,4 +162,18 @@ page{
 .reply{
   margin: 12px 0 10px 0;
   line-height: 13px;
+}
+.list{
+margin:10px 0;
+display:flex;
+flex-flow:row wrap;
+justify-content:flex-start;
+
+}
+.specific{
+  font-size: 12px;
+ width:25%;
+color:#0096e6;
+margin:5px 0;
+text-align:center;
 }

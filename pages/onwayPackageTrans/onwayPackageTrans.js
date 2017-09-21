@@ -15,6 +15,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
       var that=this
       var url ="package"
       var data={
@@ -22,6 +25,7 @@ Page({
       }
       utils.allRequest(url,data,function(res){
           if(res.error_code==0){
+            wx.hideLoading()
             var packages = res.result.packages
               var count = res.result.allCount
               that.setData({
@@ -30,7 +34,7 @@ Page({
               })
           }
       },function(res){
-
+        wx.hideLoading()
       },true)
   },
 
@@ -90,7 +94,17 @@ Page({
   
   },
   jump: function (e) {
-   utils.jump(e)
+    var url = e.currentTarget.dataset.jump
+    var id = e.currentTarget.dataset.id
+    if (url == "index" || url == "packagePredictTrans" || url == "member") {
+      wx.switchTab({
+        url: '../../pages/' + url + '/' + url + "?id=" + id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../pages/' + url + '/' + url+"?id="+id,
+      })
+    }
   },
   formSubmit: function (e) {
     console.log('传值处理..')

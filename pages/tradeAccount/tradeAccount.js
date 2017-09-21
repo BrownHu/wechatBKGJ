@@ -14,6 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this
     var url = "finance"
     var data = {
@@ -29,8 +32,10 @@ Page({
           record: record,
           emptyHide: hideornot
         })
+        wx.hideLoading()
       }
     }, function (res) {
+      wx.hideLoading()
       wx.showToast({
         title: "错误",
         image: '../../icon/error.png'
@@ -70,7 +75,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.startPullDownRefresh({
+      success: res => {
+        this.onLoad()
+      },
+      complete: res => {
+        wx.stopPullDownRefresh()
+      }
+    })  
   },
 
   /**
