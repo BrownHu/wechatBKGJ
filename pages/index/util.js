@@ -3,8 +3,9 @@ function  ImageUtil(e){
   wx.getSystemInfo({
     success: function (res) {
       var windowWidth = res.windowWidth;
-      height.height=(windowWidth-20)*0.25;
-      height.swiperHeight = (windowWidth-30)*0.37;
+      height.height=(windowWidth)*0.25;
+      height.swiperWidth = windowWidth
+      height.swiperHeight = windowWidth*0.41;
     }
   }) 
   return height;

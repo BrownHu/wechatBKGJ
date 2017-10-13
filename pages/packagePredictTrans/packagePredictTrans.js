@@ -15,7 +15,8 @@ Page({
     express:{},
     goods:[
       {"name":"时尚女装","count":2,"value":1285}
-    ]
+    ],
+    textAreaWidth:20
   },
 
   /**
@@ -45,7 +46,15 @@ Page({
         }, true)
       }
     })
-    
+    // wx.getSystemInfo({
+    //   success: function (res) {
+    //     var windowWidth = res.windowWidth-30;
+    //     that.setData({
+    //       textAreaWidth:windowWidth
+    //     })
+        
+    //   }
+    // }) 
   },
 
   /**

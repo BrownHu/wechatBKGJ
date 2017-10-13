@@ -6,9 +6,10 @@ Page({
     // open:'',
     swiperHeight:0,
     height:0,
+    swiperWidth:0,
     imgUrls: [
-      "../../images/index/banner1.png",
-      "../../images/index/banner2.png",
+      "../../images/index/banner1.jpg",
+      "../../images/index/banner2.jpg",
     ],
     indicatorDots: true,
     autoplay: true,
@@ -42,7 +43,8 @@ Page({
     var height = util.ImageUtil(e);
     this.setData({
       height:height.height,
-      swiperHeight: height.swiperHeight
+      swiperHeight: height.swiperHeight,
+      swiperWidth: height.swiperWidth
     })
   },
   jump: function (e) {

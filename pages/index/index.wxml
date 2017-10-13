@@ -4,7 +4,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image class="img" style="height:{{swiperHeight}}px"  src="{{item}}"  mode="aspectFit" />
+      <image class="img" style="height:{{swiperHeight}}px;width:{{swiperWidth}}px"  src="{{item}}"  mode="aspectFit" />
     </swiper-item>
   </block> 
 </swiper>
